@@ -1,0 +1,10 @@
+select * from SPedimentos
+
+select * from SClases
+select * from SPartes
+
+select * from SPartidasExpo
+select * from SPartidasImpo
+
+select * from SFacImp
+select * from SFacExp
