@@ -1,0 +1,5891 @@
+
+GAAduanal {
+	CLAVEAA varchar pk
+	NOMBRE varchar
+	DIRECCION varchar
+	CODIGOPOSTAL varchar
+	CIUDAD varchar
+	ESTADO varchar > GEstado.CLAVEM3]
+	TELEFONO varchar
+	FAX varchar
+	EMAIL varchar
+	PAIS varchar > GPaises.CLAVEM3]
+	RFC varchar
+	CURP varchar
+	PUESTO varchar
+	PATENTE varchar
+	EMPRESA varchar
+	CONTACTO varchar
+	RUTAARCHCER varchar
+	RUTAARCHKEY varchar
+	CLAVEACCESO varchar
+	FORMAGENFIEL varchar
+	RUTALEERARCHAAFIRMA varchar
+	RUTADEPARCHIVO varchar
+	CLAVEACCESOFIEL varchar
+	USUARIOWEBSERVICEVU varchar
+	CLAVEACCESOWEBSERVICEVU varchar
+	EMAILVU varchar
+	TIPOFIGURAVU varchar
+	RUTAARCHIVOSXML varchar
+	RFCCONSULTA varchar
+	RUTAARCHCERDODA varchar
+	RUTAARCHKEYDODA varchar
+	USUARIOWEBSERVICEDODA varchar
+	CLAVEACCESOWEBSERVICEDODA varchar
+	CLAVEACCESOFIELDODA varchar
+	RUTAARCHIVOSXMLDODA varchar
+}
+
+GAAduanalPersonal {
+	CLAVEAA varchar pk
+	LINEA int pk
+	NOMBRE varchar
+	RFC varchar
+	CURP varchar
+	PUESTO varchar
+	PATENTE varchar
+	NOMBRES varchar
+	APELLIDOPATERNO varchar
+	APELLIDOMATERNO varchar
+	EMAIL varchar
+}
+
+GAccesos {
+	CONSECUTIVO int
+	FECHAINICIAL int
+	FECHAFINAL int
+	HORAINICIAL int
+	HORAFINAL int
+	HORADEUSO int
+	MAQUINA varchar
+	IP varchar
+	ESTADO varchar
+	SISTEMA varchar
+}
+
+GAccesosModulos {
+	CONSECUTIVO int
+	FECHAINICIAL int
+	FECHAFINAL int
+	HORAINICIAL int
+	HORAFINAL int
+	HORADEUSO int
+	MAQUINA varchar
+	IP varchar
+	ESTADO varchar
+	SISTEMA varchar
+	MODULO varchar
+	INDENTIFICADOR varchar
+}
+
+GAduanaSec {
+	ADUANASECCION varchar pk
+	NOMBRE varchar
+}
+
+GAgencyTariffCodes {
+	CONSECUTIVO int pk
+	TARIFFFLAGCODE varchar
+	AGENCYCODE varchar
+	REQUIREDMAYBEREQUIRED varchar
+	PROGRAMCODE varchar
+	TARIFFFLAGCODEDEFINITION varchar
+}
+
+GAnexo22App3 {
+	CLAVE varchar pk
+	METODOTRANSPORTE varchar
+	TIPOFECHAPAGO varchar
+}
+
+GArchivosConsecutivos {
+	ARCHIVO varchar pk
+	CONSECUTIVO int
+}
+
+GArchivosDescargaSifra {
+	ARCHIVO varchar pk
+	FECHA int
+	TIPO char
+}
+
+GArchivosSIAA {
+	ARCHIVO varchar pk
+	MEDIDA int
+	FECHA int
+	HORA int
+	NUMFACTURA varchar
+	TIPO varchar
+	ESTATUS varchar
+	FOLDER_LLEGADA_FTP varchar
+}
+
+GBitacora {
+	SYSID int pk
+	SYSID int
+	REFERENCIA varchar
+	PROCEDIMIENTO varchar
+	MOVIMIENTO varchar
+	USUARIO varchar
+	FECHA int
+	HORA int
+	SISTEMA varchar
+	\\SYSID int
+}
+
+GBotonLeyendas {
+	NUMBOTON tinyint pk
+	BOTONLEYENDA varchar
+	BOTONLEYENDA2 varchar
+}
+
+GBultos {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+	DESCRIPCIONI varchar
+	PESOUNI decimal
+	PLURALES varchar
+	PLURALIN varchar
+	CLAVEACE varchar
+	CLAVEAAMEX varchar
+}
+
+GCatErrores {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+	CLASIFICACION varchar
+}
+
+GCatErroresClas {
+	CLASIFICACION varchar pk
+	NIVEL varchar
+}
+
+GCertOrigen {
+	NUMERO varchar pk
+	EXPORTADOR varchar
+	FECHAINICIO int
+	FECHAFINAL int
+	PRODUCTOR varchar
+	IMPORTADOR varchar
+	EMPRESA varchar
+	NOMBRE varchar
+	CARGO varchar
+	FECHAGEN int
+	TELEFONO varchar
+	FAX varchar
+	TIPOFRACCION varchar
+	SISTEMA varchar
+	TAXID1 varchar
+	TAXID2 varchar
+	TAXID3 varchar
+	CORREOELECTRONICO varchar
+	NUMEROEMBARQUE varchar
+	CLIENTEASIGNAR varchar
+	NUMERODEFACTURA varchar
+}
+
+GClavePed {
+	CLAVEPED varchar pk
+	DESCRIPCION varchar
+}
+
+GClavePedRegimen {
+	CONSECUTIVO int pk
+	CLAVEPED varchar
+	REGIMENPED varchar
+	TIPO varchar
+}
+
+GClientesPro {
+	TIPOEXTNAC varchar
+	CLIENTE varchar pk
+	NOMBRE varchar
+	RFC varchar
+	CALLES varchar
+	NUMEXT varchar
+	NUMINT varchar
+	CODIGOPOSTAL varchar
+	COLONIA varchar
+	CIUDAD varchar
+	ESTADO varchar
+	PAIS varchar
+	TELEFONO varchar
+	NUMFAX varchar
+	EMAIL varchar
+	CURP varchar
+	CLIENTE_O_PROV varchar
+	PROGRAMA varchar
+	NUMEROPROGRAMA varchar
+	PROSEC tinyint
+	AUTORIZACIONPROSEC varchar
+	FECHAAUTSECON int
+	MANUFACTERID varchar
+	TAXID varchar
+	BROKER varchar
+	BROKERIMPO varchar
+	CLAVETRANSFER varchar
+	CLAVEWEB varchar
+	TRASFORMASUBMAQ varchar
+	AUTORIZACIONSECON varchar
+	PROPORCIONAPLICADA decimal
+	VINCULACION varchar
+	ESEMPRESACERTIFICADA varchar
+	REGISTROEMPCERT varchar
+	INFORMACIONEXTRA varchar
+	CONTACTO varchar
+	NUMAUTDONACION varchar
+	NOMBRECORTO varchar
+	ESPROVNACIONAL varchar
+	MUNICIPIO varchar
+	CTPAT_SVI varchar
+	RESPONSABLE varchar
+	PUESTO varchar
+	HABILITADODESAHABILITADO tinyint
+	NUMREGLTRIBUTARIO varchar
+	REFERENCIA varchar
+	INCOTERM varchar
+	SERVICIOSUBMAQ tinyint
+	FECHASAUTSE int
+	NUMAUTSE varchar
+}
+
+GCodigosFCC {
+	CLAVEFCC varchar pk
+	CODIGOFCC varchar
+	MARCA varchar
+	CONDICIONIMP varchar
+	MODELO varchar
+	INSPECCION tinyint
+	REQUERIMIENTO varchar
+}
+
+GCodigosFDA {
+	CLAVEFDA varchar pk
+	DESCRIPCION varchar
+	CODIGOPRO varchar
+	REQUERIMIENTOS varchar
+	MANUFACTERID varchar
+	PAISORIGEN varchar
+	STATUSALMACEN varchar
+	CODIGOAFI1 varchar
+	CALIFAFI1 varchar
+	CODIGOAFI2 varchar
+	CALIFAFI2 varchar
+	CODIGOAFI3 varchar
+	CALIFAFI3 varchar
+	CODIGOAFI4 varchar
+	CALIFAFI4 varchar
+	CODIGOAFI5 varchar
+	CALIFAFI5 varchar
+	FDA01PRODCODE varchar
+	FDA01COMODITYDESC varchar
+	FDA01BRANDNAME varchar
+	FDA01DISCLAIMER varchar
+	FDA01PGMCODE varchar
+	FDA01PROCCODE varchar
+	FDA01INTNDUSECODE varchar
+	FDA01INTNDUSEDESC varchar
+	FDA01TEMPQUAL varchar
+	FDA01TEMPTYPE varchar
+	FDA01TEMPDEGREES decimal
+	FDA01TEMPNEGATIVE varchar
+	FDA01TEMPLOCATION varchar
+	FDA01QUANTITY1 decimal
+	FDA01QTYUOM1 varchar
+	FDA01QUANTITY2 decimal
+	FDA01QTYUOM2 varchar
+	FDA01QUANTITY3 decimal
+	FDA01QTYUOM3 varchar
+	FDA01LACFCONT1 varchar
+	FDA01LACFCONT2 varchar
+	FDA01LACFCONT3 varchar
+	FDA01CTRYPROD varchar
+	FDA01CTRYSOURCE varchar
+	FDA01CTRYGROWTH varchar
+	FDA01CTRYREFUSAL varchar
+	FDA01CTRYSHIPPING varchar
+	FDA01MANUFKEY varchar
+	FDA01SHIPPERKEY varchar
+	FDA01UITCONSKEY varchar
+	FDA01FDAIMPKEY varchar
+	FDA01PNSUBMKEY varchar
+	FDA01CONSOLKEY varchar
+	FDA01PRODUCERKEY varchar
+	FDA01OWNERKEY varchar
+	FDA01DELIPARTYKEY varchar
+	FDA01GROWERKEY varchar
+	FDA01DEVINIIMPKEY varchar
+	FDA01PNTRANSMITTERKEY varchar
+}
+
+GCodigosProductoCP {
+	SYSID int pk
+	CODIGO varchar
+	DESCRIPCION varchar
+	PALABRASSIMILARES varchar
+	MATPELIGROSO varchar
+	FECHAINICIOVIGENCIA int
+	FECHAFINVIGENCIA int
+}
+
+GConceptos {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+	DESCRIPCIONINGLES varchar
+	DESCRIPCIONDETALLADA varchar
+	PRIORIDAD int
+	PRIORIDADAME int
+	PRIMERTOTAL tinyint
+	TIPO varchar
+	SEIMPRIME tinyint
+	SECCION int
+	CLASIFICACION varchar
+}
+
+GConceptosAAduanal {
+	CLAVEAA varchar pk
+	CONCEPTO varchar
+	IMPORTE decimal
+	PRIORIDAD int
+}
+
+GConceptosClasif {
+	CLASIFICACION varchar pk
+}
+
+GConCobranza {
+	CONCEPTO varchar pk
+}
+
+GConductor {
+	CLAVETRANS varchar pk
+	LINEA int pk
+	CONDUCTOR varchar
+	NUMLICENCIA varchar pk
+	IDLINEAEXPRESS varchar
+	IDENTIFICACIONACE varchar
+	FECHANAC int
+	SEXO varchar
+	PAISNACIMIENTO varchar
+	AUTTRANSMATPELIGROSO varchar
+	ESTADOMATPELIGROSO varchar
+	NOMBRE varchar
+	APELLIDOPATERNO varchar
+	CLAVEID1 varchar
+	NUMEROID1 varchar
+	ESTADOID1 varchar
+	PAISID1 varchar
+	CLAVEID2 varchar
+	NUMEROID2 varchar
+	ESTADOID2 varchar
+	PAISID2 varchar
+	NUMGAFETE varchar
+	CLASE varchar
+	NUMGAFETEUNICO varchar
+}
+
+GConfigReportes {
+	SISTEMA varchar pk
+	MODULO varchar pk
+	REPORTE varchar pk
+	IMPRIMIR tinyint
+	VENTANALLAMAR varchar
+	TIPOFACTURA varchar
+	TIPOUM varchar
+	TIPOMONEDA varchar
+	TIPOPESO varchar
+	IMPRIMIRAGEN tinyint
+	IMPRIMIRTRANSPOR tinyint
+	IMPRIMIRIMPORTADOR tinyint
+	IMPRIMIRAA tinyint
+	CANTCOPIAS int
+	GENPDF tinyint
+}
+
+GConfigTablas {
+	TABLA varchar pk
+	CAMPO varchar pk
+	VENTANA varchar
+}
+
+GContenedores {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+}
+
+GConversiones {
+	CLAVEUNI1 varchar pk
+	CLAVEUNI1 varchar
+	CLAVEUNI1 varchar
+	FACTORCONV decimal
+	CLAVEUNI2 varchar pk
+	CLAVEUNI2 varchar
+	CLAVEUNI2 varchar
+}
+
+GDestinoAduanero {
+	ID varchar pk
+	CLAVE varchar
+	DESTINOADUANERO varchar
+}
+
+GDestruccion {
+	OFICIO varchar pk
+	FECHADESTRUCCION int
+}
+
+GDivisionPeligro {
+	CLASEDEPELIGRO varchar
+	DESCRIPCION varchar
+}
+
+GDocumentosDigital {
+	CONSECUTIVO int pk
+	IDTIPODOCUMENTO varchar
+	NOMBREARCHIVO varchar
+	EDOCUMENT varchar
+	FECHADIGITALIZACION int
+	INDENTIFICADOR varchar
+	NUMOPERACIONVU varchar
+	MODULO varchar
+	CLAVEAA varchar
+	DESCRIPCION varchar
+	RUTAENVIOXML varchar
+	RUTARESPUESTAXML varchar
+	RFCCONSULTA varchar
+	CADENAORIGINALDOC varchar
+	SELLODIGITALSOLICITANTE varchar
+	SELLODIGITALVU varchar
+	FOLIOSOLICITUD varchar
+	PEDIMENTO varchar
+}
+
+gDODA {
+	SYSID int pk
+	NOINTEGRACION varchar
+	FECHADODA int
+	HORADODA int
+	ADUANADESPACHO varchar
+	ADUANASECCIONES varchar
+	PATENTE varchar
+	PEIDMENTOS varchar
+	CAAT varchar
+	IDENTIFICACIONTRANSPORTE varchar
+	FAST_ID varchar
+	TIPOOPERACION varchar
+	SELECCIONADO tinyint
+	USUARIOSELECCIONO varchar
+	ULTIMOUSUARIO varchar
+	RESPONSABLE varchar
+	TRANSPORTISTA varchar
+	REMESAS varchar
+	TIPOPEDIMENTO varchar
+	CADENAORIGINAL varchar
+	NUMEROSERIE char
+	FIRMAELECTRONICA varchar
+	NOTRANSACCION varchar
+	ESTATUS varchar
+	LINQSATQR varchar
+	SAT_CERTIFICADO char
+	SAT_SELLODIGITAL text
+	PATHXMLDODAENVIO varchar
+	PATHXMLDODARESPUESTA varchar
+	SAT_CADENAORIGINAL text
+	DESPACHOADUANERO int
+	NUMEROGAFETEUNICO varchar
+}
+
+GDotInformation {
+	CLAVEDOT varchar pk
+	BOXNUMBER varchar
+	PGMCODE varchar
+	INTNDUSECODE varchar
+	INTNDUSEDESC varchar
+	DISCLAIMER varchar
+	CATTYPECODE varchar
+	CATCODE varchar
+	BRANDNAME varchar
+	MODEL varchar
+	MANUFMONTH varchar
+	MANUFYEAR varchar
+	MODELYEAR varchar
+	DRIVESIDE varchar
+	EMBASSYCO varchar
+	PASSPORTCO varchar
+	PASSPORTNO varchar
+	SURETYCODE varchar
+	BONDSERIAL varchar
+	BONDQUAL varchar
+	BONDAMT int
+	FABMANUFKEY varchar
+	RETDISTKEY varchar
+	CERTINDKEY varchar
+	OWNERKEY varchar
+	OEIKEY varchar
+}
+
+GEmails {
+	SYSID int pk
+	SYSID int
+	EMAIL varchar
+	EMAIL varchar
+	NOMBRE varchar
+	EMPRESA varchar
+	TELEFONOS varchar
+	CATEGORIA varchar
+}
+
+GEmpresa {
+	CONSECUTIVO int pk
+	NOMBRE varchar
+	RFC varchar
+	CALLES varchar
+	CALLESIND varchar
+	NUMEXT varchar
+	NUMEXTIND varchar
+	CODIGOPOSTAL varchar
+	CODIGOPOSTALIND varchar
+	COLONIA varchar
+	COLONIAIND varchar
+	CIUDAD varchar
+	CIUDADIND varchar
+	ESTADO varchar
+	ESTADOIND varchar
+	TELEFONO varchar
+	TELEFONOIND varchar
+	NUMFAX varchar
+	NUMFAXIND varchar
+	EMAIL varchar
+	EMAILIND varchar
+	ACTPREPONDERANTE varchar
+	PROGRAMA varchar
+	NUMEROPROGRAMA varchar
+	PROSEC tinyint
+	AUTORIZACIONPROSEC varchar
+	SECTOR1 varchar
+	SECTOR2 varchar
+	SECTOR3 varchar
+	MANUFACTERID varchar
+	BROKER varchar
+	RESPONSABLE varchar
+	RFCRESPONSABLE varchar
+	RESPPATERNO varchar
+	RESPMATERNO varchar
+	RESPNOMBRE varchar
+	PUESTO varchar
+	LOGO varchar
+	ACTETIQUETAS tinyint
+	CLAVEFTP varchar
+	ACTFRACCIONES tinyint
+	RUTASIFRA varchar
+	BUFETEINTERNACIONAL tinyint
+	TIPOVERSION varchar
+	ESEMPRESACERTIFICADA varchar
+	REGISTROEMPCERT varchar
+	TIENELINEAEXPRESS varchar
+	TIPOFORMATOPED varchar
+	CODIGOANTERIOR tinyint
+	ACTIVACAAT tinyint
+	INTERFASETRANS tinyint
+	COSTOSAMERICANOS tinyint
+	SCAFSOLOLECTURA tinyint
+	ESEMPRESASERVICIO varchar
+	SUSTPARTES tinyint
+	NOMBRECLIENTE varchar
+	ACTFACMEXAME tinyint
+	PARTEREFERENCIA tinyint
+	SQLLENGUAJE varchar
+	MODOSUBMAQUILA varchar
+	FECHAINICIALEMPCERT int
+	FECHAFINALEMPCERT int
+	MODOOPERACIONSALDO varchar
+	CURP varchar
+	RUTAARCHCER varchar
+	RUTAARCHKEY varchar
+	CLAVEACCESOFIEL varchar
+	USUARIOWEBSERVICEVU varchar
+	CLAVEACCESOWEBSERVICEVU varchar
+	EMAILVU varchar
+	NOMBREBDINTER varchar
+	TIPOFIGURAVU varchar
+	RUTAVUCENTRAL varchar
+	RUTAARCHIVOSXML varchar
+	RFCCONSULTA varchar
+	TOMACONFIGURACIONVU varchar
+	VUUNIDADESMEDIDA varchar
+	RFCVALIDACIONVU varchar
+	CTPAT_SVI varchar
+	FECHACERTIFICACIONANEXO31 int
+	NUMEROCERTIFICACIONANEXO31 varchar
+	MODALIDADANEXO31 varchar
+	TIPOEMPRESAANEXO31 varchar
+	EMPRESANEEC int
+	RUTAARCHIVOCERCFDI varchar
+	RUTAARCHIVOKEYCFDI varchar
+	FECHAVENCCERCFDI int
+	FECHAVENCKEYCFDI int
+	CONTRASEÑACFDI varchar
+	RUTAGUARDARXML varchar
+	RUTAAPPCFDI varchar
+	RUTAAPPPAC varchar
+	RUTAARCHIVOCANCELACION varchar
+	CONTRASEÑACANCELACION varchar
+	NUMDEEXPORTADORCONFIABLE varchar
+	NUMINTERIOR varchar
+	NUMINTIND varchar
+	MUNICIPIO varchar
+	MUNICIPIOIND varchar
+	PAIS varchar
+	PAISIND varchar
+	FECHARENOVACIONCERTIFICACIONA31 int
+	FECHAFINALCERTIFICACIONA31 int
+	EMPRESAOEA tinyint
+	CALLESIND2 varchar
+	COLONIAIND2 varchar
+	CODIGOPOSTALIND2 varchar
+	CIUDADIND2 varchar
+	TELEFONOIND2 varchar
+	MUNICIPIOIND2 varchar
+	NUMEXTIND2 varchar
+	ESTADOIND2 varchar
+	NUMFAXIND2 varchar
+	PAISIND2 varchar
+	EMAILIND2 varchar
+	ADUANAPREVALIDADOR varchar
+	CLAVEPREVALIDADOR varchar
+	PATENTEPREVALIDADOR varchar
+	DESCRIPCIONPREVALIDADOR varchar
+	FOLDERENTRADAAELECTRONICO varchar
+	FOLDERSALIDAAELECTRONICO varchar
+	MASCARAENVIARAELECTRONICO varchar
+	MASCARARESPAELECTRONICO varchar
+	EXTENSIONRESPUESTAAELECTRONICO varchar
+	INICIOCONTADORAELECTRONICO int
+	FINALCONTADORAELECTRONICO int
+	SIGUIENTECONTADORAELECTRONICO int
+}
+
+GEncAnexo {
+	MODULO varchar pk
+	TITULO varchar
+}
+
+GEncFacturas {
+	CONSECUTIVO int pk
+	PEDIMENTO varchar
+	REMESA smallint
+	FACTURA varchar
+	FECHAFACTURA int
+	TIPOCAMBIO decimal
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	INCOTERM varchar
+	PRECINTO varchar
+	FLETE decimal
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	ADUANA_CRUCE varchar
+	NUMTRAILER varchar
+	MANIFIESTO varchar
+	ESTATUS varchar
+	MARCAR tinyint
+	SISTEMA varchar
+	MODULO varchar
+}
+
+GEquivalenteEnc {
+	IDENTIFICADOR varchar pk
+	DESCRIPCION varchar
+}
+
+GEquivPartidas {
+	ID varchar pk
+	ID varchar
+	CAMPOORIG varchar pk
+	CAMPOORIG varchar
+	CAMPOEXT varchar pk
+}
+
+GErroresFac {
+	CONSECUTIVO int pk
+	LINEA int pk
+	CLAVE varchar
+	DESCRIPCION varchar
+	MODULO varchar pk
+	CANTIDAD decimal
+}
+
+GEstados {
+	CLAVEM3 varchar pk
+	CLAVE_MEX varchar
+	CLAVE_AME varchar
+	DESCRIPCION varchar pk
+}
+
+GExpedienteElecEnc {
+	CONSECUTIVO int pk
+	FACTOR varchar
+	DESCRIPCION varchar
+	SISTEMA varchar
+	MOVIMIENTO varchar
+	TIPOFACTURA varchar
+}
+
+GExpedienteElecPartidas {
+	CONSECUTIVOEXT int pk
+	CONSECUTIVOINT int pk
+	RUTA varchar
+	DESCRIPCION varchar
+	TIPODOCUMENTO varchar
+}
+
+GFacProforma {
+	NUMEROPROFORMA varchar pk
+	NUMERODUNS varchar
+	FECHA int
+	PESOBRUTO decimal
+	PESONETO decimal
+	VALORTOTALME decimal
+	VALORTOTALMN decimal
+	TIPOCAMBIO decimal
+	PROVEEDORNAC varchar
+	VENDIDOA varchar
+	REMITIDOA varchar
+	PROVEEDOR varchar
+	CLAVECLIENTE varchar
+}
+
+GFiltros {
+	FILTRO varchar pk
+	DESCRIPCION varchar
+	TIPO varchar
+}
+
+GFirmas {
+	CLAVEFIRMA varchar pk
+	FIRMA varchar
+	PATHFOTO varchar
+}
+
+GFormaPago {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+}
+
+GFracAme {
+	FRACCION varchar
+	PREFIJO varchar
+	ADV decimal
+	UNIDAD varchar
+	DESCRIPCION varchar
+	TIPOADV varchar
+	ADVCOSTOFIJO decimal
+}
+
+GFraccionesHistorico {
+	CONSECUTIVO int pk
+	FRACCIONHISTORICA varchar
+	UMCLAVE varchar
+	PAIS varchar
+	TIPOFRACCION varchar
+	SECTOR varchar
+	TASAIMNUM decimal
+	TASAEXNUM decimal
+	FECHAPUBLICACION int
+	ESIMMEX varchar
+	TEMPORALIDADNORMAL smallint
+	TEMPORALIDADSERVICIOS smallint
+	TEMPORALIDADCERTIFICADA smallint
+	PORLOG varchar
+	FECHATERMINO int
+}
+
+GFracEUACan {
+	FRACCION varchar
+	ADV decimal
+	UNIDAD varchar
+	CLAVEM3 varchar
+	DESCRIPCION varchar
+}
+
+GFracROctava {
+	PERMISO varchar
+	LINEA int pk
+	FRACCION varchar
+	CANTIDADCUPO decimal
+	CANTUSADA decimal
+	VALORCUPO decimal
+	VALORUSADA decimal
+	COSTOUNITARIOME decimal
+	UNIMED varchar
+}
+
+GIdentificadores {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+	NIVEL varchar
+	COMPLEMENTO varchar
+}
+
+GIdentificadoresPartidas {
+	CONSECUTIVOFACTURA int
+	LINEAPARTIDA int
+	ID varchar
+	MODULO varchar
+	COMPLEMENTO1 varchar
+	COMPLEMENTO2 char
+	COMPLEMENTO3 varchar
+}
+
+GIncoterm {
+	INCOTERM varchar
+	DESCESPANOL varchar
+	DESCINGLES varchar
+}
+
+GINPC {
+	ANIO varchar pk
+	MES varchar pk
+	VALOR decimal
+}
+
+GLeyendas {
+	CLAVELEY int pk
+	DESCLEYENDA varchar
+}
+
+GManifCoductor {
+	MANIFIESTO varchar pk
+	CONDUCTOR varchar
+	TIPO varchar
+	DIRECCION1 varchar
+	DIRECCION2 varchar
+	CIUDAD varchar
+	ESTADO varchar
+	CODIGOPOSTAL varchar
+	PAIS varchar
+}
+
+GManifestacionAnexo {
+	CONSECUTIVO int pk
+	LINEA int pk
+	TIPOANEXO varchar
+	NUMERO varchar
+	DOCANEXADO varchar
+}
+
+GManifestacionConcepto {
+	CONSECUTIVO int pk
+	LINEA int pk
+	TIPOANEXO varchar
+	NUMERO varchar
+	MCIAOPROV varchar
+	FACODOC varchar
+	IMPORTE decimal
+	MONEDA varchar
+	CONCEPTOCARGO varchar
+}
+
+GManifestacionValor {
+	CONSECUTIVO int pk
+	NUMEROMANVAL varchar
+	PEDIMENTO varchar
+	PERIODICIDAD varchar
+	SEMESTRE tinyint
+	ANIO varchar
+	TIPOPEDIMENTO varchar
+	CLAVEAA varchar
+	PATENTE varchar
+	NOMBRES varchar
+	APELLIDOPATERNO varchar
+	APELLIDOMATERNO varchar
+	CANTMETODOSUTIL int
+	METVALPORMCIAPRO varchar
+	VALORTRANSACCIÓN tinyint
+	VALTRAMCIASIDENTICAS tinyint
+	VALTRAMCIASSIMILARES tinyint
+	VALPREUNIVENTA tinyint
+	VALRECONSTRUIDO tinyint
+	VALDETART78 tinyint
+	VALDECLARACIONVALORPROV int
+	PRESENTAANEXOS tinyint
+	NUMHOJASANEX varchar
+	PRECIOPAGADOMETVALTRANS decimal
+	PRECIOPREFAC tinyint
+	PRECIOOTROSDOC tinyint
+	CONCEPSENALART66 tinyint
+	CONCEPART66DESGLOSAODOS tinyint
+	ANEXORELART66 varchar
+	PREPAGADOMCIASART65 varchar
+	ANEXORELART65 varchar
+	BASEGRAVNOCOMPRAVENTA varchar
+	EXISTECIRCDISTART67Y71 varchar
+	ANEXOVALADUANA varchar
+	VALDETPROVISIONAL varchar
+	ANEXOCONSTAVALMCIA varchar
+	RFCREPLEGAL varchar
+	REPRESANTANTELEGAL varchar
+	FECHA int
+	FACTURASELECCIONADA varchar
+	OPCIONFACTURA varchar
+	IMPORTADORAUSAR varchar
+}
+
+GManifiesto {
+	MANIFIESTO varchar pk
+	NOMNUMDESCIMPO varchar
+	NOMPERSACARGO varchar
+	CONSIGNADOA varchar
+	ENVIADOPOR varchar
+	PTOEXTSAL varchar
+	LOCALIZAPTOEXTSAL varchar
+	PTODESTINO varchar
+	LOCALIZAPTODESTINO varchar
+	PTOENTRADA varchar
+	LOCALIZAPTOENTRADA varchar
+	FECHAENTRADA int
+	PESONETO decimal
+	PESOBRUTO decimal
+	VALORTOTAL decimal
+	DESCRIPCION varchar
+	CLAVEBROKER varchar
+	CLAVETRANS varchar
+	FACTURAPAG varchar
+	PRECINTO varchar
+	HORAENTRADA int
+	MATERIALPELIGROSO varchar
+	MODTRANS varchar
+	CLAVETRANSPORTE varchar
+	NUMTRAILER varchar
+	ESTATUS varchar
+	DESCRIPCIONESTATUS varchar
+	TIPOMANIFIESTO varchar
+}
+
+GMetValor {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+}
+
+GModTransporte {
+	CLAVEMOD varchar pk
+	MODOTRANS varchar
+}
+
+gMSSQLFile {
+	DS_FIELD1 varchar
+	DS_FIELD2 varchar pk
+	DS_FIELD3 varchar
+	DS_FIELD4 varchar
+	DS_FIELD5 varchar
+	DS_FIELD6 varchar
+	DS_FIELD7 varchar
+	DS_FIELD8 varchar
+	DS_FIELD9 varchar
+	DS_FIELD10 varchar
+	DS_FIELD11 varchar
+	DS_FIELD12 varchar
+	DS_FIELD13 varchar
+	DS_FIELD14 varchar
+	DS_FIELD15 varchar
+	DS_FIELD16 varchar
+	DS_FIELD17 varchar
+	DS_FIELD18 varchar
+	DS_FIELD19 varchar
+	DS_FIELD20 varchar
+	DS_FIELD21 varchar
+	DS_FIELD22 varchar
+	DS_FIELD23 varchar
+	DS_FIELD24 varchar
+	DS_FIELD25 varchar
+	DS_FIELD26 varchar
+	DS_FIELD27 varchar
+	DS_FIELD28 varchar
+	DS_FIELD29 varchar
+	DS_FIELD30 varchar
+	DS_FIELD31 varchar
+	DS_FIELD32 varchar
+	DS_FIELD33 varchar
+	DS_FIELD34 varchar
+	DS_FIELD35 varchar
+	DS_FIELD36 varchar
+	DS_FIELD37 varchar
+	DS_FIELD38 varchar
+	DS_FIELD39 varchar
+	DS_FIELD40 varchar
+}
+
+GNivelesSeguridad {
+	SYSID int pk
+	CLAVE varchar
+	DESCRIPCION varchar
+	SISTEMA varchar
+	ACCAMBIOREGIMEN tinyint
+	ACCOMPRASMEXICANAS tinyint
+	ACREMISIONESENTRADA tinyint
+	ACFACTURASSALIDA tinyint
+	ACFACTURASREPARACION tinyint
+	ACFACTURAIMPOTEMPORAL tinyint
+	ACFACTURAIMPODEFINITIVA tinyint
+	ACREMISIONSALIDA tinyint
+	ACFACTINTEGRACIONCTM tinyint
+	ACREMRECIBOCTM tinyint
+	ACREMENVIOCTM tinyint
+	PERMITECAMBIARCLASE tinyint
+	PERMITEDESSEG tinyint
+	PERMITEDESCOSTOFIJO tinyint
+	RESTRINGIRMODCOSTOFIJO tinyint
+	RESTRINGEDESHABILITARDESCPARTE tinyint
+	PAREXCANTPESODESVSFAC tinyint
+	CANTSERIEVSCANT tinyint
+	PERMITEACTREVCLASE tinyint
+	DESHABILITAUMPARTIDAIMPO tinyint
+	RESTRINGEMODVU tinyint
+	RESTRINGEMODEDOCOPEADEN tinyint
+	RESTRINGEMODFIRMACERFIEL tinyint
+	REPOPEPORNIVEL tinyint
+	ACFACTURASMODULOCTM tinyint
+	AUTACTUALIZAREXPO tinyint
+	PERMITIRMODIFICARPEDIMENTOSPREVIOSALAFECHAACTUAL int
+	SOLICITARPERMISOADMINAGREGARPED int
+	MODIFICARFECHASDEPEDIMENTO tinyint
+	ESTATUSPED tinyint
+}
+
+GNivelesSeguridadTablas {
+	SYSIDNIVEL int pk
+	TABLA varchar pk
+	INSERTAR tinyint
+	EDITAR tinyint
+	BORRAR tinyint
+	PROIMP tinyint
+	TIPO varchar
+}
+
+GPaises {
+	CLAVEM3 varchar pk
+	PAIS_MEX varchar
+	PAIS_AME varchar
+	DESC_E varchar
+	DESC_I varchar
+}
+
+GPaisesGrupoSifra {
+	GRUPO varchar pk
+	PAIS varchar
+}
+
+GPaisReglaOct {
+	PERMISO varchar pk
+	LINEA int pk
+	FRACCION varchar
+	CLAVEM3 varchar pk
+}
+
+GParAnexo {
+	MODULO varchar pk
+	LINEA int pk
+	TITULO varchar
+	DESCRIPCION text
+}
+
+GParFacturas {
+	CONSECUTIVO int pk
+	FACTURA varchar
+	LINEA int pk
+	NUMPARTE varchar
+	CANTIDAD decimal
+	UNIMED varchar
+	COSTOUNITARIOMC decimal
+	NUMPERMISO varchar
+	PAGRENGLON varchar
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	CLAVEBULTOS varchar
+	CANTBULTOS int
+	FRACCIONIMPO varchar
+	TIPOFRACCIMPO varchar
+	TIENECO varchar
+	SECTOR varchar
+	FRACCIONAMERICANA varchar
+	ORDENCOMPRAVENTA varchar
+	DESCRIPCIONPARTE varchar
+	VALORAGREGADO decimal
+	TIPOVA varchar
+	VALEMPAQUEUS decimal
+}
+
+GPartidasCO {
+	NUMERO varchar pk
+	NUMPARTE varchar
+	DESCRIPCION varchar
+	CLASIFARANCEL varchar
+	CRITERIOPREFERENCIAL varchar
+	ESPRODUCTOR varchar
+	ENCASONO varchar
+	COSTONETO varchar
+	PAISORIGEN varchar
+}
+
+GPeriodoAnexo31 {
+	CLAVE varchar pk
+	PERIODO varchar
+}
+
+GPermisoReglaOct {
+	PERMISO varchar pk
+	FECHAINICIO int
+	FECHAFINAL int
+	SECTOR varchar
+	SISTEMA varchar
+}
+
+GPrecintos {
+	PRECINTO varchar pk
+}
+
+GPrevalidadores {
+	CLAVE varchar pk
+	ADUANAPREVALIDADOR varchar
+	PATENTEPREVALIDADOR varchar
+	DESCRIPCIONPREVALIDADOR varchar
+}
+
+GProcesos {
+	CONSECUTIVO int pk
+	SISTEMA varchar
+	IDPROCESO varchar
+	DESCRIPCION varchar
+}
+
+GPuertoEnt {
+	PUERTO varchar pk
+	LOCALIZACION varchar pk
+	DESCRIPCION varchar
+	DESCLOCALIZACION varchar
+}
+
+GRecintos {
+	CLAVE varchar pk
+	ADUANA varchar pk
+	RECINTOFISCALIZADO varchar
+}
+
+GRegimenPed {
+	REGIMENPED varchar pk
+	DESCRIPCION varchar
+}
+
+GRelacionFacturas {
+	FOLIO int pk
+	FECHAEXP int
+	PEDIMENTO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	EDOCUMENT varchar
+	OBSERVACIONESVU varchar
+	NUMOPERACIONVU varchar
+	AADUANAL varchar
+	LINEAPERSONAAA int
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	TIPOIANOIA varchar
+	ESFERROCARRIL varchar
+	ADENDAVU varchar
+	NUMTRASPORTE varchar
+	IMPORTADOREXPORTADOR varchar
+	ESAGRANEL tinyint
+	DESTINOORIGENCOVE varchar
+}
+
+GRelFacFacturas {
+	FOLIO int pk
+	LINEA int pk
+	FACTURA varchar
+	SISTEMA varchar
+	MODULO varchar
+}
+
+GRutasGenerales {
+	NOMBRERUTA varchar
+	RUTA varchar
+}
+
+GSectores {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+	AUTORIZADO tinyint
+}
+
+GSIAA {
+	TIPOACTUALIZACION varchar
+	HTTPSERVER varchar
+	MANUALFOLDER varchar
+	FECHAINFORMACIONSIAA int
+	ALMACEN tinyint
+	FECHAINFORMACIONSIFRA int
+	ANEXO31 tinyint
+	SYSID int pk
+	SIFRA tinyint
+	WINSAAI tinyint
+	REMESAS tinyint
+	WINVAL tinyint
+	NOAJUSTE int
+	SCAII tinyint
+	SCAF tinyint
+	SCON tinyint
+	GERENCIALES tinyint
+	UTILERIAS tinyint
+	SISET tinyint
+}
+
+GSisMultiples {
+	IDENTIFICADOR varchar pk
+	PREFIJO varchar
+	CONSECUTIVOIMPO varchar
+	PEDIMENTO varchar
+	TIPOMOV varchar
+	PROVEEDOREXPORTADOR varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	ENVIADOPORVENDIDOPOR varchar
+	VENDIDOPOR varchar
+}
+
+GSisManifiesto {
+	CONSECUTIVO int pk
+	PREFIJO varchar
+	CONSECUTIVOMAN varchar
+	NOMNUMDESCIMPO varchar
+	NOMPERSACARGO varchar
+	CONSIGNADOA varchar
+	ENVIADOPOR varchar
+	PTOEXTSAL varchar
+	LOCALIZAPTOEXTSAL varchar
+	PTODESTINO varchar
+	LOCALIZAPTODESTINO varchar
+	PTOENTRADA varchar
+	LOCALIZAPTOENTRADA varchar
+	CLAVEBROKER varchar
+	CLAVETRANS varchar
+	FACTURAPAG varchar
+	ESCODERCODBARRASSCAC tinyint
+}
+
+GSQLFile {
+	C1 varchar
+	C2 varchar
+	C3 varchar
+	C4 varchar
+	C5 varchar
+	C6 varchar
+	C7 varchar
+	C8 varchar
+	C9 varchar
+	C10 varchar
+	C11 varchar
+	C12 varchar
+	C13 varchar
+	C14 varchar
+	C15 varchar
+	C16 varchar
+	C17 varchar
+	C18 varchar
+	C19 varchar
+	C20 varchar
+	C21 varchar
+	C22 varchar
+	C23 varchar
+	C24 varchar
+	C25 varchar
+	C26 varchar
+	C27 varchar
+	C28 varchar
+	C29 varchar
+	C30 varchar
+	C31 varchar
+	C32 varchar
+	C33 varchar
+	C34 varchar
+	C35 varchar
+	C36 varchar
+	C37 varchar
+	C38 varchar
+	C39 varchar
+	C40 varchar
+	C41 varchar
+	C42 varchar
+	C43 varchar
+	C44 varchar
+	C45 varchar
+	C46 varchar
+	C47 varchar
+	C48 varchar
+	C49 varchar
+	C50 varchar
+	C51 varchar
+	C52 varchar
+	C53 varchar
+	C54 varchar
+	C55 varchar
+	C56 varchar
+	C57 varchar
+	C58 varchar
+	C59 varchar
+	C60 varchar
+	C61 varchar
+	C62 varchar
+	C63 varchar
+	C64 varchar
+	C65 varchar
+	C66 varchar
+	C67 varchar
+	C68 varchar
+	C69 varchar
+	C70 varchar
+}
+
+GSQLFile2 {
+	C1 varchar
+	C2 varchar
+	C3 varchar
+	C4 varchar
+	C5 varchar
+	C6 varchar
+	C7 varchar
+	C8 varchar
+	C9 varchar
+	C10 varchar
+	C11 varchar
+	C12 varchar
+	C13 varchar
+	C14 varchar
+	C15 varchar
+	C16 varchar
+	C17 varchar
+	C18 varchar
+	C19 varchar
+	C20 varchar
+	C21 varchar
+	C22 varchar
+	C23 varchar
+	C24 varchar
+	C25 varchar
+	C26 varchar
+	C27 varchar
+	C28 varchar
+	C29 varchar
+	C30 varchar
+}
+
+GSQLFile3 {
+	C1 varchar
+	C2 varchar
+	C3 varchar
+	C4 varchar
+	C5 varchar
+	C6 varchar
+	C7 varchar
+}
+
+GSubEmpresa {
+	CLAVESUB varchar pk
+	SUBEMPRESA varchar
+	BROKER varchar
+}
+
+GTipoCambio {
+	FECHA int pk
+	VALOR decimal
+	TIPOMN varchar
+	TIPOME varchar
+}
+
+GTipoCambioMM {
+	CLAVEMONEDA varchar
+	ANIO varchar pk
+	ENERO decimal
+	FEBRERO decimal
+	MARZO decimal
+	ABRIL decimal
+	MAYO decimal
+	JUNIO decimal
+	JULIO decimal
+	AGOSTO decimal
+	SEPTIEMBRE decimal
+	OCTUBRE decimal
+	NOVIEMBRE decimal
+	DICIEMBRE decimal
+}
+
+GTipoDoc {
+	CLAVETD varchar pk
+	DESCRIPCION varchar
+}
+
+GTipoDocDigital {
+	IDTIPODOCUMENTO varchar pk
+	TIPODOCUMENTO varchar
+}
+
+GTipoMultiMoneda {
+	CLAVE varchar
+	PAIS varchar
+	FACTORCONV decimal
+	FECHAPUBLICACION int pk
+}
+
+GTiposMoneda {
+	CLAVE varchar pk
+	MONEDA varchar
+	DESCPAIS varchar
+}
+
+GTipoTrailer {
+	CLAVETRAILER varchar pk
+	DESCRIPCION varchar
+}
+
+GTipoTransportes {
+	CLAVETRANSPORTE varchar pk
+	DESCRIPCION varchar
+}
+
+GTrailers {
+	NUMTRAILER varchar pk
+	NUMTRAILERACE varchar
+	TIPOTRAILER varchar
+	PRECINTO varchar
+	CODENTIDADIIT varchar
+	NUMEROPLACAS varchar
+	ESTADO varchar
+	PAIS varchar
+	CLAVECONTENEDOR varchar
+}
+
+GTransportes {
+	CLAVETRANSPORTE varchar pk
+	CLAVETRANSACE varchar
+	CLAVETRANS varchar
+	NUMIDENTIFICATRANS varchar
+	TIPOTRANSPORTE varchar
+	CODENTIDADIIT varchar
+	NUMTRANSPONDEDOR varchar
+	NUMERODOT varchar
+	NUMEROPLACAS varchar
+	CIUDAD varchar
+	ESTADO varchar
+	PAIS varchar
+	PRECINTO varchar
+	NOMEMPASEGURADORA varchar
+	NUMEROASEGURANZA varchar
+	MONTOASEGURANZA decimal
+	FECHAASEGURANZA int
+	NUMEROCAJA varchar
+	MARCA varchar
+	ANIO varchar
+	SERIE varchar
+	DESCRIPCION varchar
+	NUMMOTOR varchar
+	PERMISOSCT varchar
+	COLOR varchar
+	CLAVECONTENEDOR varchar
+}
+
+GTransportista {
+	CLAVETRANS varchar
+	NOMBRE varchar
+	NOMBRECORTO varchar
+	RESPONSABLE varchar
+	RFC varchar
+	CALLES varchar
+	CODIGOPOSTAL varchar
+	CIUDAD varchar
+	ESTADO varchar
+	PAIS varchar
+	CODCARGADOR varchar
+	CODIGOCAAT varchar
+	CODIGOTRANS varchar
+	TIPOINTERFASETRANS varchar
+	SERVIDOR_FTP varchar
+	USUARIO_FTP varchar
+	CLAVEACCESSO_FTP varchar
+	DIRECTORIO_FTP varchar
+	FILLERCODE varchar
+}
+
+GUMAduana {
+	CLAVE varchar
+	DESCRIPCION varchar
+	UNIDADSCAII varchar
+}
+
+GUMAme {
+	CLAVE varchar
+	DESCRIPCION varchar
+}
+
+GUMOMA {
+	CLAVEUM varchar
+	DESCRIPCION varchar
+}
+
+GUniMed {
+	UNIDAD varchar
+	DESCRIPCION varchar
+	FACTORCONV decimal
+	UNIDAD_MEX varchar
+	UNIDAD_AME varchar
+	CLAVE_ADUANA varchar
+	CLAVEACE varchar
+}
+
+GUniMedACE {
+	CLAVEACE varchar
+	DESCRIPCION varchar
+}
+
+GUniMedida {
+	CLAVEUNI varchar
+	DESCRIPCION varchar
+	DESCRIPCIONINGLES varchar
+	CLAVE_AMEX varchar
+	CLAVE_AAMER varchar
+	CLAVEACE varchar
+	CLAVEOMA varchar
+}
+
+GUsuarios {
+	USUARIO varchar
+	NOMBRE varchar
+	NIVELSEG varchar
+	PUESTO varchar
+	LOGIN varchar
+	CLAVE_ACCESO varchar
+}
+
+PedimentosAmericanos {
+	CLAVE int
+	DESCRIPCION varchar
+	TIPOOPERACION int
+}
+
+QAssetTag {
+	CONSECUTIVO int
+	FACTURAIMPO varchar
+	LINEAIMPO int
+	ASSETNUMBER varchar
+	TIPOFACTURA varchar
+	FOTOPARTE varchar
+}
+
+QEqeMaq {
+	CONSECUTIVO int pk
+	FACTURAEXPO varchar
+	LINEAEXPO int pk
+	NUMPARTE varchar
+	FACTURAIMPO varchar
+	LINEAIMPO int
+	TIPOMOVIMPO varchar
+	FECHAFACTURA int
+	CANTEXPO decimal
+	UNIDADMEDIDA varchar
+	COSTOUNITARIOCAPTURA decimal
+	COSTOUNITARIODLLS decimal
+	COSTOUCOMDLLS decimal
+	COSTOACTUALDLLS decimal
+	COSTODEPRECME decimal
+	COSTOUNITARIOPESOS decimal
+	COSTOUCOMPESOS decimal
+	COSTOACTUALMN decimal
+	COSTODEPRECMN decimal
+	VALOREXPOMN decimal
+	VALOREXPOCOMMN decimal
+	VALORACTUALIZADOMN decimal
+	VALOREXPOME decimal
+	VALOREXPOCOMME decimal
+	VALORACTUALIZADOME decimal
+	CLASE varchar
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESONETOKGS decimal
+	PESONETOLBS decimal
+	PESOBRUTO decimal
+	PESOBRUTOKGS decimal
+	PESOBRUTOLBS decimal
+	DESCRIPCIONE varchar
+	DESCRIPCIONI varchar
+	CLAVEBULTOS varchar
+	CANTBULTOS smallint
+	DESCBULTOS varchar
+	FRACCIONEXPO varchar
+	TIPOFRACCION varchar
+	TASAEX varchar
+	SECTOR varchar
+	ADVEXPO decimal
+	TIPOFRAC varchar
+	FRACCIONAMERICANA varchar
+	ADVAME decimal
+	MARCA varchar
+	MODELO varchar
+	LLEVASERIE tinyint
+	DESCARGA tinyint
+	IDENTIFICADOR varchar
+	RECTIFICACION smallint
+	CANT_SERIES int
+	ORDENCOMPRA varchar
+	CERTORIGEN tinyint
+	NOCERTIFICADO varchar
+	SUBPARTIDA smallint
+	INCUYESUBPARTIDAS varchar
+	LLEVACODFDA varchar
+	CLAVEFDA varchar
+	PROCEDENCIA varchar
+	TASADEPRECIA decimal
+	FRACCIONREFERENCIA varchar
+	DESCRIPCIONEEXTRA text
+	ENVIADOA varchar
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	TIPOBUSQUEDA varchar
+	ESSUBPARTIDA varchar
+	CONTIENESUBP varchar
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	ADVALORMELINEAPED decimal
+	ADVALORMNLINEAPED decimal
+	PERMISOSPED varchar
+	LINEAPED int
+	CLAVEFCC varchar
+	TIPOFACTURAASSET varchar
+	CANTEXPOUMA decimal
+	CLAVEUMA varchar
+	VALOREXPOMC decimal
+	METVALOR varchar
+	METVALORVALORDETERMINADO decimal
+	METVALORMOTIVODEUSO varchar
+	LOTE varchar
+	NUMENTRADA varchar
+	CONTENEDORREGLA varchar
+	CONSECUTIVOAPHIS int
+}
+
+QEqeMaqRep {
+	CONSECUTIVO int pk
+	FACTURAEXPO varchar
+	LINEAEXPO int pk
+	NUMPARTE varchar
+	FACTURAIMPO varchar
+	LINEAIMPO int
+	TIPOMOVIMPO varchar
+	FECHAFACTURA int
+	CANTEXPO decimal
+	UNIDADMEDIDA varchar
+	COSTOUNITARIOCAPTURA decimal
+	COSTOUNITARIODLLS decimal
+	COSTOUCOMDLLS decimal
+	COSTOACTUALDLLS decimal
+	COSTODEPRECME decimal
+	COSTOUNITARIOPESOS decimal
+	COSTOUCOMPESOS decimal
+	COSTOACTUALMN decimal
+	COSTODEPRECMN decimal
+	VALOREXPOMN decimal
+	VALOREXPOCOMMN decimal
+	VALORACTUALIZADOMN decimal
+	VALOREXPOME decimal
+	VALOREXPOCOMME decimal
+	VALORACTUALIZADOME decimal
+	CLASE varchar
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESONETOKGS decimal
+	PESONETOLBS decimal
+	PESOBRUTO decimal
+	PESOBRUTOKGS decimal
+	PESOBRUTOLBS decimal
+	DESCRIPCIONE varchar
+	DESCRIPCIONI varchar
+	CLAVEBULTOS varchar
+	CANTBULTOS smallint
+	DESCBULTOS varchar
+	FRACCIONEXPO varchar
+	TIPOFRACCION varchar
+	TASAEX varchar
+	SECTOR varchar
+	ADVEXPO decimal
+	TIPOFRAC varchar
+	FRACCIONAMERICANA varchar
+	ADVAME decimal
+	MARCA varchar
+	MODELO varchar
+	LLEVASERIE tinyint
+	DESCARGA tinyint
+	IDENTIFICADOR varchar
+	RECTIFICACION smallint
+	CANT_SERIES int
+	ORDENCOMPRA varchar
+	CERTORIGEN tinyint
+	NOCERTIFICADO varchar
+	SUBPARTIDA smallint
+	INCUYESUBPARTIDAS varchar
+	LLEVACODFDA varchar
+	CLAVEFDA varchar
+	PROCEDENCIA varchar
+	TASADEPRECIA decimal
+	ENVIADOA varchar
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	TIPOBUSQUEDA varchar
+	ESSUBPARTIDA varchar
+	CONTIENESUBP varchar
+	CANTRETORNADA decimal
+	VALORRETORNADOME decimal
+	VALORRETORNADOMN decimal
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	ADVALORMELINEAPED decimal
+	ADVALORMNLINEAPED decimal
+	PERMISOSPED varchar
+	LINEAPED int
+	CLAVEFCC varchar
+	TIPOFACTURAASSET varchar
+	DESCRIPCIONEEXTRA text
+	CANTEXPOUMA decimal
+	CLAVEUMA varchar
+	VALOREXPOMC decimal
+	LOTE varchar
+	NUMENTRADA varchar
+}
+
+QEqiDef {
+	CONSECUTIVO int pk
+	FACTURAIMPODEF varchar
+	LINEAIMPODEF int pk
+	FECHAFACTURA int
+	NUMPARTE varchar
+	CLASE varchar
+	CANTIMPODEF decimal
+	CANTEXPOTEMP decimal
+	CANTEXISTENCIA decimal
+	UNIDADMEDIDA varchar
+	COSTOUNITARIOCAPTURA decimal
+	COSTOUNITARIODLLS decimal
+	COSTOUNITARIOPESOS decimal
+	COSTOUNITARIOSUBPDLLS decimal
+	COSTOUNITARIOSUBPPESOS decimal
+	VALORMN decimal
+	VALORSUBPMN decimal
+	SUBVALORIMPOMN decimal
+	IVAIMPOMN decimal
+	VALORME decimal
+	VALORSUBPME decimal
+	SUBVALORIMPOME decimal
+	IVAIMPOME decimal
+	VALORIMPOMC decimal
+	SUBVALORIMPOMC decimal
+	IVAIMPOMC decimal
+	NUMPERMISO varchar
+	PAGRENGLON varchar
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESONETOKGS decimal
+	PESONETOLBS decimal
+	PESOBRUTO decimal
+	PESOBRUTOKGS decimal
+	PESOBRUTOLBS decimal
+	DESCRIPCIONE varchar
+	DESCRIPCIONI varchar
+	CLAVEBULTOS varchar
+	CANTBULTOS smallint
+	DESCBULTOS varchar
+	FRACCION varchar
+	TIPOFRACCION varchar
+	TASAIM varchar
+	SECTOR varchar
+	FRACCIONIMPO varchar
+	TIPOFRACCIMPO varchar
+	ADVIMPO decimal
+	FRACCIONAMERICANA varchar
+	ADVAME decimal
+	MARCA varchar
+	MODELO varchar
+	LLEVASERIE tinyint
+	CANTRETORNADA decimal
+	CANTRETORNADATEMP decimal
+	VALORRETORNADOMN decimal
+	VALORRETORNADOME decimal
+	RECTIFICACION smallint
+	LOCALIZACION varchar
+	ESSUBPARTIDA varchar
+	CONTIENESUBP varchar
+	SUBPARTIDA int
+	ESREPARACION tinyint
+	ORDENCOMPRA varchar
+	CERTORIGEN tinyint
+	NOCERTIFICADO varchar
+	ASSETNUMBER varchar
+	EQI_MENSAJE varchar
+	EQUIPOPROPIO varchar
+	NUMREFERENCIA varchar
+	CANT_SERIESDEF int
+	FOTOACTIVOFIJO varchar
+	CLAVETIPOIV32 varchar
+	NUMEROIV32 varchar
+	BODEGA varchar
+	PROVEEDOR varchar
+	REQUISITOR varchar
+	PERMISOROCTAVA varchar
+	FRACCIONROCTAVA varchar
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	MONTOIGI decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	LINEARO int
+	ADVALORMELINEAPED decimal
+	ADVALORMNLINEAPED decimal
+	PERMISOSPED varchar
+	LINEAPED int
+	TIPOFACTURAASSET varchar
+	DESCRIPCIONEEXTRA text
+	METVALOR varchar
+	CANTIMPOUMA decimal
+	CLAVEUMA varchar
+	ESMCIAMILITAR tinyint
+	METVALORVALORDETERMINADO decimal
+	METVALORMOTIVODEUSO varchar
+	LOTE varchar
+	NUMENTRADA varchar
+	CONTENEDORPARTESII varchar
+	TIPOMAT varchar
+}
+
+QEqiMaqRep {
+	CONSECUTIVO int pk
+	FACTURAIMPO varchar
+	LINEAIMPO int pk
+	NUMPARTE varchar
+	FACTURAEXPO varchar
+	LINEAEXPO int
+	TIPOMOVIMPO varchar
+	FECHADEPRECIACION int
+	CLASE varchar
+	CANTIMPO decimal
+	UNIDADMEDIDA varchar
+	COSTOUNITARIOCAPTURA decimal
+	COSTOUNITARIODLLS decimal
+	COSTOUNITARIOPESOS decimal
+	COSTOUNITARIOSUBPDLLS decimal
+	COSTOUNITARIOSUBPPESOS decimal
+	VALORIMPOMN decimal
+	VALORSUBPMN decimal
+	VALORIMPOME decimal
+	VALORSUBPME decimal
+	VALORIMPOMC decimal
+	NUMPERMISO varchar
+	PAGRENGLON varchar
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESONETOKGS decimal
+	PESONETOLBS decimal
+	PESOBRUTO decimal
+	PESOBRUTOKGS decimal
+	PESOBRUTOLBS decimal
+	DESCRIPCIONE varchar
+	DESCRIPCIONI varchar
+	CLAVEBULTOS varchar
+	CANTBULTOS smallint
+	DESCBULTOS varchar
+	FRACCIONIMPO varchar
+	FRACCION varchar
+	ADVIMPO decimal
+	TASAIM varchar
+	TIPOFRACCIMPO varchar
+	TIPOFRACCION varchar
+	FRACCIONAMERICANA varchar
+	ADVAME decimal
+	MARCA varchar
+	MODELO varchar
+	LLEVASERIE tinyint
+	CANTRETORNADA decimal
+	VALORRETORNADOMN decimal
+	VALORDEPRECIADOMN decimal
+	VALORRETORNADOME decimal
+	VALORDEPRECIADOME decimal
+	RECTIFICACION smallint
+	LOCALIZACION varchar
+	ESSUBPARTIDA varchar
+	CONTIENESUBP varchar
+	SUBPARTIDA int
+	ESREPARACION tinyint
+	ORDENCOMPRA varchar
+	CERTORIGEN tinyint
+	NOCERTIFICADO varchar
+	SECTOR varchar
+	ASSETNUMBER varchar
+	NUMREFERENCIA varchar
+	CANT_SERIES int
+	FOTOACTIVOFIJO varchar
+	CLAVETIPOIV32 varchar
+	NUMEROIV32 varchar
+	DESCARGA tinyint
+	FRACCIONALTERNA varchar
+	BODEGA varchar
+	PROVEEDOR varchar
+	PERMISOROCTAVA varchar
+	FRACCIONROCTAVA varchar
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	MONTOIGI decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	TIPOBUSQUEDA varchar
+	ADVALORMELINEAPED decimal
+	ADVALORMNLINEAPED decimal
+	PERMISOSPED varchar
+	LINEAPED int
+	TIPOFACTURAASSET varchar
+	DESCRIPCIONEEXTRA text
+	METVALOR varchar
+	CANTIMPOUMA decimal
+	CLAVEUMA varchar
+	ESMCIAMILITAR tinyint
+}
+
+QFacExp {
+	CONSECUTIVO int pk
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOEXPO varchar
+	REMESA smallint
+	FACTURAEXPO varchar pk
+	FECHAFACTURA int
+	CAMBIOREGIMEN tinyint
+	DEFINITIVA tinyint
+	TIPOCAMBIO decimal
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	ENVIADOPORVENDIDOPOR varchar
+	VENDIDOPOR varchar
+	AADUANAL varchar
+	MANIFIESTO varchar
+	ESTATUS varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS smallint
+	VALOREXPOMN decimal
+	VALORACTUALIZADOMN decimal
+	VALOREXPOME decimal
+	VALORACTUALIZADOME decimal
+	CANTEXPO decimal
+	CANT_PARTIDAS smallint
+	TRANSPORTISTA varchar
+	TRANSPORTISTAAME varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	NUMTRASPORTECOMPLE varchar
+	MODTRANS varchar
+	BILLNUMBER varchar
+	INCOTERM varchar
+	IDENTIFICADOR varchar
+	COMPLEMENTO1 varchar
+	IDENTIFICADOR2 varchar
+	COMPLEMENTO2 varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETE decimal
+	OBSERVACIONES varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	TIPOFACTURA varchar
+	CLAVETIPOIV18 varchar
+	NUMEROIV18 varchar
+	FECHAACTUAL int
+	HORAACTUAL int
+	ESCAMBIOREGIMEN varchar
+	CUALTIPOCAMBIO varchar
+	GENERAID varchar
+	ACTVALOR varchar
+	CLAVEMONEDA varchar
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	NUMEROPROFORMA varchar
+	OFICIO varchar
+	NUMEROGUIA varchar
+	NUMEMBARQUE varchar
+	RECIBIDOPOR varchar
+	FECHAENTREGA int
+	ENTREGADO varchar
+	NUMTRAILER varchar
+	PEDIMENTOR1 varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	ADUANA_CRUCE varchar
+	TIPOMOVIMIENTO varchar
+	FACTURAALTERNA varchar
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	COMENTARIOSESTATUS varchar
+	METVALOR varchar
+	TOTALINCREMMN decimal
+	TOTALINCREMME decimal
+	NUMFACTURABROKER varchar
+	FECHAFACBROKER int
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	GENPARTIDAS varchar
+	FECHAFACTURA_ISO datetime
+	COMOFUEPROCESADA varchar
+	PROVEEDOREXPORTADOR varchar
+	EDOCUMENT varchar
+	NUMOPERACIONVU varchar
+	LINEAPERSONAAA int
+	TIPOCAMBIOMM decimal
+	VALOREXPOMC decimal
+	OBSERVACIONESVU varchar
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	ADENDAVU varchar
+	ESFERROCARRIL varchar
+	DESTINOORIGENCOVE varchar
+	FECHAEMISION int
+	ESMIXTO varchar
+	MODOCONTINGENCIA tinyint
+	RAZONEXPORTACION varchar
+	ORDENCOMPRA varchar
+	TERMINOSPAGO varchar
+	MANIOBRAS decimal
+	RECINTO varchar
+	SEMAFOROEXPO varchar
+	OPCIONIV18 varchar
+	TIPODEGUIAAIDENTIFICAR varchar
+	CFDIUUID varchar
+	CFDIPATHPDF varchar
+	CFDIPATHXML varchar
+	CLAVEDOT varchar
+	SUBDIVISION varchar
+	FUNGIRCOMOCO varchar
+	ENAJENACIONBIENES tinyint
+	APENDICE17 tinyint
+}
+
+QFacExpCobranza {
+	CONSECUTIVO int pk
+	FACTURA varchar
+	LINEA int pk
+	CONCEPTO varchar
+	COBRADO tinyint
+	FECHACOBRANZA int
+	VALOR decimal
+	DEPTOCOBRANZA varchar
+	FACTCOBRADOR varchar
+	NOMBRECOBRADOR varchar
+}
+
+QFacExpRep {
+	CONSECUTIVO int pk
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOEXPO varchar
+	REMESA smallint
+	FACTURAEXPO varchar
+	FACTURAEXPO varchar
+	FECHAFACTURA int
+	CAMBIOREGIMEN tinyint
+	DEFINITIVA tinyint
+	TIPOCAMBIO decimal
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	ENVIADOPORVENDIDOPOR varchar
+	VENDIDOPOR varchar
+	AADUANAL varchar
+	MANIFIESTO varchar
+	ESTATUS varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS smallint
+	VALOREXPOMN decimal
+	VALORACTUALIZADOMN decimal
+	VALOREXPOME decimal
+	VALORACTUALIZADOME decimal
+	CANTEXPO decimal
+	CANT_PARTIDAS smallint
+	TRANSPORTISTA varchar
+	TRANSPORTISTAAME varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	NUMTRASPORTECOMPLE varchar
+	MODTRANS varchar
+	BILLNUMBER varchar
+	INCOTERM varchar
+	IDENTIFICADOR varchar
+	COMPLEMENTO1 varchar
+	IDENTIFICADOR2 varchar
+	COMPLEMENTO2 varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETE decimal
+	OBSERVACIONES varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	TIPOFACTURA varchar
+	CLAVETIPOIV18 varchar
+	NUMEROIV18 varchar
+	FECHAACTUAL int
+	HORAACTUAL int
+	ESCAMBIOREGIMEN varchar
+	CUALTIPOCAMBIO varchar
+	GENERAID varchar
+	ACTVALOR varchar
+	CLAVEMONEDA varchar
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	NUMEROPROFORMA varchar
+	OFICIO varchar
+	NUMEROGUIA varchar
+	NUMEMBARQUE varchar
+	RECIBIDOPOR varchar
+	FECHAENTREGA int
+	ENTREGADO varchar
+	NUMTRAILER varchar
+	PEDIMENTOR1 varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	ADUANA_CRUCE varchar
+	TIPOMOVIMIENTO varchar
+	FACTURAALTERNA varchar
+	FORMADESCARGA varchar
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	COMENTARIOSESTATUS varchar
+	METVALOR varchar
+	TOTALINCREMMN decimal
+	TOTALINCREMME decimal
+	NUMFACTURABROKER varchar
+	FECHAFACBROKER int
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	FECHAFACTURA_ISO datetime
+	COMOFUEPROCESADA varchar
+	PROVEEDOREXPORTADOR varchar
+	EDOCUMENT varchar
+	NUMOPERACIONVU varchar
+	LINEAPERSONAAA int
+	TIPOCAMBIOMM decimal
+	VALOREXPOMC decimal
+	OBSERVACIONESVU varchar
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	ADENDAVU varchar
+	ESFERROCARRIL varchar
+	DESTINOORIGENCOVE varchar
+	ESMIXTO varchar
+	MODOCONTINGENCIA tinyint
+	RAZONEXPORTACION varchar
+	ORDENCOMPRA varchar
+	TERMINOSPAGO varchar
+	MANIOBRAS decimal
+	RECINTO varchar
+	SEMAFOROEXPO varchar
+	OPCIONIV18 varchar
+	TIPODEGUIAAIDENTIFICAR varchar
+	CFDIUUID varchar
+	CFDIPATHPDF varchar
+	CFDIPATHXML varchar
+	CLAVEDOT varchar
+}
+
+QFacImp {
+	CONSECUTIVO int pk
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOIMPO varchar
+	REMESA smallint
+	FACTURAIMPO varchar pk
+	FECHAFACTURA int
+	TIPOCAMBIO decimal
+	TIPOCAMBIOMM decimal
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	ESTATUS varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS smallint
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORIMPOMC decimal
+	CANTIMPO decimal
+	CANT_PARTIDAS smallint
+	CANTRETORNADA decimal
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	INCOTERM varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETE decimal
+	SUJECION varchar
+	OBSERVACIONES varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	CLAVETIPOIV18 varchar
+	NUMEROIV18 varchar
+	FECHAACTUAL int
+	HORAACTUAL int
+	CLAVEMONEDA varchar
+	MODTRANS varchar
+	CUALTIPOCAMBIO varchar
+	FECHAEMISION int
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	PEDIMENTOR1 varchar
+	SELLOVALOR2500 tinyint
+	TOTALINCREMMN decimal
+	TOTALINCREMME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	FACTURAALTERNA varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	TIPOMOVIMIENTO varchar
+	ADUANA_CRUCE varchar
+	NUMTRAILER varchar
+	ESMIXTO varchar
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	COMENTARIOSESTATUS varchar
+	METVALOR varchar
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	FECHAFACTURA_ISO datetime
+	COMOFUEPROCESADA varchar
+	EDOCUMENT varchar
+	NUMOPERACIONVU varchar
+	LINEAPERSONAAA int
+	OBSERVACIONESVU varchar
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	ADENDAVU varchar
+	ESFERROCARRIL varchar
+	DESTINOORIGENCOVE varchar
+	PUERTOENTRADA varchar
+	FUEREVISADAMCIA tinyint
+	MODOCONTINGENCIA tinyint
+	RECINTO varchar
+	SEMAFOROIMPO varchar
+	FACTORIVA varchar
+	VALORIVAMN decimal
+	VALORIVAME decimal
+	TIPODEGUIAAIDENTIFICAR varchar
+	CLAVEDOT varchar
+	SUBDIVISION varchar
+	FUNGIRCOMOCO varchar
+	APENDICE17 tinyint
+	APLICAPARTESII tinyint
+}
+
+QFacImpCobranza {
+	CONSECUTIVO int pk
+	FACTURA varchar
+	LINEA int pk
+	CONCEPTO varchar
+	COBRADO tinyint
+	FECHACOBRANZA int
+	VALOR decimal
+	DEPTOCOBRANZA varchar
+	FACTCOBRADOR varchar
+	NOMBRECOBRADOR varchar
+}
+
+QFacImpDef {
+	CONSECUTIVO int pk
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOIMPODEF varchar
+	REMESA smallint
+	FACTURAIMPODEF varchar pk
+	FECHAFACTURA int
+	TIPOCAMBIO decimal
+	TIPOCAMBIOMM decimal
+	PROVIMPODEFCR varchar
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	ESTATUS varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS smallint
+	VALORIMPOMN decimal
+	SUBVALORIMPOMN decimal
+	IVAIMPOMN decimal
+	VALORIMPOME decimal
+	SUBVALORIMPOME decimal
+	IVAIMPOME decimal
+	VALORIMPOMC decimal
+	SUBVALORIMPOMC decimal
+	IVAIMPOMC decimal
+	FACTORIVA decimal
+	CANTIMPODEF decimal
+	CANT_PARTIDAS smallint
+	CANTRETORNADA decimal
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	INCOTERM varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETE decimal
+	SUJECION varchar
+	OBSERVACIONES varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	CLAVETIPOIV18 varchar
+	NUMEROIV18 varchar
+	FECHAACTUAL int
+	HORAACTUAL int
+	CLAVEMONEDA varchar
+	MODTRANS varchar
+	CUALTIPOCAMBIO varchar
+	FECHAEMISION int
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	PEDIMENTOR1 varchar
+	SELLOVALOR2500 tinyint
+	TOTALINCREMMN decimal
+	TOTALINCREMME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	FACTURAALTERNA varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	TIPOMOVIMIENTO varchar
+	ADUANA_CRUCE varchar
+	NUMTRAILER varchar
+	ESMIXTO varchar
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	COMENTARIOSESTATUS varchar
+	METVALOR varchar
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	FECHAFACTURA_ISO datetime
+	COMOFUEPROCESADA varchar
+	EDOCUMENT varchar
+	NUMOPERACIONVU varchar
+	LINEAPERSONAAA int
+	OBSERVACIONESVU varchar
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	ADENDAVU varchar
+	ESFERROCARRIL varchar
+	DESTINOORIGENCOVE varchar
+	PUERTOENTRADA varchar
+	FUEREVISADAMCIA tinyint
+	MODOCONTINGENCIA tinyint
+	RECINTO varchar
+	SEMAFOROIMPO varchar
+	TIPODEGUIAAIDENTIFICAR varchar
+	CLAVEDOT varchar
+	SUBDIVISION varchar
+	FUNGIRCOMOCO varchar
+	APENDICE17 tinyint
+	APLICAPARTESII tinyint
+}
+
+QFacImpRep {
+	CONSECUTIVO int pk
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOIMPO varchar
+	REMESA smallint
+	FACTURAIMPO varchar
+	FECHAFACTURA int
+	TIPOCAMBIO decimal
+	TIPOCAMBIOMM decimal
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	ESTATUS varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS smallint
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORIMPOMC decimal
+	CANTIMPO decimal
+	CANT_PARTIDAS smallint
+	CANTRETORNADA decimal
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	INCOTERM varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETE decimal
+	SUJECION varchar
+	OBSERVACIONES varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	CLAVETIPOIV18 varchar
+	NUMEROIV18 varchar
+	FECHAACTUAL int
+	HORAACTUAL int
+	CLAVEMONEDA varchar
+	MODTRANS varchar
+	CUALTIPOCAMBIO varchar
+	FECHAEMISION int
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	PEDIMENTOR1 varchar
+	SELLOVALOR2500 tinyint
+	TOTALINCREMMN decimal
+	TOTALINCREMME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	FACTURAALTERNA varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	TIPOMOVIMIENTO varchar
+	ADUANA_CRUCE varchar
+	NUMTRAILER varchar
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	COMENTARIOSESTATUS varchar
+	METVALOR varchar
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	FECHAFACTURA_ISO datetime
+	ESCAMBIOREGIMEN varchar
+	COMOFUEPROCESADA varchar
+	EDOCUMENT varchar
+	NUMOPERACIONVU varchar
+	LINEAPERSONAAA int
+	OBSERVACIONESVU varchar
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	ADENDAVU varchar
+	ESFERROCARRIL varchar
+	DESTINOORIGENCOVE varchar
+	ESMIXTO varchar
+	PUERTOENTRADA varchar
+	FUEREVISADAMCIA tinyint
+	MODOCONTINGENCIA tinyint
+	RECINTO varchar
+	SEMAFOROIMPO varchar
+	TIPODEGUIAAIDENTIFICAR varchar
+	CLAVEDOT varchar
+}
+
+QInfDepre {
+	CONSECUTIVO int pk
+	FRACCION varchar
+	SUPUESTO varchar
+	PORCENTAJE decimal
+}
+
+QLocalizacion {
+	CLAVE varchar pk
+	LOCALIZACION varchar
+}
+
+QLocalizacionExt {
+	CLAVE varchar
+	DEPARTAMENTO varchar
+	RESPONSABLE varchar
+	OBSERVACIONES varchar
+}
+
+QNiveles {
+	NIVEL varchar pk
+	TIPO varchar
+	MENUARCHIVO tinyint
+	CONFIGIMPRESORA tinyint
+	RESPSCAF tinyint
+	IMPLEMENTACION tinyint
+	MENUCONFIGURACION tinyint
+	DATOSEMPRESA tinyint
+	SUBPARAMETROS tinyint
+	GENERALES tinyint
+	IMPOTEMPORAL tinyint
+	IMPODEFINITIVA tinyint
+	EXPORTACION tinyint
+	MENUCATALOGOS tinyint
+	SUBGENERALES tinyint
+	SUBEMPRESA tinyint
+	LOCALIZACIONES tinyint
+	UNIDADESADUANA tinyint
+	UNIDADESMEDIDA tinyint
+	TIPOSCAMBIO tinyint
+	TIPOSMONEDA tinyint
+	TIPOSDOCUMENTO tinyint
+	PUERTOS tinyint
+	PAISES tinyint
+	BULTOS tinyint
+	IDENTIFICADORES tinyint
+	INCOTERMS tinyint
+	LEYENDASFIJAS tinyint
+	SUBFRACCIONES tinyint
+	FRACIMPOEXPO tinyint
+	AMERICANAS tinyint
+	SECTORES tinyint
+	SUBACTIVOFIJO tinyint
+	TIPOSAF tinyint
+	CLASESAF tinyint
+	SUBPEDIMENTOS tinyint
+	CATPEDIMENTO tinyint
+	REGIMENES tinyint
+	CLAVESPED tinyint
+	CLIENTESPRO tinyint
+	AADUANALES tinyint
+	TRANSPORTISTA tinyint
+	MENUPERMISO tinyint
+	PERSECON tinyint
+	SUBREPSECON tinyint
+	BOTONCLASES tinyint
+	BOTONPERMISO tinyint
+	PERACTFIJO tinyint
+	SUBREPACTFIJO tinyint
+	BOTONCLASESAF tinyint
+	BOTONPERMISOAF tinyint
+	MENUIMPORTACION tinyint
+	SUBTEMPORAL tinyint
+	CATIMPOTEMP tinyint
+	BITACTUALIZAR tinyint
+	BITDESACTUALIZAR tinyint
+	SUBREPIMPOTEMP tinyint
+	BITBUSQUEDAS tinyint
+	BITCONSPED tinyint
+	BITRANGOCLASE tinyint
+	BITRANGOPED tinyint
+	BITVALORDIS tinyint
+	BITSAFEH tinyint
+	SUBDEFINITIVA tinyint
+	CATIMPODEF tinyint
+	BIDACTUALIZAR tinyint
+	BIDDESACTUALIZAR tinyint
+	SUBREPIMPODEF tinyint
+	BIDBUSQUEDAS tinyint
+	BIDCONSPED tinyint
+	BIDRANGOCLASE tinyint
+	BIDRANGOPED tinyint
+	CATCREGIMEN tinyint
+	BCRACTUALIZAR tinyint
+	BCRDESCTUALIZAR tinyint
+	TRANSELECIMPO tinyint
+	BIASIGPEDPEN tinyint
+	BIASIGPEDRECT tinyint
+	MENUEXPORTACION tinyint
+	SUBEXPOTEMPORAL tinyint
+	BETACTUALIZAR tinyint
+	BETDESACTUALIZAR tinyint
+	SUBEXPODEFINITIVO tinyint
+	BEDACTUALIZAR tinyint
+	BEDDESACTUALIZAR tinyint
+	MANIFIESTO tinyint
+	TRANSELECEXPO tinyint
+	BEASIGPEDPEN tinyint
+	BEASIGPEDRECT tinyint
+	SUBREPEXPO tinyint
+	BEBUSQUEDAS tinyint
+	BECONSPED tinyint
+	BERANGOCLASE tinyint
+	BERANGOPED tinyint
+	MENUDIVERSOS tinyint
+	SUBREPORTES tinyint
+	REPMOVTEM tinyint
+	REPMOVDEF tinyint
+	HOJACALCULO tinyint
+	MANIFESTACION tinyint
+	REPANUAL tinyint
+	SUBCATALOGOS tinyint
+	REPCLASESAF tinyint
+	DESCLASESAF tinyint
+	REPPEDIMENTOS tinyint
+	REPFRACCIONES tinyint
+	REPCLIENTES tinyint
+	MENUSEGURIDAD tinyint
+	NIVELES tinyint
+	USUARIOS tinyint
+	INSCATALOGOS tinyint
+	EDITCATALOGOS tinyint
+	BORRARCATALOGOS tinyint
+	INSPERMISOS tinyint
+	EDITPERMISOS tinyint
+	BORRARPERMISOS tinyint
+	INSIMPO tinyint
+	EDITIMPO tinyint
+	BORRARIMPO tinyint
+	INSEXPO tinyint
+	EDITEXPO tinyint
+	BORRAREXPO tinyint
+	INSSEG tinyint
+	EDITSEG tinyint
+	BORRARSEG tinyint
+}
+
+QPartes {
+	NUMPARTE varchar pk
+	NUMPARTECOM varchar
+	DESCRIPCIONE varchar
+	DESCRIPCIONI varchar
+	CLASE varchar
+	UNIMED varchar
+	COSTOUNITARIO decimal
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	PESOUNITARIO decimal
+	TIPOPESO varchar
+	PAIS varchar
+	FRACCION varchar
+	TIPOFRACCION varchar
+	SECTOR varchar
+	FECHAMODIFICA int
+	FOTOPARTE varchar
+	FECHAMODIFICA_ISO datetime
+	FRACCIONAME varchar
+	HABILITADADESHABILITADA tinyint
+	FECHACREACIONPARTE int
+	CLAVEFDA varchar
+	CLAVEFCC varchar
+	LICENSECODE varchar
+	ECCN varchar
+	EXPORTCODE varchar
+	SIMBOLOEXCLIC varchar
+}
+
+QPedimentos {
+	PEDIMENTO varchar pk
+	TIPO varchar
+	CLAVEPED varchar
+	REGIMEN varchar
+	FECHA_INICIO int
+	FECHA_FIN int
+	FECHA_PAGO int
+	ACUSEELECTRONICO varchar
+	PAIS varchar
+	FACTOR decimal
+	ADUANA_CRUCE varchar
+	PEDRECTIFICA varchar
+	SERECTIFICO varchar
+	OBSRECTIFICA varchar
+	INDIVIDUALCONS varchar
+	DTA decimal
+	VALORIVA decimal
+	PEDIMENTODESCARGO varchar
+	PREVALIDACION decimal
+	MONTOTIGIE decimal
+	PAGOIMPUESTO varchar
+	ESMIXTO varchar
+	ESTATUS varchar
+	SERECTIFICO2 varchar
+	PEDRECTIFICA2 varchar
+	FECHA_REC_1 int
+	FECHA_REC_2 int
+	FECHA_CIERRE int
+	FECHA_REVISION int
+	FECHA_AUTORIZACION int
+	FECHA_RECIBIDO int
+	ERRORES varchar
+	PERSONAREV varchar
+	REPRESANTANTEAA varchar
+	CLAVEDESTORIGEN varchar
+	VALORME decimal
+	VALORADUANAS decimal
+	CLAVETRANSPORTACION varchar
+	TOTALINCREMMN decimal
+	FACTORINCREMENTABLE decimal
+	FEA varchar
+	FECHA_PAGO_ISO datetime
+	FECHA_ENTRADARECINTO int
+	FECHA_EXTRACCIONRECINTO int
+	FLETE decimal
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	FORMAPAGODTA varchar
+	FORMAPAGOPREVAL varchar
+	FORMAPAGOIGI varchar
+	FORMAPAGOIVA varchar
+	RECARGOS decimal
+	IVADEPREV decimal
+	CUOTASCOMPENS varchar
+	MULTAS decimal
+	IDENTIFICADORES varchar
+	CNT decimal
+	IEPS decimal
+	OPCIONDESTINO varchar
+	TIPOPEDIMENTOTRANSPORTEE varchar
+	TIPOPEDIMENTOTRANSPORTEA varchar
+	TIPOPEDIMENTOTRANSPORTES varchar
+	PEDIMENTO18 varchar
+	IEPS2 decimal
+	DTA2 decimal
+	IVA2 decimal
+	IGI2 decimal
+	PREVALIDACION2 decimal
+	CNT2 decimal
+	IEPS2FP varchar
+	DTA2FP varchar
+	IVA2FP varchar
+	IGI2FP varchar
+	PREVALIDACION2FP varchar
+	CNT2FP varchar
+	IDPEDVIEJONUEVO int
+}
+
+QPedimentosAA {
+	PEDIMENTO varchar pk
+	CLAVEAA varchar
+	FACTURA varchar
+	FECHAFAC int
+	FECHAREC int
+	FECHAENT int
+	FECHAVENC int
+	SECCION int
+}
+
+QPedimentosConcep {
+	PEDIMENTO varchar pk
+	CLAVEAA varchar
+	CONCEPTO varchar
+	IMPORTE decimal
+	TIPO varchar
+	TIPOMONEDA varchar
+}
+
+QPermiso {
+	NUMSOLICITUD varchar pk
+	FECHA_ENTREGA int pk
+	PERMISO varchar
+	FECHA_INICIO int
+}
+
+QPermisoClase {
+	NUMSOLICITUD varchar
+	FECHA_ENTREGA int pk
+	LINEA smallint pk
+	PAGINARENGLON varchar
+	CLASE varchar pk
+}
+
+QPermisoPR {
+	NUMSOLICITUD varchar
+	FECHA_ENTREGA int pk
+	LINEA smallint pk
+	PAGINARENGLON varchar
+	DESCRIPCION varchar
+}
+
+QPermisoSECON {
+	CONSECUTIVO int pk
+	NUMOFICIO varchar
+	PERMISO varchar
+	FECHA int
+}
+
+QRepMovimientos {
+	FACTURAIMPO varchar
+	FECHA int
+	PEDIMENTO varchar
+	LINEAIMPO smallint
+	DESCRIPCIONE varchar
+	CANTIDADIMPO decimal
+	UNIMED varchar
+	VALORIMPOMN decimal
+	CANTRETORNADA decimal
+	VALORRETORNADO decimal
+	CANTSALDO decimal
+	MARCA varchar
+	MODELO varchar
+	SERIE varchar
+}
+
+QSeriesDef {
+	CONSECUTIVO int pk
+	FACTURAIMPODEF varchar
+	SERIEEXPO tinyint
+	LINEAIMPODEF int pk
+	RENGLON int pk
+	SERIEIMPO varchar
+	MODELOIMPO varchar
+	SUBMODELOIMPO varchar
+	PARTEIMPO varchar
+	NUMIDIMPO varchar
+}
+
+QSeriesExpo {
+	CONSECUTIVO int pk
+	FACTURAEXPO varchar
+	LINEAEXPO int pk
+	RENGLON int pk
+	SERIEEXPO varchar
+	MODELOEXPO varchar
+	SUBMODELOEXPO varchar
+	MARCA tinyint
+	PARTEEXPO varchar
+	LINEASERIEIMPO int
+	NUMIDEXPO varchar
+}
+
+QSeriesExpoRep {
+	CONSECUTIVO int pk
+	FACTURAEXPO varchar
+	LINEAEXPO int pk
+	RENGLON int pk
+	SERIEEXPO varchar
+	MODELOEXPO varchar
+	SUBMODELOEXPO varchar
+	MARCA tinyint
+	PARTEEXPO varchar
+	SERIEIMPO tinyint
+	LINEASERIEIMPO int
+	NUMIDEXPO varchar
+}
+
+QSeriesImpo {
+	CONSECUTIVO int pk
+	FACTURAIMPO varchar
+	SERIEEXPO tinyint
+	LINEAIMPO int pk
+	RENGLON int pk
+	SERIEIMPO varchar
+	MODELOIMPO varchar
+	SUBMODELOIMPO varchar
+	PARTEIMPO varchar
+	NUMIDIMPO varchar
+}
+
+QSeriesImpoRep {
+	CONSECUTIVO int pk
+	FACTURAIMPO varchar
+	SERIEEXPO tinyint
+	LINEAIMPO int pk
+	RENGLON int pk
+	SERIEIMPO varchar
+	MODELOIMPO varchar
+	SUBMODELOIMPO varchar
+	PARTEIMPO varchar
+	MARCA tinyint
+	LINEASERIEEXPOREP int
+	NUMIDIMPO varchar
+}
+
+QSisCMex {
+	CONSECUTIVO int pk
+	PREFIJOCM varchar
+	CONSECUTIVOCM varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	FLETE decimal
+	PAISORIGENMEX tinyint
+	FIRMAFMEX varchar
+	FRACCIONIMP tinyint
+	TIPOFRACCMEX tinyint
+	TASAFRACCMEX tinyint
+	IMPORDENCOMP tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	PACKINGORDENCOMPRA int
+	IMPRIMIRLOTE int
+	IMPRIMIRNUMENTRADA int
+}
+
+QSisDef {
+	CONSECUTIVO int pk
+	PREFIJOIMPO varchar
+	CONSECUTIVOIMPO varchar
+	PEDIMENTO varchar
+	TIPO varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	INCOTERM varchar
+	FLETE decimal
+	IDENTIFICADOR varchar
+	FIRMAFMEX varchar
+	FIRMAFAME varchar
+	GENERARASSETTAG tinyint
+	CODIGOBARRAS tinyint
+	FRACCIONIMP tinyint
+	TASAFRACCMEX tinyint
+	TIPOFRACCMEX tinyint
+	FRACCIONAME tinyint
+	PAISORIGENMEX tinyint
+	PAISORIGENAME tinyint
+	IMPORDENCOMP tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	TIPOMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	CLAVEMONEDA varchar
+	CONTROLREMESA varchar
+	REMESAINICIO smallint
+	REMESAFINAL smallint
+	CANTLIMITE decimal
+	PESOLIMITE decimal
+	VALORLIMITE decimal
+	METVALOR varchar
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	TRANSPORTISTA varchar
+	AADUANALAME varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	NUMPARTEMEX tinyint
+	NUMPARTEAME tinyint
+	CANTLIMITEMIN decimal
+	PESOLIMITEMIN decimal
+	VALORLIMITEMIN decimal
+	ACTUALIZARPARTEPARTIDA tinyint
+	PACKINGORDENCOMPRA int
+	SOLICITARCONTRASENAADMINISTRADOR int
+	IMPRIMIRLOTE int
+	IMPRIMIRNUMENTRADA int
+}
+
+QSisExpoRep {
+	TIPOFACTURA varchar
+	PREFIJOEXPO varchar
+	CONSECUTIVOEXPO varchar
+	PEDIMENTO varchar
+	TIPO varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	VENDIDOPOR varchar
+	AADUANAL varchar
+	INCOTERM varchar
+	FLETE decimal
+	IDENTIFICADOR varchar
+	CODIGOBARRAS tinyint
+	CANTPNCODBAR tinyint
+	DTACEROCODBAR tinyint
+	CBARRASVALOR varchar
+	FIRMAFMEX varchar
+	FRACCIONEXP tinyint
+	TASAFRACCMEX tinyint
+	TIPOFRACCMEX tinyint
+	NUMPARTEMEX tinyint
+	PAISORIGENMEX tinyint
+	FIRMAFAME varchar
+	FRACCIONAME tinyint
+	PAISORIGENAME tinyint
+	NUMPARTEAME tinyint
+	CODIGOSCAC tinyint
+	IMPORDENCOMP tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	MOSTRARVALACT tinyint
+	PEPSPORCLASE tinyint
+	PEPSPORFRACCION tinyint
+	PEPSPORDESCRIPCION tinyint
+	CANTLIMITE decimal
+	PESOLIMITE decimal
+	VALORLIMITE decimal
+	VENTQUEUEACT tinyint
+	VALFACTTC varchar
+	METVALOR varchar
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	TRANSPORTISTA varchar
+	AADUANALAME varchar
+	ENVIADOPORVENDIDOPOR varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	PROVEEDOREXPORTADOR varchar
+	CANTLIMITEMIN decimal
+	PESOLIMITEMIN decimal
+	VALORLIMITEMIN decimal
+	SOLICITARPSWDACTUAL tinyint
+	SOLICITARPSWDDESACTUAL tinyint
+	PACKINGORDENVENTA int
+	IMPRIMIRPO int
+	FDAINFORMACIONAME int
+	PACKINGPEDCLAVE int
+	SOLICITARCONTRASENAADMINISTRADOR int
+	IMPRIMIRLOTE int
+	IMPRIMIRNUMENTRADA int
+}
+
+QSisGen {
+	CONSECUTIVO int pk
+	DTA int
+	DTAEXPO int
+	SUBEMPRESA varchar
+	PATHARCH varchar
+	PATHARCHTRANSMISION varchar
+	PATHRESPUESTA varchar
+	PATHARCHPED varchar
+	PATHARCHPEDCONSM varchar
+	PATHGENIMPOTEMP varchar
+	PATHGENEXPO varchar
+	APLICAPERMAT tinyint
+	ACTSEGURIDAD tinyint
+	CONTROLDES tinyint
+	DIADESACTUAL int
+	FECHADES int
+	UBIPLANTA varchar
+	DATOSHISTORICOS tinyint
+	TIPOVENRO varchar
+	CANTVENRO int
+	OMITIRIMPOSUBPCODBARRAS varchar
+	MUESTRAARCHCODBARRAS tinyint
+	CALVALBASETCPED tinyint
+	CALVALBASETCPEDEXPO tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	FACTORIVA decimal
+	FILTROCANTIDAD decimal
+	FIRMAPACKING tinyint
+	ESCONDAAMEXPACKING tinyint
+	ADVERTENCIATM tinyint
+	CALCDEPRECIACION varchar
+	VALMANIFUSADO tinyint
+	VALIDADECENCANT tinyint
+	MOSTRARADVERTENCIARO tinyint
+	USARTRANSPAMEDOCAME tinyint
+	CANTVSCANTSERIES tinyint
+	COVEFECHAEMISION tinyint
+	INTERFACEAACONSOLIDADA tinyint
+	INTERFACEAATCFPFF varchar
+	INCLUIROBSCOVEOBSIMPO tinyint
+	AGREGARINCREIMPO tinyint
+	REPDESCARGOLINEAL tinyint
+	IDENTIFICADORNODOSERIECOVE tinyint
+	ACTPDFREPORTES tinyint
+	PATHARCHPDFIMPO varchar
+	PATHARCHPDFEXPO varchar
+	MENSAJESVURFC int
+	MOSTRARPACKINGLISTINGLES int
+	ENVIARSUBPARTIDASCOVE int
+	RESTRINGEPAISIMPO int
+	RESTRINGEPAISEXPO int
+	UTILIZARFECHAPAGOPEDDEUNDIAANTERIOR int
+	UTILIZARTITULOSALTERNATIVOSIMPRESIONFACTURA int
+	USARTCDELAFECHAPAGOPEDIMPOENDESCARGA int
+	USARVUDE128O256 int
+	AGREGARNUMEROEMBARQUE int
+	UTILIZARUMDEEXISTENCIAENTRANSMISIONVU int
+	UTILIZARCODIGODEBROKERDECLIENTEENMAINX30 int
+	HOJACALCULOSEPARARINCREMENTABLESANEXO3 int
+	HOJACALCULODESGLOSEFACTURAANEXO3 int
+	UTILIZARNOMBREGENERICOMAINX30 int
+	UTILIZARTCRESPECTOATIPOPED int
+	UTILIZARSOLOPARTESNAFTAENCO int
+	CAMBIARPESOSPORCOSTOUNITARIO int
+	BLOQUEODEEDICIONDEFACTURAS int
+	CALCULARCOSTOUNITARIOENBASEAVALORTOTALSCAF tinyint
+	IMPRESIONFACTURAALTERNA tinyint
+	TRANSMITIRFACALTERNA tinyint
+}
+
+QSisImpo {
+	CONSECUTIVO int pk
+	PREFIJOIMPO varchar
+	CONSECUTIVOIMPO varchar
+	PEDIMENTO varchar
+	TIPO varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	INCOTERM varchar
+	FLETE decimal
+	IDENTIFICADOR varchar
+	FIRMAFMEX varchar
+	FIRMAFAME varchar
+	CODIGOBARRAS tinyint
+	FRACCIONIMP tinyint
+	TASAFRACCMEX tinyint
+	TIPOFRACCMEX tinyint
+	FRACCIONAME tinyint
+	PAISORIGENMEX tinyint
+	PAISORIGENAME tinyint
+	IMPORDENCOMP tinyint
+	GENERARASSETTAG tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	TIPOMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	CLAVEMONEDA varchar
+	CONTROLREMESA varchar
+	REMESAINICIO smallint
+	REMESAFINAL smallint
+	PERPAGRENGLON tinyint
+	CANTLIMITE decimal
+	PESOLIMITE decimal
+	VALORLIMITE decimal
+	METVALOR varchar
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	TRANSPORTISTA varchar
+	AADUANALAME varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	NUMPARTEMEX tinyint
+	NUMPARTEAME tinyint
+	CANTLIMITEMIN decimal
+	PESOLIMITEMIN decimal
+	VALORLIMITEMIN decimal
+	ACTUALIZARPARTEPARTIDA tinyint
+	PACKINGORDENCOMPRA int
+	SOLICITARCONTRASENAADMINISTRADOR int
+	IMPRIMIRLOTE int
+	IMPRIMIRNUMENTRADA int
+}
+
+QSisImpoRep {
+	TIPOFACTURA varchar
+	CONSECUTIVO int
+	PREFIJOIMPO varchar
+	CONSECUTIVOIMPO varchar
+	PEDIMENTO varchar
+	TIPO varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	INCOTERM varchar
+	FLETE decimal
+	IDENTIFICADOR varchar
+	FIRMAFMEX varchar
+	FIRMAFAME varchar
+	CODIGOBARRAS tinyint
+	FRACCIONIMP tinyint
+	TASAFRACCMEX tinyint
+	TIPOFRACCMEX tinyint
+	FRACCIONAME tinyint
+	PAISORIGENMEX tinyint
+	PAISORIGENAME tinyint
+	IMPORDENCOMP tinyint
+	GENERARASSETTAG tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	TIPOMONEDA varchar
+	TIPOMN varchar
+	TIPOME varchar
+	CLAVEMONEDA varchar
+	CONTROLREMESA varchar
+	REMESAINICIO smallint
+	REMESAFINAL smallint
+	PERPAGRENGLON tinyint
+	CANTLIMITE decimal
+	PESOLIMITE decimal
+	VALORLIMITE decimal
+	VENTQUEUEACT tinyint
+	METVALOR varchar
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	TRANSPORTISTA varchar
+	AADUANALAME varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	NUMPARTEMEX tinyint
+	NUMPARTEAME tinyint
+	CANTLIMITEMIN decimal
+	PESOLIMITEMIN decimal
+	VALORLIMITEMIN decimal
+	PACKINGORDENCOMPRA int
+	SOLICITARCONTRASENAADMINISTRADOR int
+}
+
+QTipoActFijo {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+}
+
+QTiposFactura {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+	OBSERVACION varchar
+}
+
+SAceesos {
+	CONSECUTIVO int pk
+	FECHAENTRADA int
+	FECHASALIDA int
+	HORAENTRADA int
+	HORASALIDA int
+	NOMBRECOMPUTADORA char
+	DIRECCIONIP char
+}
+
+sAladi2 {
+	SYSID int pk
+	FRACCION varchar
+	ACUERDO varchar
+	PAIS varchar
+	TASATXT varchar
+	TIPOTASA int
+	DOF char
+	NOTAS varchar
+	OBSERVACIONES text
+	TASANUM decimal
+	TASACALCULADA varchar
+}
+
+sArchivosDescargados {
+	ARCHIVO varchar pk
+	FECHA int
+	HORA int
+}
+
+sArchivosProcesados {
+	ARCHIVO varchar pk
+	FECHA int
+	HORA int
+}
+
+SBackFlashPL {
+	CONSECUTIVO int pk
+	PACKINGLIST varchar
+	NUMPARTE varchar
+	CANTIDAD decimal
+	UNIMED varchar
+}
+
+SBOMVer {
+	NUMPARTE varchar
+	VERSION int pk
+	FECHAMODIFICA int
+}
+
+SClasePermiso {
+	CONSECUTIVO int pk
+	NUMOFICIO varchar
+	LINEA int
+	CLASE varchar pk
+	PAGINARENGLON varchar
+	FECHA int
+	CANTIDAD decimal
+	CANTUSADA decimal
+}
+
+SClases {
+	CLASE varchar pk
+	DESCRIPCIONE varchar
+	DESCRIPCIONI varchar
+	TIPOMAT varchar
+	UNIMED varchar
+	UMEXISTENCIA varchar
+	FRACCION varchar
+	FRACCIONAME varchar
+	MATERIALPPAL tinyint
+	CLAVESUB varchar
+	REVFISICA tinyint
+	FRACCIONEXENTAIVA varchar
+	FRACCIONAMERICANAUSA varchar
+}
+
+SComprasMexID {
+	CONSECUTIVO int pk
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOIMPODEF varchar
+	PEDIMENTOR1 varchar
+	PEDIMENTOK1 varchar
+	REMESA smallint
+	FACCMIMPODEF varchar
+	FECHAFACTURA int
+	TIPOCAMBIO decimal
+	TIPOCAMBIOMM decimal
+	PROVDECR varchar
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	ESTATUS varchar
+	ESTATUSREC tinyint
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS int
+	VALORIMPOMN decimal
+	SUBVALORIMPOMN decimal
+	IVAIMPOMN decimal
+	VALORIMPOME decimal
+	SUBVALORIMPOME decimal
+	IVAIMPOME decimal
+	VALORIMPOMC decimal
+	SUBVALORIMPOMC decimal
+	IVAIMPOMC decimal
+	FACTORIVA decimal
+	INCREMENTOS decimal
+	CANTIDAD decimal
+	CANT_PARTIDAS smallint
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	INCOTERM varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETES decimal
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	TIPOFACTURA varchar
+	MODTRANS varchar
+	CUALTIPOCAMBIO varchar
+	FECHAEMISION int
+	SELLOVALOR2500 tinyint
+	TOTALINCREMMN decimal
+	TOTALINCREMME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	FECHAACTUAL int
+	HORAACTUAL int
+	ESAGRANEL tinyint
+	FACTORPESO decimal
+	FACTURAALTERNA varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	TIPOMOVIMIENTO varchar
+	ADUANA_CRUCE varchar
+	NUMTRAILER varchar
+	DESTINO varchar
+	GENERARSALDOS varchar
+	ESMIXTO varchar
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	COMENTARIOSESTATUS varchar
+	METVALOR varchar
+	ESDUENOMCIA varchar
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	FECHAFACTURA_ISO datetime
+	COMOFUEPROCESADA varchar
+	FUEREVISADAMCIA tinyint
+	EDOCUMENT varchar
+	NUMOPERACIONVU varchar
+	LINEAPERSONAAA int
+	OBSERVACIONESVU varchar
+	ORIGENUBICACION varchar
+	DESTINOUBICACION varchar
+	ITINERARIOTRANPORTE varchar
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	ADENDAVU varchar
+	ESFERROCARRIL varchar
+	DESTINOORIGENCOVE varchar
+	PUERTOENTRADA varchar
+	MODOCONTINGENCIA tinyint
+	RECINTO varchar
+	SEMAFOROIMPO varchar
+	TIPODEGUIAAIDENTIFICAR varchar
+	LOCALIZACION varchar
+	CLAVEDOT varchar
+	SUBDIVISION varchar
+	FUNGECOMOCO varchar
+	APENDICE17 tinyint
+	TIPOMOV varchar
+	IDFERRORCARRIL varchar
+}
+
+SConfigFTP {
+	CONSECUTIVO int pk
+	SERVIDOR_FTP varchar
+	USUARIO_FTP varchar
+	CLAVEACCESSO_FTP varchar
+	DIRECTORIO_FTP varchar
+	FOLDER_LLEGADA_FTP varchar
+	FOLDER_HISTORICO_LOCAL varchar
+	PUERTO int
+	FTPTRANSBINARIA tinyint
+	TIPOFACTURA varchar
+	CONSOLIDAFACTURA tinyint
+	TIPOMONEDA varchar
+}
+
+SConfiguracion {
+	CONSECUTIVO int pk
+	TIPODEFONDOS varchar
+	ACTIMPLEMENTACION tinyint
+	ALTAUSUARIOS tinyint
+	RESPALDO tinyint
+	FOLDER_LLEGADA text
+	ACTIVAR_BUSQUEDA varchar
+	INTERVALO_BUSQUEDA int
+	FTP_SERVER varchar
+	FTP_USERNAME varchar
+	FTP_PASSWORD varchar
+	FTP_DIRECTORY varchar
+	TIPOACTUALIZACION char
+	DIRECCTORIOMANUALSIFRA varchar
+	DIRECCIONHTTP char
+	FTP_FOLDER_LLEGADA varchar
+	FECHAACTUALIZACION int
+	RUTASERVIDOR text
+}
+
+SCTM {
+	CONSECUTIVO int pk
+	FOLIO varchar
+	FECHAINICIO int
+	FECHAEXPEDICION int
+	ENVIADOA varchar
+}
+
+SDescargaCTM {
+	CONSECUTIVO int pk
+	FACTRECIBO varchar
+	FACTENVIO varchar
+	NUMPARTE varchar
+	CANTDESC decimal
+	UNIMED varchar
+	VALORMN decimal
+	VALORME decimal
+	FECHAENT int
+	NUMPARTEEXPO varchar
+	LINEA int
+}
+
+SDescargaD {
+	CONSECUTIVO int pk
+	FACTEXPO varchar
+	FACREFERENCIA varchar
+	FACTIMPODEF varchar
+	PEDIMENTOIMPODEF varchar
+	PEDIMENTOEXPO varchar
+	CLASE varchar
+	NUMPARTE varchar
+	CANTDESC decimal
+	UNIMED varchar
+	VALORMN decimal
+	VALORME decimal
+	PESONETO decimal
+	PESOBRUTO decimal
+	PAISMERCANCIA varchar
+	FECHADESC int
+	TIPOFRACCION varchar
+	ADVALOREMIMPO varchar
+	SECTOR varchar
+	NUMPARTEEXPO varchar
+	LINEAEXPO int
+	PARTEORIGINAL varchar
+	TIPODESC varchar
+	MONTOIGI decimal
+	PAGOIMPUESTO varchar
+	TIENECERT varchar
+	ORDENVENTA varchar
+	ACTUALREPARACION varchar
+	TIPOMATEXPO varchar
+	CONSECPARCIAL int
+	LINEAEXPOREF int
+	APARTADOCTM char
+	PORUTILERIA tinyint
+	DESCARGASM varchar
+}
+
+SDescargaM {
+	CONSECUTIVO int pk
+	CONSECUTIVOEXPO int
+	FACTURAEXPO varchar
+	LINEA int
+	NUMPARTE varchar
+	CLASE varchar
+	CANTIDAD decimal
+	UNIMED varchar
+	FACTURAIMPO varchar
+	NUMPARTEMP varchar
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	PAIS varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	TIPOFRACCION varchar
+	SECTOR varchar
+	FACTURADEF varchar
+	PROCEDENCIA varchar
+	FACTURA varchar
+	TIPODESPERDICIO varchar
+	ORDENVENTA varchar
+	TOMARSALDOBASEALPT varchar
+}
+
+SDescargaMerDes {
+	CONSECUTIVO int pk
+	FACTURAEXPO varchar
+	PEDIMENTOEXPO varchar
+	NUMPARTEPAREXPO varchar
+	FACTEXPOSCRAP varchar
+	PEDIMENTOEXPOSCRAP varchar
+	CLASE varchar
+	TIPO varchar
+	NUMPARTE varchar
+	CANTDESC decimal
+	UNIMED varchar
+	VALORMN decimal
+	VALORME decimal
+	PESONETO decimal
+	FECHADESC int
+	NUMPARTEEXPO varchar
+	LINEAEXPO int
+	PROCEDENCIA varchar
+}
+
+SDescargaR {
+	CONSECUTIVOEXPO int pk
+	LINEA int pk
+	FACTURAEXPO varchar
+	NUMPARTE varchar
+	NUMPARTEMP varchar
+	CANTIDAD decimal
+	UNIMED varchar
+	PROCEDENCIA varchar
+	CANTEQUIVALENTE decimal
+	UMEQUIVALENTE varchar
+	LINEAEXPO int
+}
+
+SDescargaS {
+	FACTEXPO varchar pk
+	FACTURAEXPO varchar
+	NUMPARTE varchar
+	TIPO varchar pk
+	CANTDESC decimal
+	UNIMED varchar
+	VALORMN decimal
+	VALORME decimal
+	PESONETO decimal
+}
+
+SDescargaSM {
+	CONSECUTIVO int pk
+	REMISIONENTRADA varchar
+	REMISIONSALIDA varchar
+	NUMPARTE varchar
+	CANTDESC decimal
+	UNIMED varchar
+	VALORMN decimal
+	VALORME decimal
+	FECHAENT int
+	NUMPARTEEXPO varchar
+	LINEA int
+}
+
+SDescargaT {
+	CONSECUTIVO int pk
+	FACTEXPO varchar
+	FACREFERENCIA varchar
+	FACTIMPO varchar
+	PEDIMENTOIMPO varchar
+	PEDIMENTOEXPO varchar
+	CLASE varchar
+	NUMPARTE varchar
+	CANTDESC decimal
+	UNIMED varchar
+	VALORMN decimal
+	VALORME decimal
+	VALORIVAMN decimal
+	VALORIVAME decimal
+	PESONETO decimal
+	PESOBRUTO decimal
+	PAISMERCANCIA varchar
+	FECHADESC int
+	TIPOFRACCION varchar
+	ADVALOREMIMPO varchar
+	SECTOR varchar
+	NUMPARTEEXPO varchar
+	LINEAEXPO int
+	PARTEORIGINAL varchar
+	TIPODESC varchar
+	MONTOIGI decimal
+	PAGOIMPUESTO varchar
+	TIENECERT varchar
+	ORDENVENTA varchar
+	ACTUALREPARACION varchar
+	TIPOMATEXPO varchar
+	CONSECPARCIAL int
+	LINEAEXPOREF int
+	APARTADOCTM char
+	PORUTILERIA tinyint
+	DESCARGASM varchar
+	CANTIDADRETORNADASM decimal
+}
+
+SFacEntradaSM {
+	CONSECUTIVO int pk
+	FACTURAREMISION varchar
+	FECHAENTRADA int
+	ENVIADOPOR varchar
+	ESTATUS varchar
+	TIPOCAMBIO decimal
+	TIPOMONEDA varchar
+	VALORENTMN decimal
+	VALORENTME decimal
+	FECHAACTUAL int
+	HORAACTUAL int
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	PEDIMENTO varchar
+	SEM int
+}
+
+SFacEnviaCTM {
+	CONSECUTIVO int pk
+	FACTURAENVIO varchar
+	FECHAENVIO int
+	NUMVEHICULO varchar
+	TIPOCAMBIO decimal
+	TIPOMONEDA varchar
+	ESTATUS varchar
+	ENVIADOPOR varchar
+	ENVIADOA varchar
+	TRANSPORTISTA varchar
+	NUMTRAILER varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	OBSERVACIONE varchar
+}
+
+SFacExp {
+	CONSECUTIVO int pk
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOEXPO varchar
+	PEDIMENTOR1 varchar
+	PEDIMENTOK1 varchar
+	REMESA smallint
+	FACTURAEXPO varchar
+	FECHAFACTURA int
+	TIPOCAMBIO decimal
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	VENDIDOPOR varchar
+	AADUANAL varchar
+	MANIFIESTO varchar
+	ESTATUS varchar
+	ESTATUSREC tinyint
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS int
+	VALOREXPOMN decimal
+	VALORMPMN decimal
+	VALORAGREMN decimal
+	IVAEXPOMN decimal
+	VALORVMEXMN decimal
+	VALEMPAQUENACMN decimal
+	VALOREXPOME decimal
+	VALORMPME decimal
+	VALORAGREME decimal
+	IVAEXPOME decimal
+	VALORVMEXME decimal
+	VALEMPAQUENACME decimal
+	FACTORIVA decimal
+	CANTEXPO decimal
+	CANT_PARTIDAS smallint
+	TRANSPORTISTA varchar
+	TRANSPORTISTAAME varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	NUMTRASPORTECOMPLE varchar
+	INCOTERM varchar
+	IDENTIFICADOR varchar
+	COMPLEMENTO1 varchar
+	IDENTIFICADOR2 varchar
+	COMPLEMENTO2 varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETE decimal
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	TIPOFACTURA varchar
+	GENERAID varchar
+	ACTVALOR varchar
+	MODTRANS varchar
+	BILLNUMBER varchar
+	APLICADESCMANUAL varchar
+	DESTINOMCIA varchar
+	FECHAPAGO int
+	NUMRECIBOPAGO varchar
+	VALORIMPUESTOME decimal
+	TIPODESPERDICIO varchar
+	ESCAMBIOREGIMEN varchar
+	CUALTIPOCAMBIO varchar
+	TOTALINCREMMN decimal
+	TOTALINCREMME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	ESTATUSREP varchar
+	FECHAACTUAL int
+	HORAACTUAL int
+	DESCARGASUST tinyint
+	DESCARGACLASE tinyint
+	DESCARGADEF tinyint
+	ESAGRANEL tinyint
+	NUMEROPROFORMA varchar
+	NUMEROGUIA varchar
+	NUMEMBARQUE varchar
+	RECIBIDOPOR varchar
+	FECHAENTREGA int
+	ENTREGADO varchar
+	NUMTRAILER varchar
+	ENVIADOPORVENDIDOPOR varchar
+	NUMREFERENCIA varchar
+	OFICIO varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	ADUANA_CRUCE varchar
+	TIPOMOVIMIENTO varchar
+	FACTURAALTERNA varchar
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	COMENTARIOSESTATUS varchar
+	SEMAFORO varchar
+	NUMPROYECTO varchar
+	METVALOR varchar
+	TIPOSCRAP varchar
+	NUMFACTURABROKER varchar
+	FECHAFACBROKER int
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	GENDESCPARTIDAS varchar
+	FECHAFACTURA_ISO datetime
+	COMOFUEPROCESADA varchar
+	FACTURAEXPOREF varchar
+	ESMIXTO varchar
+	PROVEEDOREXPORTADOR varchar
+	EDOCUMENT varchar
+	NUMOPERACIONVU varchar
+	LINEAPERSONAAA int
+	TIPOCAMBIOMM decimal
+	VALOREXPOMC decimal
+	VALORAGREMC decimal
+	IVAEXPOMC decimal
+	VALEMPAQUENACMC decimal
+	VALORVMEXMC decimal
+	OBSERVACIONESVU varchar
+	ORIGENUBICACION varchar
+	DESTINOUBICACION varchar
+	ITINERARIOTRANPORTE varchar
+	SETRATAPROCESOCTM varchar
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	ADENDAVU varchar
+	ESFERROCARRIL varchar
+	DESTINOORIGENCOVE varchar
+	FECHAEMISION int
+	MODOCONTINGENCIA tinyint
+	RAZONEXPORTACION varchar
+	ORDENCOMPRA varchar
+	TERMINOSPAGO varchar
+	MANIOBRAS decimal
+	RECINTO varchar
+	SEMAFOROEXPO varchar
+	OPCIONIV18 varchar
+	TIPODEGUIAAIDENTIFICAR varchar
+	LOCALIZACION varchar
+	CFDIUUID varchar
+	CFDIPATHPDF varchar
+	CFDIPATHXML varchar
+	CLAVEDOT varchar
+	SUBDIVISION varchar
+	FUNGECOMOCO varchar
+	ENAJENACIONBIENES tinyint
+	APENDICE17 tinyint
+	TIPOMOV varchar
+	IDFERRORCARRIL varchar
+}
+
+SFacExpCobranza {
+	CONSECUTIVO int pk
+	FACTURA varchar
+	LINEA int pk
+	CONCEPTO varchar
+	COBRADO tinyint
+	FECHACOBRANZA int
+	VALOR decimal
+	DEPTOCOBRANZA varchar
+	FACTCOBRADOR varchar
+	NOMBRECOBRADOR varchar
+}
+
+SFacImp {
+	CONSECUTIVO int pk
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOIMPO varchar
+	PEDIMENTOR1 varchar
+	REMESA smallint
+	FACTURAIMPO varchar
+	FECHAFACTURA int
+	TIPOCAMBIO decimal
+	TIPOCAMBIOMM decimal
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	ESTATUS varchar
+	ESTATUSREC tinyint
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS int
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORIMPOMC decimal
+	CANTIMPO decimal
+	CANT_PARTIDAS smallint
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	INCOTERM varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETE decimal
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	MODTRANS varchar
+	CUALTIPOCAMBIO varchar
+	FECHAEMISION int
+	SELLOVALOR2500 tinyint
+	TOTALINCREMMN decimal
+	TOTALINCREMME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	FECHAACTUAL int
+	HORAACTUAL int
+	ESAGRANEL tinyint
+	FACTORPESO decimal
+	FACTURAALTERNA varchar
+	AADUANALAME varchar
+	TIPOPESO varchar
+	TIPOMOVIMIENTO varchar
+	ADUANA_CRUCE varchar
+	NUMTRAILER varchar
+	DESTINO varchar
+	GENERARSALDOS varchar
+	ESMIXTO varchar
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	COMENTARIOSESTATUS varchar
+	METVALOR varchar
+	ESDUENOMCIA varchar
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	FECHAFACTURA_ISO datetime
+	COMOFUEPROCESADA varchar
+	FUEREVISADAMCIA tinyint
+	EDOCUMENT varchar
+	NUMOPERACIONVU varchar
+	LINEAPERSONAAA int
+	OBSERVACIONESVU varchar
+	ORIGENUBICACION varchar
+	DESTINOUBICACION varchar
+	ITINERARIOTRANPORTE varchar
+	FIRMAELECTRONICA varchar
+	NUMEROCERTIFICADO varchar
+	CONTENEDORESTIPO varchar
+	DATOSVEHICULO varchar
+	NUMERONIU varchar
+	CANTGUIASEMBARQUE varchar
+	ADENDAVU varchar
+	ESFERROCARRIL varchar
+	DESTINOORIGENCOVE varchar
+	PUERTOENTRADA varchar
+	MODOCONTINGENCIA tinyint
+	RECINTO varchar
+	PEDIMENTOK1 varchar
+	FACTORIVA varchar
+	VALORIVAMN decimal
+	VALORIVAME decimal
+	SEMAFOROIMPO varchar
+	TIPODEGUIAAIDENTIFICAR varchar
+	LOCALIZACION varchar
+	CLAVEDOT varchar
+	SUBDIVISION varchar
+	FUNGECOMOCO varchar
+	APENDICE17 tinyint
+	TIPOMOV varchar
+	IDFERRORCARRIL varchar
+}
+
+SFacImpCobranza {
+	CONSECUTIVO int pk
+	FACTURA varchar
+	LINEA int pk
+	CONCEPTO varchar
+	COBRADO tinyint
+	FECHACOBRANZA int
+	VALOR decimal
+	DEPTOCOBRANZA varchar
+	FACTCOBRADOR varchar
+	NOMBRECOBRADOR varchar
+}
+
+SFacOrdenVenta {
+	CONSECUTIVO int pk
+	FACTURAEXPO varchar
+	LINEA int pk
+	ORDENVENTA varchar
+	COLORES varchar
+	CANTBULTOS int
+	COLORCUADRITO char
+}
+
+SFacReciboCTM {
+	CONSECUTIVO int pk
+	FACTURARECIBO varchar
+	FECHARECIBO int
+	NUMVEHICULO varchar
+	TIPOCAMBIO decimal
+	TIPOMONEDA varchar
+	ESTATUS varchar
+	ENVIADOPOR varchar
+}
+
+SFacRep {
+	PED_PENDIENTE_ASIGNAR tinyint
+	PEDIMENTOIMPO varchar
+	PEDIMENTOR1 varchar
+	REMESA smallint
+	FACTURAIMPO varchar pk
+	FECHAFACTURA int
+	TIPOCAMBIO decimal
+	TIPOCAMBIOMM decimal
+	TIPODOC varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	ESTATUS varchar
+	ESTATUSREC tinyint
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS int
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORIMPOMC decimal
+	CANTIMPO decimal
+	CANT_PARTIDAS smallint
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRASPORTE varchar
+	INCOTERM varchar
+	PRECINTO varchar
+	SUBEMPRESA varchar
+	FLETE decimal
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	MODTRANS varchar
+	CUALTIPOCAMBIO varchar
+	IDRELDOC int
+	CLAVEFIRMA varchar
+	SEMAFOROEXPO varchar
+}
+
+SFacSalidaSM {
+	CONSECUTIVO int pk
+	FACTURASALIDA varchar
+	FECHAENVIO int
+	ENVIADOPOR varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	ESTATUS varchar
+	TIPOCAMBIO decimal
+	TIPOMONEDA varchar
+	VALORSALMN decimal
+	VALORSALME decimal
+	FECHAACTUAL int
+	HORAACTUAL int
+	USUARIOACT varchar
+	USUARIOCAP varchar
+	FECHACAPTURA int
+	PEDIMENTO varchar
+	SEM int
+}
+
+SFracAmeFact {
+	CONSECUTIVO int pk
+	CONSECUTIVOEXPO int
+	FACTURAEXPO varchar
+	LINEA int
+	LINEAPARTE int
+	NUMPARTE varchar
+	FRACCIONAME varchar
+	TASA decimal
+	VALOR decimal
+	TIPOVALOR varchar
+	PAIS varchar
+	TIPOADVALOREM varchar
+	PREFIJO varchar
+	AR decimal
+	OH decimal
+}
+
+SFracAmeParte {
+	CONSECUTIVO int pk
+	CONSECUTIVO int
+	NUMPARTE varchar
+	FRACCIONAME varchar
+	VALOR decimal
+	TIPOVALOR varchar
+	PAIS varchar
+	PREFIJO varchar
+	FRACCIONAMERICANASIFRA varchar
+	AR decimal
+	OH decimal
+}
+
+sFracciones {
+	SYSID int pk
+	FRACCION varchar
+	FRACCIONPUNTO varchar
+	DESCRIPCION text
+	UMCLAVE varchar
+	UMABREVIACION varchar
+	ADVIMPOTXT varchar
+	ADVIMPONUM decimal
+	TIPOTASAADVIMPO int
+	ADVEXPOTXT varchar
+	ADVEXPONUM decimal
+	TIPOTASAADVEXPO int
+	TASAIVAFRANJA decimal
+	TASAIVAINTERIOR decimal
+	TASAISAN decimal
+	ARANCELMIXTO char
+	TASAMIXTA decimal
+	DOF char
+	NOTAS text
+	HISTORICO text
+	ARANCELESPECIFICO char
+	TIPOVEHICULO char
+	APLICAISAN char
+	APLICAIEPS char
+	NIVEL int
+}
+
+sFracciones_USA {
+	CONSECUTIVO int pk
+	FRACCION_SIN_PUNTO varchar
+	FRACCION_CON_PUNTO varchar
+	FRACCION_MOSTRAR varchar
+	ESPECIFICO varchar
+	NIVEL int
+	DESCRIPCION varchar
+	UNIDADCANTIDAD varchar
+	TARIFA1 varchar
+	TLC varchar
+	TARIFA2 varchar
+	NOTAS varchar
+}
+
+sFraccionesAnteriores {
+	SYSID int pk
+	FRACCIONACTUAL varchar
+	FRACCIONANTERIOR varchar
+}
+
+SFraccionesAnterioresN {
+	SysID int
+	FraccionActual varchar
+	FraccionAnterior varchar
+}
+
+sFraccionesCortas {
+	CONSECUTIVO int pk
+	FRACCION varchar
+	DECRIPCIONCORTA varchar
+	DESCRIPCIONLARGA varchar
+}
+
+sFraccionesResumidas {
+	CONSECUTIVO int pk
+	FRACCION_SIN_PUNTO varchar
+	FRACCION_CON_PUNTO varchar
+	DESCRIPCION text
+}
+
+sHistoricoReit {
+	SYSID int pk
+	FRACCION varchar
+	ARTICULO varchar
+	FUNDAMENTO varchar
+	ACUERDO varchar
+	DOF char
+	DOF2 char
+	DOF3 char
+	PERMISO char
+	DOCUMENTO varchar
+	TEMPORALIDAD smallint
+	TEMPORALIDADSERVICIOS smallint
+	TEMPORALIDADEMPRESACERTIFICADA smallint
+}
+
+SIdentificadoresPedimento {
+	PEDIMENTO varchar
+	CLAVEID varchar
+	COMPLEMENTO1 varchar
+	COMPLEMENTO2 varchar
+	COMPLEMENTO3 varchar
+}
+
+SImplosion {
+	CONSECUTIVO int pk
+	FOLIOIMPLOSION varchar
+	FECHAIMPOSION int
+	TIPOCAMBIO decimal
+	ESTATUS varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	CANTBULTOS int
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORIMPOMC decimal
+	CANTIMPLO decimal
+	CANT_PARTIDAS smallint
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	FECHAACTUAL int
+	HORAACTUAL int
+	TIPOPESO varchar
+	FACTURAIMPO varchar
+	NUMPARTE varchar
+	PAISORIGEN varchar
+	TIPOFRACIMPO varchar
+	SECTOR varchar
+	PROCEDENCIA varchar
+}
+
+SLocalizacion {
+	CLAVE varchar pk
+	LOCALIZACION varchar
+}
+
+SMatBOM {
+	CONSECUTIVO int pk
+	NUMPARTE varchar
+	NUMPARTEBOM varchar
+	CANTIDAD decimal
+	UNIMED varchar
+	PROCEDENCIA varchar
+	CANTMP decimal
+	CANTDESP decimal
+	CANTMERMA decimal
+	CANTEQUIVALENTE decimal
+	UMEQUIVALENTE varchar
+	CANTDESPEQUI decimal
+	CANTMERMAEQUI decimal
+	DESCDESPAPARTADO tinyint
+	PORCENTAJEMP decimal
+	PORCENTAJEDESP decimal
+	PORCENTAJEMERMA decimal
+	TIPODESPMERMA varchar
+}
+
+SMatBOMClase {
+	CONSECUTIVO int pk
+	NUMPARTE varchar
+	CLASE varchar
+	PORCENTAJE decimal
+}
+
+SMermaDesp {
+	FACTURAEXPO varchar pk
+	FECHAEXPO int
+	PEDIMENTOEXPO varchar
+	CLASE varchar
+	TIPO varchar pk
+	NUMPARTE varchar
+	NUMPARTEPAREXPO varchar pk
+	CANTIDAD decimal
+	CANTIDADUSADA decimal
+	UNIMED varchar
+	VALORMN decimal
+	VALORUSADOMN decimal
+	VALORME decimal
+	VALORUSADOME decimal
+	PESONETO decimal
+	PESOUSADO decimal
+	PROCEDENCIA varchar pk
+}
+
+SModificaciones {
+	MOVIMIENTO varchar
+	LINEA int pk
+	TABLA varchar
+	CAMPOREF1 varchar
+	CAMPOREF2 varchar
+	FECHA int
+	HORA int
+	LOGIN varchar
+	CLAVE_ACCESO varchar
+}
+
+SPackingList {
+	CONSECUTIVO int pk
+	NUMPACKINGLIST varchar
+	EXPORTADOR varchar
+	EXPORTADOA varchar
+	ENVIADOA varchar
+	ENVIADOPOR varchar
+	TRANSPORTISTA varchar
+	AADUANAL varchar
+	FECHA int
+	FACTURAREFERENCIA varchar
+	ESTATUS varchar
+}
+
+SParPruSuf {
+	FACTURAEXPO varchar pk
+	LINEA int pk
+	LINEAEXPO int pk
+	ADVALOREM decimal
+	VALORME decimal
+}
+
+SParteCliente {
+	NUMPARTE varchar
+	CLIENTE varchar
+	ESTATUS varchar
+}
+
+SPartePais {
+	NUMPARTE varchar
+	FRACCION varchar
+	PAISDEFAULT tinyint
+	PAISDEFAULTEXPO tinyint
+	PAIS varchar
+	TIPOFRACCION varchar pk
+	TASAIM varchar
+	TASAEX varchar
+	TIENECERT varchar
+	NOCERTIFICADO varchar
+	FECHAFINALCO int
+	SECTOR varchar
+	TASAIMNUM decimal
+}
+
+SPartes {
+	NUMPARTE varchar pk
+	TIPOPARTE varchar
+	NUMPARTECOM varchar
+	NUMPARTEREF varchar
+	DESCRIPCIONE varchar
+	DESCRIPCIONI varchar
+	CLASE varchar
+	UNIMED varchar
+	UNIMEDEQUIV varchar
+	FACTORCONV decimal
+	COSTOUNITARIO decimal
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	PESOUNITARIO decimal
+	TIPOMAT varchar
+	FRACCION varchar
+	FRACCIONAME varchar
+	ADVALOREMAME decimal
+	FRACCAMEEXPONDUTY varchar
+	FRACEUA varchar
+	FRACCANADA varchar
+	SUBEMPRESA varchar
+	UMEXISTENCIA varchar
+	VALORAGREGADO decimal
+	TIPOVA varchar
+	FECHAMODIFICA int
+	UNIMEDALTERNA varchar
+	CLAVEFDA varchar
+	LEYENDASEG varchar
+	VALORNOORIG decimal
+	IMPPAGAR decimal
+	DESCESPSCRAP varchar
+	DESCINGSCRAP varchar
+	FRACEXPOSCRAP varchar
+	FRACAMESCRAP varchar
+	FECHACOSTO int
+	FOTOPARTE varchar
+	CAPXUMAUXILIAR varchar
+	FACTORAUXILIAR decimal
+	UMAUXILIAR varchar
+	COSTOUAUXILIAR decimal
+	CAPTXKILO varchar
+	CANTKILO decimal
+	COSTOVENTA decimal
+	CANTPZXCJ decimal
+	VERSIONBILL int
+	NUMPARTESUS varchar
+	ESREPARACION varchar
+	COSTOUNITARIOREP decimal
+	USACANTALTERNA tinyint
+	FECHAMODBOM int
+	FECHAMODFRACAME int
+	VALORAGREGADOREP decimal
+	ESMATPELIGROSO varchar
+	NUMEMERGENCIA varchar
+	CLASEDEPELIGRO varchar
+	NUMIDENTIFICACIONUN varchar
+	GRUPOEMBALAJE varchar
+	NOMAPROPIADOEMB varchar
+	NOTASMATPELIGROSO varchar
+	VALORDUTY decimal
+	FLETEDUTY decimal
+	VALORTOTALDUTY decimal
+	VALORNODUTY decimal
+	FLETENODUTY decimal
+	VALORTOTALNDUTY decimal
+	VALORTOTAL decimal
+	TRABAJODIREC decimal
+	GASTOGRALES decimal
+	OTROSGASTOS decimal
+	TOTALGASTOS decimal
+	DEPRECIACION decimal
+	TOOLING decimal
+	MATCONSUMED decimal
+	VALORSCRAP decimal
+	FORENGDESDEV decimal
+	VALTOTALASIST decimal
+	VALEMPAQUEFOR decimal
+	GANANCIA decimal
+	DUTIABLEVALUE7 decimal
+	OTROSNDUTIABLE decimal
+	COSTOESTIMADO decimal
+	TOTALNDUTIABLE decimal
+	ACTUALDUTIABLE decimal
+	VALEMPAQUEUS decimal
+	VALEMPAQUENAC decimal
+	FECHACOSTOAME int
+	ESTEXTIL varchar
+	PROVEEDOR varchar
+	ECCN varchar
+	SIMBOLOEXCLIC varchar
+	CAMPOOPCIONAL varchar
+	UNIMEDEQUIV2 varchar
+	FACTORCONV2 decimal
+	LABORCOST decimal
+	EXPORTCODE varchar
+	LICENSECODE varchar
+	CAMPOOPCIONALBOM varchar
+	TIPOPESO varchar
+	TIPOIMMEX varchar
+	CLAVEFCC varchar
+	NUMPARTESCRAP varchar
+	NUMPARTEMERMA varchar
+	FACTORDESP decimal
+	HABILITADADESHABILITADA tinyint
+	FECHAMODIFICA_ISO datetime
+	VERSIONBOM int
+	ORDENVENTA varchar
+	CLIENTEASIGNADO varchar
+	ANCHURA varchar
+	ESPESOR varchar
+	SPEC varchar
+	FACTORCONVERSION decimal
+	UMCONVERSION varchar
+	NOTIFICARSIPARTEUSAREGLA8VA int
+	FECHACREACIONPARTE int
+	LLENARINFOSUGERIDAR8 int
+	RESULTADOCALCULONAFTA varchar
+	PORCENTAJECALCULONAFTA decimal
+	MDI varchar
+	CONSECUTIVOATF int
+	FRACCIONAMERICANASIFRA varchar
+	NUMPARTEREFFLEX varchar
+	DTA varchar
+	DTB varchar
+	DTG varchar
+	IDENTIFICADOR varchar
+	CONSECUTIVOAPHIS int
+}
+
+SPartidasCM {
+	CONSECUTIVO int pk
+	FACCMIMPODEF varchar
+	LINEACMIMPDEF int pk
+	FECHAFACTURA int
+	NUMPARTE varchar
+	CLASE varchar
+	CANTIMPO decimal
+	UNIMED varchar
+	CANTALTERNA decimal
+	UNIMEDALTERNA varchar
+	COSTOUNITARIOME decimal
+	COSTOUNITARIOMN decimal
+	COSTOUNITARIOMC decimal
+	VALORIMPOMN decimal
+	SUBVALORIMPOMN decimal
+	IVAIMPOMN decimal
+	VALORIMPOME decimal
+	SUBVALORIMPOME decimal
+	IVAIMPOME decimal
+	VALORIMPOMC decimal
+	SUBVALORIMPOMC decimal
+	IVAIMPOMC decimal
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESONETOKGS decimal
+	PESONETOLBS decimal
+	PESOBRUTO decimal
+	PESOBRUTOKGS decimal
+	PESOBRUTOLBS decimal
+	DESCRIPCIONE varchar
+	DESCRIPCIONI varchar
+	CLAVEBULTOS varchar
+	CANTBULTOS int
+	DESCBULTOS varchar
+	FRACCIONIMPO varchar
+	TIPOFRACCIMPO varchar
+	ADVIMPO varchar
+	ADVIMPONUM decimal
+	TIENECO varchar
+	NOCERTIFICADO varchar
+	SECTOR varchar
+	FRACCIONAMERICANA varchar
+	ADVAME decimal
+	ORDENCOMPRA varchar
+	INFOADICIONESP varchar
+	INFOADICIONING varchar
+	MONTOIGI decimal
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	NUMEROGUIA varchar
+	PROVEEDOR varchar
+	CANTIMPOAUXILIAR decimal
+	UNIMEDAUXILIAR varchar
+	COSTOUAUXILIARME decimal
+	VALORIMPOAUXILIARME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	CLIENTEFACTURAR varchar
+	FRACCIONROCTAVA varchar
+	PERMISOROCTAVA varchar
+	BODEGA varchar
+	REQUISITOR varchar
+	LINEARO int
+	ADVALORMELINEAPED decimal
+	ADVALORMNLINEAPED decimal
+	PERMISOSPED varchar
+	LINEAPED int
+	CAMPOCOMODIN varchar
+	ESMCIAMILITAR tinyint
+	METVALOR varchar
+	DESCRIPCIONPARTE varchar
+	CANTIMPOUMA decimal
+	CLAVEUMA varchar
+	NUMPARTECOM varchar
+	NOCAJAS varchar
+	VALIDACIONZERO int
+	VALIDACIONUNO int
+	METVALORVALORDETERMINADO decimal
+	METVALORMOTIVODEUSO varchar
+	CLIENTEASIGNADO varchar
+	NUMERODEENTRADA varchar
+	LOCALIZACION varchar
+	LOTE varchar
+}
+
+SPartidasEntradaSM {
+	CONSECUTIVO int pk
+	FACTURAREMISION varchar
+	LINEAREMISION int pk
+	FACTURASALIDA varchar
+	LINEASALIDA int
+	NUMPARTE varchar
+	CANTENTRADA decimal
+	UNIDADMEDIDA varchar
+	COSTOUNITARIOMC decimal
+	COSTOMN decimal
+	COSTOME decimal
+	VALORENTMN decimal
+	VALORENTME decimal
+	TIPODENUMPARTE varchar
+	TIPODEORDEN varchar
+	CONCEPTODELAPARTIDA varchar
+	FRACCIONDELAPRENDA varchar
+}
+
+SPartidasImpo {
+	CONSECUTIVO int pk
+	FACTURAIMPO varchar
+	LINEAIMPO int pk
+	FECHAFACTURA int
+	NUMPARTE varchar
+	CLASE varchar
+	CANTIMPO decimal
+	UNIMED varchar
+	CANTALTERNA decimal
+	UNIMEDALTERNA varchar
+	COSTOUNITARIOME decimal
+	COSTOUNITARIOMN decimal
+	COSTOUNITARIOMC decimal
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORIMPOMC decimal
+	VALORIVAMN decimal
+	VALORIVAME decimal
+	NUMPERMISO varchar
+	PAGRENGLON varchar
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESONETOKGS decimal
+	PESONETOLBS decimal
+	PESOBRUTO decimal
+	PESOBRUTOKGS decimal
+	PESOBRUTOLBS decimal
+	CLAVEBULTOS varchar
+	CANTBULTOS int
+	DESCBULTOS varchar
+	FRACCIONIMPO varchar
+	TIPOFRACCIMPO varchar
+	ADVIMPO varchar
+	ADVIMPONUM decimal
+	TIENECO varchar
+	NOCERTIFICADO varchar
+	SECTOR varchar
+	FRACCIONAMERICANA varchar
+	ADVAME decimal
+	ORDENCOMPRA varchar
+	INFOADICIONESP varchar
+	INFOADICIONING varchar
+	MONTOIGI decimal
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	NUMEROGUIA varchar
+	PROVEEDOR varchar
+	CANTIMPOAUXILIAR decimal
+	UNIMEDAUXILIAR varchar
+	COSTOUAUXILIARME decimal
+	VALORIMPOAUXILIARME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	CLIENTEFACTURAR varchar
+	FRACCIONROCTAVA varchar
+	PERMISOROCTAVA varchar
+	BODEGA varchar
+	REQUISITOR varchar
+	LINEARO int
+	ADVALORMELINEAPED decimal
+	ADVALORMNLINEAPED decimal
+	PERMISOSPED varchar
+	LINEAPED int
+	CAMPOCOMODIN varchar
+	ESMCIAMILITAR tinyint
+	METVALOR varchar
+	DESCRIPCIONPARTE varchar
+	CANTIMPOUMA decimal
+	CLAVEUMA varchar
+	NUMPARTECOM varchar
+	NOCAJAS varchar
+	VALIDACIONZERO int
+	VALIDACIONUNO int
+	METVALORACIONVALORDETERMINADO decimal
+	METVALORACIONMOTIVODEUSO varchar
+	CLIENTEASIGNADO varchar
+	NUMERODEENTRADA varchar
+	LOCALIZACION varchar
+	LOTE varchar
+	FORMAPAGOTIGI varchar
+}
+
+SPartidasImposion {
+	CONSECUTIVO int pk
+	FACTURAIMPO varchar
+	LINEAIMPO int pk
+	FECHAFACTURA int
+	NUMPARTE varchar
+	CLASE varchar
+	CANTIMPO decimal
+	UNIMED varchar
+	CANTALTERNA decimal
+	UNIMEDALTERNA varchar
+	COSTOUNITARIOME decimal
+	COSTOUNITARIOMN decimal
+	COSTOUNITARIOMC decimal
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORIMPOMC decimal
+	NUMPERMISO varchar
+	PAGRENGLON varchar
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESONETOKGS decimal
+	PESONETOLBS decimal
+	PESOBRUTO decimal
+	PESOBRUTOKGS decimal
+	PESOBRUTOLBS decimal
+	CLAVEBULTOS varchar
+	CANTBULTOS int
+	DESCBULTOS varchar
+	FRACCIONIMPO varchar
+	TIPOFRACCIMPO varchar
+	ADVIMPO varchar
+	ADVIMPONUM decimal
+	TIENECO varchar
+	NOCERTIFICADO varchar
+	SECTOR varchar
+	FRACCIONAMERICANA varchar
+	ADVAME decimal
+	ORDENCOMPRA varchar
+	INFOADICIONESP varchar
+	INFOADICIONING varchar
+	MONTOIGI decimal
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	NUMEROGUIA varchar
+	PROVEEDOR varchar
+	CANTIMPOAUXILIAR decimal
+	UNIMEDAUXILIAR varchar
+	COSTOUAUXILIARME decimal
+	VALORIMPOAUXILIARME decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	CLIENTEFACTURAR varchar
+	FRACCIONROCTAVA varchar
+	PERMISOROCTAVA varchar
+	BODEGA varchar
+	REQUISITOR varchar
+}
+
+SPartidasPackingList {
+	CONSECUTIVO int pk
+	LINEA int pk
+	NUMPACKINGLIST varchar
+	NUMPARTE varchar
+	DESCRIPCION varchar
+	CANTIDAD decimal
+	UNIMED varchar
+	CANTBULTOS int
+	CLAVEBULTOS varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+}
+
+SPartidasReciboCTM {
+	CONSECUTIVO int pk
+	LINEARECIBO int pk
+	NUMPARTE varchar
+	CANTENVIO decimal
+	UNIDADMEDIDA varchar
+	COSTOUNITARIOMC decimal
+	COSTOMN decimal
+	COSTOME decimal
+	VALORMN decimal
+	VALORME decimal
+	PESONETO decimal
+	MARCA varchar
+	MODELO varchar
+	SERIES varchar
+	OPCION char
+	FACTURASALIDA varchar
+}
+
+SPartidasRep {
+	FACTURAIMPO varchar pk
+	LINEAIMPO int pk
+	FECHAFACTURA int
+	NUMPARTE varchar
+	CLASE varchar
+	CANTIMPO decimal
+	UNIMED varchar
+	CANTALTERNA decimal
+	UNIMEDALTERNA varchar
+	COSTOUNITARIOME decimal
+	COSTOUNITARIOMN decimal
+	COSTOUNITARIOMC decimal
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORIMPOMC decimal
+	NUMPERMISO varchar
+	PAGRENGLON varchar
+	PAISORIGEN varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	CLAVEBULTOS varchar
+	CANTBULTOS int
+	DESCBULTOS varchar
+	FRACCIONIMPO varchar
+	TIPOFRACCIMPO varchar
+	ADVIMPO varchar
+	TIENECO varchar
+	NOCERTIFICADO varchar
+	SECTOR varchar
+	FRACCIONAMERICANA varchar
+	ADVAME decimal
+	ORDENCOMPRA varchar
+	INFOADICIONESP varchar
+	INFOADICIONING varchar
+}
+
+SPartidasSalidaSM {
+	CONSECUTIVO int pk
+	FACTURASALIDA varchar
+	LINEASALIDA int pk
+	NUMPARTE varchar
+	CANTSALIDA decimal
+	UNIDADMEDIDA varchar
+	COSTOUNITARIOMC decimal
+	COSTOMN decimal
+	COSTOME decimal
+	VALORSALMN decimal
+	VALORSALME decimal
+	TIPODENUMPARTE varchar
+	TIPODEORDEN varchar
+	CONCEPTODELAPARTIDA varchar
+	FRACCIONDELAPARTIDA varchar
+}
+
+SPedimentos {
+	PEDIMENTO varchar pk
+	TIPO varchar
+	CLAVEPED varchar
+	REGIMEN varchar
+	FECHA_INICIO int
+	FECHA_FIN int
+	FECHA_PAGO int
+	ACUSEELECTRONICO varchar
+	PAIS varchar
+	FACTOR decimal
+	ADUANA_CRUCE varchar
+	PEDRECTIFICA varchar
+	SERECTIFICO varchar
+	OBSRECTIFICA varchar
+	INDIVIDUALCONS varchar
+	DTA decimal
+	VALORIVA decimal
+	PEDIMENTODESCARGO varchar
+	PREVALIDACION decimal
+	MONTOTIGIE decimal
+	PAGOIMPUESTO varchar
+	ESMIXTO varchar
+	ESTATUS varchar
+	SERECTIFICO2 varchar
+	PEDRECTIFICA2 varchar
+	FECHA_REC_1 int
+	FECHA_REC_2 int
+	FECHA_CIERRE int
+	FECHA_REVISION int
+	FECHA_AUTORIZACION int
+	FECHA_RECIBIDO int
+	ERRORES varchar
+	PERSONAREV varchar
+	REPRESANTANTEAA varchar
+	CLAVEDESTORIGEN varchar
+	VALORME decimal
+	VALORADUANAS decimal
+	CLAVETRANSPORTACION varchar
+	PEDIMENTOCOMPLEMENTARIO varchar
+	TOTALINCREMMN decimal
+	FACTORINCREMENTABLE decimal
+	FEA varchar
+	FECHA_PAGO_ISO datetime
+	FECHA_ENTRADARECINTO int
+	FECHA_EXTRACCIONRECINTO int
+	FLETE decimal
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	FORMAPAGODTA varchar
+	FORMAPAGOPREVAL varchar
+	FORMAPAGOIGI varchar
+	FORMAPAGOIVA varchar
+	RECARGOS decimal
+	IVADEPREV decimal
+	CUOTASCOMPENS varchar
+	MULTAS decimal
+	IDENTIFICADORES varchar
+	CNT decimal
+	CLIENTEASIGNADO varchar
+	SEDESISTIO varchar
+	PEDDESISTIDO varchar
+	IEPS decimal
+	OPCIONDESTINO varchar
+	TIPOPEDIMENTOTRANSPORTEE varchar
+	TIPOPEDIMENTOTRANSPORTEA varchar
+	TIPOPEDIMENTOTRANSPORTES varchar
+	PEDIMENTO18 varchar
+	SUBDIVISION varchar
+	IEPS2 decimal
+	DTA2 decimal
+	IVA2 decimal
+	IGI2 decimal
+	PREVALIDACION2 decimal
+	CNT2 decimal
+	IEPS2FP varchar
+	DTA2FP varchar
+	IVA2FP varchar
+	IGI2FP varchar
+	PREVALIDACION2FP varchar
+	CNT2FP varchar
+	IDPEDVIEJONUEVO int
+}
+
+SPedimentosAA {
+	PEDIMENTO varchar
+	CLAVEAA varchar
+	FACTURA varchar
+	FECHAFAC int
+	FECHAREC int
+	FECHAENT int
+	FECHAVENC int
+	SECCION int
+}
+
+SPedimentosConcep {
+	id int pk
+	PEDIMENTO varchar
+	CLAVEAA varchar
+	CONCEPTO varchar
+	IMPORTE decimal
+	TIPO varchar
+	TIPOMONEDA varchar
+}
+
+SPedimentosEDocument {
+	PEDIMENTO varchar
+	CONSECUTIVO int pk
+	EDOCUMENT varchar
+	RUTA_XML varchar
+	OPERACION varchar
+}
+
+SPermisoSECON {
+	CONSECUTIVO int pk
+	NUMOFICIO varchar
+	PERMISO varchar
+	FECHA int
+	FECHAVIGENCIA int
+	PROGRAMA varchar
+}
+
+sProsec {
+	SYSID int
+	FRACCION varchar
+	ARTICULO varchar pk
+	SECTOR varchar
+	TASATXT varchar
+	TASANUM decimal
+	TIPOTASA int
+	DOF char
+	OBSERVACION text
+}
+
+sRCG2 {
+	SYSID int pk
+	FRACCION varchar
+	ANEXO varchar
+	SECTOR varchar
+	REGIMEN varchar
+	CONDICION varchar
+	ADUANAS varchar
+	DOF char
+	ARCHIVOCRITERIO varchar
+	TIPO varchar
+	IMPO int
+	EXPO int
+	WEB_DOCUMENTO_ID int
+}
+
+SRegulaciones {
+	SYSID int pk
+	FRACCION varchar
+	IMPORTACION varchar
+	EXPORTACION varchar
+	PERMISO varchar
+	ACUERDO varchar
+	CONDICION text
+	FUNDAMENTO text
+	DOF varchar
+	FORMATONOM varchar
+	INSTRUCCIONES varchar
+	CRITERIO varchar
+	COMPLEMENTO varchar
+	CRITERIOESPECIAL varchar
+	PAIS varchar
+}
+
+sREIT {
+	SYSID int pk
+	FRACCION varchar
+	ARTICULO varchar
+	FUNDAMENTO varchar
+	ACUERDO varchar
+	PERMISO char
+	DOF char
+	DOCUMENTO varchar
+	TEMPORALIDAD smallint
+	TEMPORALIDADSERVICIO smallint
+	TEMPORALIDADCERTIFICADA smallint
+}
+
+sRequisitoPrevio {
+	SYSID int pk
+	FRACCION varchar
+	DESCRIPCION varchar
+	OBSERVACION varchar
+	DOF char
+	VIGENCIA char
+	PERMISO char
+	NUMEROACUERDO int
+	NUMEROCRITERIO int
+	NUMEROFORMATO int
+	NUMEROINSTRUCCIONES int
+	HISTORICO varchar
+	NOTA varchar
+}
+
+SSaldoCTM {
+	FACTENVIO varchar pk
+	FECHAENVIO int
+	NUMPARTE varchar
+	CANTENVIO decimal
+	CANTEXITENCIA decimal
+	UMEXITENCIA varchar
+	CANTPARTIDA decimal
+	CANTUSADA decimal
+	UMPARTIDA varchar
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORUSADOMN decimal
+	VALORUSADOME decimal
+	VENCIMIENTO int
+}
+
+SSaldoDef {
+	TIPOSALDO varchar
+	FACTURAIMPO varchar pk
+	PEDIMENTOIMPODEF varchar
+	FECHAFACTURA int
+	SUBEMPRESA varchar
+	CLASE varchar
+	NUMPARTE varchar
+	DESCRIPCIONE varchar
+	PAISORIGEN varchar
+	ESNAFTA varchar
+	NOCERTIFICADO varchar
+	CANTIDADCLASE decimal
+	UNIMEDCLASE varchar
+	CANTUSADA decimal
+	CANTUSADADESP decimal
+	PESONETO decimal
+	PESOUSADO decimal
+	PESOBRUTO decimal
+	PESOBRUTOUSADO decimal
+	CANTEXITENCIA decimal
+	CANTGENDESP decimal
+	UMEXITENCIA varchar
+	CANTPARTIDA decimal
+	UMPARTIDA varchar
+	CLAVEBULTOS varchar
+	DESCBULTO varchar
+	CANTBULTOS int
+	SUBVALORIMPOMN decimal
+	IVAIMPOMN decimal
+	VALORIMPOMN decimal
+	VALORUSADOMN decimal
+	SUBVALORIMPOME decimal
+	IVAIMPOME decimal
+	VALORIMPOME decimal
+	VALORUSADOME decimal
+	NUMSOLICITUD varchar
+	PAGRENGLON varchar
+	FRACCIONIMPO varchar
+	ADVIMPO varchar
+	TIPOFRACIMPO varchar pk
+	FRACCIONAMERICANA varchar
+	SECTOR varchar
+	CANTALTERNA decimal
+	UMALTERNA varchar
+	MONTOIGI decimal
+	MONTOIGIUSADO decimal
+	FORMAPAGO varchar
+	PAGOIMPUESTO varchar
+	CANTAUXILIAR decimal
+	UMAUXILIAR varchar
+	VALORAUXILIARIMPOME decimal
+	ORDENCOMPRA varchar
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	ESREPARACION varchar
+	FECHAFACTURA_ISO datetime
+	FECHAVENC_ISO datetime
+	NUMPARTECOM varchar
+}
+
+SSaldoRep {
+	FACTURAIMPO varchar pk
+	PEDIMENTOIMPO varchar
+	FECHAFACTURA int
+	SUBEMPRESA varchar
+	CLASE varchar
+	NUMPARTE varchar
+	DESCRIPCIONE varchar
+	PAISORIGEN varchar
+	ESNAFTA varchar
+	NOCERTIFICADO varchar
+	CANTIDADCLASE decimal
+	UNIMEDCLASE varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	PESOUSADO decimal
+	CANTUSADA decimal
+	CANTEXITENCIA decimal
+	UMEXITENCIA varchar
+	CANTPARTIDA decimal
+	UMPARTIDA varchar
+	CLAVEBULTOS varchar
+	DESCBULTO varchar
+	CANTBULTOS int
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORUSADOMN decimal
+	VALORUSADOME decimal
+	NUMSOLICITUD varchar
+	PAGRENGLON varchar
+	FRACCIONIMPO varchar
+	ADVALOREMIMPO varchar
+	TIPOFRACIMPO varchar pk
+	FRACCIONAMERICANA varchar
+	SECTOR varchar
+	CANTALTERNA decimal
+	UMALTERNA varchar
+	FECHAVENC int
+}
+
+SSaldoSalidaSM {
+	REMISIONSALIDA varchar pk
+	FECHASALIDA int
+	NUMPARTE varchar
+	DESCRIPCIONE varchar
+	CANTUSADA decimal
+	CANTEXITENCIA decimal
+	UMEXITENCIA varchar
+	CANTPARTIDA decimal
+	UMPARTIDA varchar
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORUSADOMN decimal
+	VALORUSADOME decimal
+}
+
+SSaldosBultos {
+	FACTURAIMPO varchar
+	NUMPARTE varchar
+	CLASE varchar
+	PAISORIGEN varchar
+	TIPOFRACIMPO varchar
+	SECTOR varchar
+	PROCEDENCIA varchar
+	CANTBULTOS int
+	CLAVEBULTOS varchar
+	DESCBULTO varchar
+}
+
+SSaldosDetallado {
+	FACTURAIMPO varchar pk
+	NUMPARTE varchar
+	PAISORIGEN varchar
+	TIPOFRACIMPO varchar pk
+	SECTOR varchar
+	CAMPOCOMODIN varchar pk
+	PROCEDENCIA varchar pk
+	CANTEXISTENCIA decimal
+	CANTUSADA decimal
+}
+
+SSaldosReglaOctava {
+	FACTURAIMPO varchar pk
+	NUMPARTE varchar
+	PAISORIGEN varchar
+	TIPOFRACIMPO varchar pk
+	SECTOR varchar
+	PERMISOROCTAVA varchar pk
+	LINEA int pk
+	CANTEXITENCIA decimal
+	UNIMED varchar
+	CLASE varchar
+	FRACCIONIMPO varchar
+	FRACCIONROCTAVA varchar
+	VALORME decimal
+	PROCEDENCIA varchar pk
+	SISTEMA varchar pk
+}
+
+SSaldoTem {
+	FACTURAIMPO varchar pk
+	PEDIMENTOIMPO varchar
+	FECHAFACTURA int
+	SUBEMPRESA varchar
+	CLASE varchar
+	NUMPARTE varchar
+	DESCRIPCIONE varchar
+	PAISORIGEN varchar
+	ESNAFTA varchar
+	NOCERTIFICADO varchar
+	CANTIDADCLASE decimal
+	UNIMEDCLASE varchar
+	PESONETO decimal
+	PESOBRUTO decimal
+	PESOUSADO decimal
+	PESOBRUTOUSADO decimal
+	CANTUSADA decimal
+	CANTUSADADESP decimal
+	CANTEXITENCIA decimal
+	CANTGENDESP decimal
+	UMEXITENCIA varchar
+	CANTPARTIDA decimal
+	UMPARTIDA varchar
+	CLAVEBULTOS varchar
+	DESCBULTO varchar
+	CANTBULTOS int
+	VALORIMPOMN decimal
+	VALORIMPOME decimal
+	VALORUSADOMN decimal
+	VALORUSADOME decimal
+	NUMSOLICITUD varchar
+	VALORIVAMN decimal
+	VALORIVAME decimal
+	VALORIVAMNUSADO decimal
+	VALORIVAMEUSADO decimal
+	PAGRENGLON varchar
+	FRACCIONIMPO varchar
+	ADVALOREMIMPO varchar
+	TIPOFRACIMPO varchar pk
+	FRACCIONAMERICANA varchar
+	SECTOR varchar
+	CANTALTERNA decimal
+	UMALTERNA varchar
+	FECHAVENC int
+	MONTOIGI decimal
+	MONTOIGIUSADO decimal
+	FORMAPAGO varchar
+	PAGOIMPUESTO varchar
+	CANTAUXILIAR decimal
+	UMAUXILIAR varchar
+	VALORAUXILIARIMPOME decimal
+	ORDENCOMPRA varchar
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	ESREPARACION varchar
+	SALDOSIMPLOSION varchar
+	FECHAFACTURA_ISO datetime
+	FECHAVENC_ISO datetime
+	NUMPARTECOM varchar
+}
+
+SSeriesExpo {
+	CONSECUTIVO int pk
+	FACTURAEXPO varchar
+	LINEAEXPO int pk
+	RENGLON int pk
+	SERIEEXPO varchar
+	MODELOEXPO varchar
+	SUBMODELOEXPO varchar
+	MARCA tinyint
+	NUMIDEXPO varchar
+	MARCAEXPO varchar
+}
+
+SSisCMex {
+	CONSECUTIVO int pk
+	PREFIJOCM varchar
+	CONSECUTIVOCM varchar
+	PORPARTECLASEMEX varchar
+	PORPARTECLASEAME varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	FLETE decimal
+	PAISORIGENMEX tinyint
+	NUMPARTEMEX tinyint
+	FIRMAFMEX varchar
+	FRACCIONIMP tinyint
+	TIPOFRACCMEX tinyint
+	TASAFRACCMEX tinyint
+	UMEQUIVALENTEMEX tinyint
+	NUMPARTEAME tinyint
+	FRACCIONAME tinyint
+	PAISORIGENAME tinyint
+	UMEQUIVALENTEAME tinyint
+	FIRMAFAME varchar
+	IMPORDENCOMP tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	UMAUXILIARMEX tinyint
+	UMALTERNAMEX tinyint
+	TRANSPORTISTA varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	CLAVEBULTOS varchar
+	PACKINGORDENCOMPRA int
+	FIRMAELECTRONICA varchar
+	INCLUIRLINEADELPO int
+	LINEAPERSONAAA int
+	AGREGARVAENPRODTERMINADOS int
+	OCULTARFECHAHORA tinyint
+}
+
+SSisDef {
+	CONSECUTIVO int pk
+	PREFIJOIMPO varchar
+	CONSECUTIVOIMPO varchar
+	PORPARTECLASEMEX varchar
+	PORPARTECLASEAME varchar
+	PEDIMENTO varchar
+	TIPO varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	INCOTERM varchar
+	FLETE decimal
+	IDENTIFICADOR varchar
+	FIRMAFMEX varchar
+	FIRMAFAME varchar
+	CODIGOBARRAS tinyint
+	NUMPARTEMEX tinyint
+	NUMPARTEAME tinyint
+	FRACCIONIMP tinyint
+	TASAFRACCMEX tinyint
+	TIPOFRACCMEX tinyint
+	PAISORIGENMEX tinyint
+	UMEQUIVALENTEMEX tinyint
+	UMAUXILIARMEX tinyint
+	FRACCIONAME tinyint
+	PAISORIGENAME tinyint
+	UMEQUIVALENTEAME tinyint
+	IMPORDENCOMP tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	CANTLIMITE decimal
+	PESOLIMITE decimal
+	VALORLIMITE decimal
+	UMALTERNAMEX tinyint
+	RESTRINGEIMPOPT tinyint
+	PARTECOMPLEMENTARIAMEX tinyint
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	METVALOR varchar
+	TRANSPORTISTA varchar
+	AADUANALAME varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	PACKINGPEDCLAVE tinyint
+	PORORDENPOROCPACK varchar
+	ACTUALIZARPARTEPARTIDA tinyint
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	CLAVEBULTOS varchar
+	PARTECOMPLEMEXPARTIDA tinyint
+	CANTLIMITEMIN decimal
+	PESOLIMITEMIN decimal
+	VALORLIMITEMIN decimal
+	PACKINGORDENCOMPRA int
+	FIRMAELECTRONICA varchar
+	SOLICITARCONTRASENAADMINISTRADOR int
+	INCLUIRLINEADELPO int
+	LINEAPERSONAAA int
+	AGREGARVAENPRODTERMINADOS int
+	IMPRIMIRLOTE int
+	IMPRIMIRNUMENTRADA int
+	OCULTARFECHAHORA tinyint
+}
+
+SSisExpo {
+	TIPOFACTURA varchar
+	PORPARTECLASEMEX varchar
+	PORPARTECLASEAME varchar
+	PREFIJOEXPO varchar
+	CONSECUTIVOEXPO varchar
+	PEDIMENTO varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	VENDIDOPOR varchar
+	AADUANAL varchar
+	TIPO varchar
+	INCOTERM varchar
+	FLETE decimal
+	IDENTIFICADOR varchar
+	TIPOMONEDA varchar
+	MONEDA varchar
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	NUMPARTEMEX tinyint
+	PAISORIGENMEX tinyint
+	FRACCIONEXP tinyint
+	TASAFRACCMEX tinyint
+	COSTOUNITMEX tinyint
+	ORDENCOMPMEX tinyint
+	CONSFACMEX tinyint
+	UMEQUIVALENTEMEX tinyint
+	OCULTAREMPAQUEMEX tinyint
+	OCULTAREMPAQUEAME tinyint
+	COSTOUNITMPMEX tinyint
+	CODIGOBARRAS tinyint
+	PARTECOMPLEMENTARIAMEX tinyint
+	VALORDLLSMEXPESOS tinyint
+	CANTPNCODBAR tinyint
+	DTACEROCODBAR tinyint
+	FIRMAFMEX varchar
+	NUMPARTEAME tinyint
+	FIRMAFAME varchar
+	FRACCIONAME tinyint
+	PAISORIGENAME tinyint
+	ORDENCOMPAME tinyint
+	UMEQUIVALENTEAME tinyint
+	FDAINFORMACIONAME tinyint
+	PAISOPCAME tinyint
+	MUESTRAFREE tinyint
+	FRACCMEXDES tinyint
+	TIPOFRACCMEXDES tinyint
+	COLVALORDES tinyint
+	COLPESODES tinyint
+	DESCARGACLASE tinyint
+	DESCARGASUST tinyint
+	DESCARGADEF tinyint
+	VENTQUEUEACT tinyint
+	CODIGOSCAC tinyint
+	FORMADESPERDICIO varchar
+	CALVALORBASECOSTO tinyint
+	CALVABASECAPT tinyint
+	CALPESOBASEDESCARGA tinyint
+	CALEMPAQUEBASECAPT tinyint
+	OCULTCANTCONS tinyint
+	PREFIJOFRACCMULT tinyint
+	CANTLIMITE decimal
+	PESOLIMITE decimal
+	VALORLIMITE decimal
+	COSTAMEPAISPARTE tinyint
+	BASECOSTOMPOTOTAL varchar
+	UMEQUIVALENTEMEX2 tinyint
+	UMEQUIVALENTEAME2 tinyint
+	TOTALEQUIVMEX tinyint
+	TOTALEQUIVAME tinyint
+	INFOADICIONAL varchar
+	RESTRINGEEXPOMP tinyint
+	CALVATOTAGREMP varchar
+	ACTIVAADVPEDRTV1 tinyint
+	ASIGNAFRACC9801 tinyint
+	VALOREXCFRACC9801 decimal
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	SCRAPSOLONODUTY tinyint
+	DESCEXTRAAMEPARTES tinyint
+	INCAMBIOREGDESC tinyint
+	ESCAMBIOREGIMEN varchar pk
+	DESCNOCONTEMCANT tinyint
+	METVALOR varchar
+	TRANSPORTISTA varchar
+	AADUANALAME varchar
+	PESONETODESDIFFAC decimal
+	ENVIADOPORVENDIDOPOR varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	CLAVEBULTOS varchar
+	OCULTACOLVA tinyint
+	CALCCOSTOSAMEBASEMEX tinyint
+	PROVEEDOREXPORTADOR varchar
+	TIPOFRACCMEX tinyint
+	PARTECOMPLEMEXPARTIDA tinyint
+	VALIDACANTPARCANDES tinyint
+	CANTLIMITEMIN decimal
+	PESOLIMITEMIN decimal
+	VALORLIMITEMIN decimal
+	COSTOSAMEPAIS char
+	INCLUIRFRACAMEBIL tinyint
+	SOLICITARPSWDACTUAL tinyint
+	SOLICITARPSWDDESACTUAL tinyint
+	BUSCARSALDOSRECIENTES tinyint
+	PACKINGORDENVENTA int
+	IMPRIMIRORDENVENTA int
+	FIRMAELECTRONICA varchar
+	MPF int
+	VALORMPF decimal
+	COLCANTPORPESO int
+	PACKINGPEDCLAVE int
+	GENERAFACTURAIMD varchar
+	GENERAFACTURAIMDENBASEA varchar
+	SOLICITARCONTRASENAADMINISTRADOR int
+	INCLUIRLINEADELPO int
+	VALORPACKING1DLLS tinyint
+	TOMARVALORMEXENFACAME int
+	LINEAPERSONAAA int
+	CALAMEBASEMEXMP tinyint
+	CALAMEBASEMEXVA tinyint
+	CALAMEBASEMEXEMPAQUE tinyint
+	USARVAENFACTURAAMERICANA tinyint
+	ACTIVARFECHACORTESALDOS tinyint
+	FECHACORTESALDOS int
+	IMPRIMIRLOTE int
+	IMPRIMIRNUMENTRADA int
+	RESPALDARDESCARGAENDESCARGAM tinyint
+	OCULTARFECHAHORA tinyint
+	CALCULARVALORESAMERICANOSENBASEAPARTIDA tinyint
+	VALIDARESTATUSPED tinyint
+	DESCAPAIS tinyint
+}
+
+SSisImpo {
+	CONSECUTIVO int pk
+	PREFIJOIMPO varchar
+	PREFIJOCR varchar
+	CONSECUTIVOIMPO varchar
+	CONSECUTIVOCR int
+	PORPARTECLASEMEX varchar
+	PORPARTECLASEAME varchar
+	PEDIMENTO varchar
+	TIPO varchar
+	PROVEEDOR varchar
+	VENDIDOCONSIGNADO varchar
+	VENDIDOA varchar
+	ENVIADOTRANSFERIDO varchar
+	ENVIADOA varchar
+	AADUANAL varchar
+	INCOTERM varchar
+	FLETE decimal
+	IDENTIFICADOR varchar
+	NUMPARTEMEX tinyint
+	NUMPARTEAME tinyint
+	FIRMAFMEX varchar
+	FIRMAFAME varchar
+	CODIGOBARRAS tinyint
+	FRACCIONIMP tinyint
+	TASAFRACCMEX tinyint
+	TIPOFRACCMEX tinyint
+	PAISORIGENMEX tinyint
+	UMEQUIVALENTEMEX tinyint
+	UMAUXILIARMEX tinyint
+	PERPAGRENGLON tinyint
+	FRACCIONAME tinyint
+	PAISORIGENAME tinyint
+	UMEQUIVALENTEAME tinyint
+	IMPORDENCOMP tinyint
+	DECIMALESPESO tinyint
+	DECIMALESCANT tinyint
+	DECIMALESVALOR tinyint
+	DECIMALESCOSTO tinyint
+	TIPOMONEDA varchar
+	CLAVEMONEDA varchar
+	CANTLIMITE decimal
+	PESOLIMITE decimal
+	VALORLIMITE decimal
+	VALORLIMITEPAR decimal
+	UMALTERNAMEX tinyint
+	RESTRINGEIMPOPT tinyint
+	CONTROLREMESA varchar
+	REMESAINICIO smallint
+	REMESAFINAL smallint
+	LEYENDAFACAME varchar
+	CALCIGIBASECAPT tinyint
+	UMEQUIVALENTEMEX2 tinyint
+	UMEQUIVALENTEAME2 tinyint
+	PARTECOMPLEMENTARIAMEX tinyint
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	METVALOR varchar
+	TRANSPORTISTA varchar
+	AADUANALAME varchar
+	CONDUCTOR varchar
+	TRANSPORTE varchar
+	NUMTRANSPORTE varchar
+	PACKINGPEDCLAVE tinyint
+	PORORDENPOROCPACK varchar
+	ACTUALIZARPARTEPARTIDA tinyint
+	OBSERVACIONE varchar
+	OBSERVACIONI varchar
+	CLAVEBULTOS varchar
+	PARTECOMPLEMEXPARTIDA tinyint
+	CANTLIMITEMIN decimal
+	PESOLIMITEMIN decimal
+	VALORLIMITEMIN decimal
+	VALORLIMITEPARMIN decimal
+	PACKINGORDENCOMPRA int
+	FIRMAELECTRONICA varchar
+	SOLICITARCONTRASENAADMINISTRADOR int
+	INCLUIRLINEADELPO int
+	LINEAPERSONAAA int
+	AGREGARVAENPRODTERMINADOS int
+	IMPRIMIRLOTE int
+	IMPRIMIRNUMENTRADA int
+	OCULTARFECHAHORA tinyint
+}
+
+STipoMat {
+	CLAVE varchar pk
+	DESCRIPCION varchar
+	TIPOMAT varchar
+}
+
+STiposFactura {
+	CLAVE varchar pk
+	DESCRIPCION char
+	OBSERVACION char
+}
+
+sTLCS {
+	SYSID int pk
+	FRACCION varchar
+	PAIS varchar
+	ORDEN int
+	TASATXT varchar
+	TIPOTASA int
+	TASA1NUM decimal
+	FACTOR1 decimal
+	TASA2NUM decimal
+	FACTOR2 decimal
+	DOF char
+	NOTAS varchar
+}
+
+SVerBOM {
+	CONSECUTIVO int pk
+	VERSION int
+	NUMPARTE varchar
+	NUMPARTEBOM varchar
+	CANTIDAD decimal
+	UNIMED varchar
+	PROCEDENCIA varchar
+	CANTMP decimal
+	CANTDESP decimal
+	CANTMERMA decimal
+	CANTEQUIVALENTE decimal
+	UMEQUIVALENTE varchar
+	CANTDESPEQUI decimal
+	CANTMERMAEQUI decimal
+	DESCDESPAPARTADO tinyint
+	PORCENTAJEMP decimal
+	PORCENTAJEDESP decimal
+	PORCENTAJEMERMA decimal
+	TIPODESPMERMA varchar
+}
+
+SVerBOMEnc {
+	VERSION int pk
+	NUMPARTE varchar
+	FECHA int
+	IDENTIFICADOR varchar
+	FECHAFINAL int
+}
+
+sysdiagrams {
+	@ integer
+	\ integer
+	name integer
+	// integer
+	\ integer
+	@ integer
+	name integer
+	principal_id int
+	diagram_id int pk
+	version int
+	definition varbinary
+}
+
+SPartidasExpo {
+	CONSECUTIVO int
+	FACTURAEXPO varchar
+	FACTURAEXPO varchar
+	LINEA int
+	LINEA int
+	NUMPARTE varchar
+	CLASE varchar
+	CANTEXPO decimal
+	UNIMED varchar
+	PAISDESTINO varchar
+	CLAVEBULTOS varchar
+	CANTBULTOS int
+	DESCBULTOS varchar
+	PESONETO decimal
+	PESONETOKGS decimal
+	PESONETOLBS decimal
+	PESOBRUTO decimal
+	PESOBRUTOKGS decimal
+	PESOBRUTOLBS decimal
+	DESCRIPCIONPARTE varchar
+	DESCRIPCIONCLASE varchar
+	COSTOUNITARIOMC decimal
+	COSTOUNITARIOME decimal
+	COSTOVENTAME decimal
+	VALORTOTALME decimal
+	VALORMPTEMPME decimal
+	VALORAGREME decimal
+	VALORMPDEFME decimal
+	IVAEXPOME decimal
+	COSTOVENTAMN decimal
+	VALORTOTALMN decimal
+	VALORMPTEMPMN decimal
+	COSTOUNITARIOMN decimal
+	VALORAGREMN decimal
+	VALORMPDEFMN decimal
+	IVAEXPOMN decimal
+	CANTBULCONT smallint
+	DESCCONTENEDOR varchar
+	ORDENCOMPRA varchar
+	CANTEXISTENCIA decimal
+	UNIMEDEXISTENCIA varchar
+	INFOADICIONESP varchar
+	INFOADICIONING varchar
+	FRACCIONEXPO varchar
+	ADVALOREMEXPO varchar
+	TIPOFRACEXPO varchar
+	VERSIONBILL int
+	FRACCIONTLCAN varchar
+	ADVTLCAN decimal
+	VALORTLCAN decimal
+	VALORNOORIGINARIOME decimal
+	VALORORIGINARIOME decimal
+	MONTOIGIME decimal
+	MONTOEXCENTOME decimal
+	PAISORIGEN varchar
+	TIENECO varchar
+	FACTURASCRAP varchar
+	CONSECUTIVODES int
+	COSTOUNICOMERCIAL decimal
+	VALORTOTALCOMERCIAL decimal
+	PROCSCRAP varchar
+	VALORAGREMC decimal
+	VALORADUANASMN decimal
+	VALORADUANASME decimal
+	SECTOR varchar
+	PAISOPCIONAL varchar
+	ENVIADOA varchar
+	VALEMPAQUENACMN decimal
+	VALEMPAQUENACME decimal
+	VALEMPAQUENACMC decimal
+	VALEMPAQUEUSME decimal
+	PAGOIMPUESTO varchar
+	FORMAPAGO varchar
+	ADVALORMELINEAPED decimal
+	ADVALORMNLINEAPED decimal
+	PERMISOSPED varchar
+	LINEAPED int
+	REVISARDESP varchar
+	CANTEXPOUMA decimal
+	CLAVEUMA varchar
+	VALORTOTALMC decimal
+	VALORMPTEMPMC decimal
+	VALORMPDEFMC decimal
+	IVAEXPOMC decimal
+	APARTADOCTM char
+	NUMPARTECOM varchar
+	VERSIONBOM int
+	METVALOR varchar
+	METVALORVALORDETERMINADO decimal
+	METVALORMOTIVODEUSO varchar
+	VALIDACIONZERO int
+	VALIDACIONUNO int
+	NUMERODEGUIA varchar
+	CLIENTEASIGNADO varchar
+	NUMERODEENTRADA varchar
+	LOCALIZACION varchar
+	TOMARCOMOPT int
+	FRACAMESELEXTRA varchar
+	LOTE varchar
+	PALLET2 smallint
+}
