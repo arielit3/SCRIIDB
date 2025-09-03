@@ -1,0 +1,570 @@
+
+TableGroup "Aduanal"{
+	GAAduanal
+	GAAduanalPersonal
+	GAduanaSec
+	GConceptosAAduanal
+	GDestinoAduanero
+	GUMAduana
+
+}
+TableGroup "General"{
+	GAccesos
+	GAccesosModulos
+	GClientesPro
+	GCodigosFCC
+	GCodigosFDA
+	GCodigosProductoCP
+	GConceptos
+	GConceptosClasif
+	GConfigReportes
+	GConfigTablas
+	GContenedores
+	GConversiones
+	Gdestruccion
+	GDivisionPeligro
+	GDotInformation
+	GEmails
+	GEmpresa
+	GEncAnexo
+	GEquivalenteEnc
+	GFacProforma
+	GFiltros
+	GFirmas
+	GFormaPago
+	GIncoterm
+	GINPC
+	GLeyendas
+	GMetValor
+	gMSSQLFile
+	GNivelesSeguridad
+	GNivelesSeguridadTablas
+	GPrevalidadores
+	GProcesos
+	GSIAA
+	GSisManifiesto
+	GSisMultiples
+	GSQLFile
+	GSQLFile2
+	GSQLFile3
+	GSubEmpresa
+	GUMAme
+	GUMOMA
+	GUsuarios
+	sHistoricoReit
+
+}
+TableGroup "Sin Asignar"{
+	GAgencyTariffCodes
+	GAnexo22App3
+	GArchivosConsecutivos
+	GArchivosDescargaSifra
+	GArchivosSIAA
+	GBitacora
+	GBotonLeyendas
+	GBultos
+	GCatErrores
+	GCatErroresClas
+	GCertOrigen
+	QAssetTag
+	QClaAct
+	QClasePermiso
+	QEqeMaq
+	QEqiDef
+	QEqiMaq
+	QEqiMaqRep
+	QInfDepre
+	QNiveles
+	QPermiso
+	QPermisoClase
+	QPermisoPR
+	QPermisoSECON
+	QRepMovimientos
+	QSisCMex
+	QSisDef
+	QSisExpo
+	QSisExpoRep
+	QSisGen
+	QSisImpo
+	QTipoActFijo
+	QTiposFactura
+	SAceesos
+	sAladi2
+	sArchivosDescargados
+	sArchivosProcesados
+	SBackFlashPL
+	SBOMVer
+	SClasePermiso
+	SClases
+	SComprasMexID
+	SCTM
+	SImplosion
+	SMatBOMClase
+	SMermaDesp
+	SModificaciones
+	SPackingList
+	SPermisoSECON
+	sProsec
+	sRCG2
+	SRegulaciones
+	sRequisitoPrevio
+	SSisCMex
+	SSisDef
+	SSisExpo
+	SSisGen
+	SSisImpo
+	STipoMat
+	sTLCS
+
+}
+TableGroup "Pedimentos"{
+	GClavePed
+	GClavePedRegimen
+	GRegimenPed
+	PedimentosAmericanos
+	QPedimentos
+	QPedimentosAA
+	QPedimentosConcep
+	SIdentificadoresPedimento
+	SPedimentos
+	SPedimentosAA
+	SPedimentosConcep
+	SPedimentosEDocument
+
+}
+TableGroup "Cobranza"{
+	GConCobranza
+
+}
+TableGroup "Transporte"{
+	GConductor
+	GManifCoductor
+	GModTransporte
+	GTipoTrailer
+	GTipoTransportes
+	GTrailers
+	GTransportes
+	Gtransportista
+
+}
+TableGroup "Documentos"{
+	GDocumentosDigital
+	GTipoDoc
+	GTipoDocDigital
+
+}
+TableGroup "Dodas"{
+	gDoda
+
+}
+TableGroup "Facturacion"{
+	GEncFacturas
+	GEquivPartidas
+	GErroresFac
+	GParFacturas
+	GPartidasCO
+	GRelacionFacturas
+	GRelFacFacturas
+	QFacExp
+	QFacExpCobranza
+	QFacExpRep
+	QFacImp
+	QFacImpCobranza
+	QFacImpDef
+	QFacImpRep
+	SFacEntradaSM
+	SFacEnviaCTM
+	SFacExp
+	SFacExpCobranza
+	SFacImp
+	SFacImpCobranza
+	SFacOrdenVenta
+	SFacReciboCTM
+	SFacRep
+	SFacSalidaSM
+	SPartidasCM
+	SPartidasEntradaSM
+	SPartidasEnviaCTM
+	SPartidasExpo
+	SPartidasImpo
+	SPartidasImposion
+	SPartidasPackingList
+	SPartidasReciboCTM
+	SPartidasRep
+	SPartidasSalidaSM
+	STiposFactura
+
+}
+TableGroup "Localizacion"{
+	GEstados
+	GPaises
+	GPaisesGrupoSifra
+	GPaisReglaOct
+	GPrecintos
+	GPuertoEnt
+	GRecintos
+	GRutasGenerales
+	GSectores
+	QLocalizacion
+	QLocalizacionExt
+	SLocalizacion
+
+}
+TableGroup "Expedientes"{
+	GExpedienteElecEnc
+	GExpedienteElecPartidas
+
+}
+TableGroup "Fracciones"{
+	GFracAme
+	GFraccionesHistorico
+	GFracEUACan
+	GFracROctava
+	SFracAmeFact
+	SFracAmeParte
+	sFracciones
+	sFracciones_USA
+	sFraccionesAnteriores
+	SFraccionesAnterioresN
+	sFraccionesCortas
+	sFraccionesResumidas
+
+}
+TableGroup "Identificadores"{
+	GIdentificadores
+	GIdentificadoresPartidas
+
+}
+TableGroup "Manifiestos"{
+	GManifestacionAnexo
+	GManifestacionConcepto
+	GManifiesto
+
+}
+TableGroup "Anexos"{
+	GParAnexo
+	GPeriodoAnexo31
+
+}
+TableGroup "Permisos"{
+	GPermisoReglaOct
+
+}
+TableGroup "Monedas"{
+	GTipoCambio
+	GTipoCambioMM
+	GTipoMultiMoneda
+	GTiposMoneda
+
+}
+TableGroup "Unidades"{
+	GUniMed
+	GUniMedACE
+	GUniMedida
+
+}
+TableGroup "Configuracion"{
+	QConfiguracion
+	SConfigFTP
+	SConfiguracion
+
+}
+TableGroup "Partes"{
+	QPartes
+	SParPruSuf
+	SParteCliente
+	SPartePais
+	SPartes
+
+}
+TableGroup "Series"{
+	QSeriesDef
+	QSeriesExpo
+	QSeriesExpoRep
+	QSeriesImpo
+	QSeriesImpoRep
+	SSeriesExpo
+
+}
+TableGroup "Descargas"{
+	SDescargaCTM
+	SDescargaD
+	SDescargaM
+	SDescargaMerDes
+	SDescargaR
+	SDescargaS
+	SDescargaSM
+	SDescargaT
+
+}
+TableGroup "nan"{
+	SMatBOM
+
+}
+TableGroup "Saldos"{
+	SSaldoCTM
+	SSaldoDef
+	SSaldoRep
+	SSaldoSalidaSM
+	SSaldosBultos
+	SSaldosDetallado
+	SSaldosReglaOctava
+	SSaldoTem
+
+}
+TableGroup "SCAII / SCAFF"{
+	GAAduanal
+	GAAduanalPersonal
+	GAccesos
+	GAccesosModulos
+	GAduanaSec
+	GAgencyTariffCodes
+	GAnexo22App3
+	GArchivosConsecutivos
+	GArchivosDescargaSifra
+	GArchivosSIAA
+	GBitacora
+	GBotonLeyendas
+	GBultos
+	GCatErrores
+	GCatErroresClas
+	GCertOrigen
+	GClavePed
+	GClavePedRegimen
+	GClientesPro
+	GCodigosFCC
+	GCodigosFDA
+	GCodigosProductoCP
+	GConceptos
+	GConceptosAAduanal
+	GConceptosClasif
+	GConCobranza
+	GConductor
+	GConfigReportes
+	GConfigTablas
+	GContenedores
+	GConversiones
+	GDestinoAduanero
+	Gdestruccion
+	GDivisionPeligro
+	GDocumentosDigital
+	GDotInformation
+	GEmails
+	GEmpresa
+	GEncAnexo
+	GEncFacturas
+	GEquivalenteEnc
+	GEquivPartidas
+	GErroresFac
+	GEstados
+	GExpedienteElecEnc
+	GExpedienteElecPartidas
+	GFacProforma
+	GFiltros
+	GFirmas
+	GFormaPago
+	GFracAme
+	GFraccionesHistorico
+	GFracEUACan
+	GFracROctava
+	GIdentificadores
+	GIdentificadoresPartidas
+	GIncoterm
+	GINPC
+	GLeyendas
+	GManifCoductor
+	GManifestacionAnexo
+	GManifestacionConcepto
+	GManifiesto
+	GMetValor
+	GModTransporte
+	gMSSQLFile
+	GNivelesSeguridad
+	GNivelesSeguridadTablas
+	GPaises
+	GPaisesGrupoSifra
+	GPaisReglaOct
+	GParAnexo
+	GParFacturas
+	GPartidasCO
+	GPeriodoAnexo31
+	GPermisoReglaOct
+	GPrecintos
+	GPrevalidadores
+	GProcesos
+	GPuertoEnt
+	GRecintos
+	GRegimenPed
+	GRelacionFacturas
+	GRelFacFacturas
+	GRutasGenerales
+	GSectores
+	GSIAA
+	GSisManifiesto
+	GSisMultiples
+	GSQLFile
+	GSQLFile2
+	GSQLFile3
+	GSubEmpresa
+	GTipoCambio
+	GTipoCambioMM
+	GTipoDoc
+	GTipoDocDigital
+	GTipoMultiMoneda
+	GTiposMoneda
+	GTipoTrailer
+	GTipoTransportes
+	GTrailers
+	GTransportes
+	Gtransportista
+	GUMAduana
+	GUMAme
+	GUMOMA
+	GUniMed
+	GUniMedACE
+	GUniMedida
+	GUsuarios
+	PedimentosAmericanos
+
+}
+TableGroup "-"{
+	gDoda
+
+}
+TableGroup "SCAFF"{
+	QAssetTag
+	QClaAct
+	QClasePermiso
+	QConfiguracion
+	QEqeMaq
+	QEqiDef
+	QEqiMaq
+	QEqiMaqRep
+	QFacExp
+	QFacExpCobranza
+	QFacExpRep
+	QFacImp
+	QFacImpCobranza
+	QFacImpDef
+	QFacImpRep
+	QInfDepre
+	QLocalizacion
+	QLocalizacionExt
+	QNiveles
+	QPartes
+	QPedimentos
+	QPedimentosAA
+	QPedimentosConcep
+	QPermiso
+	QPermisoClase
+	QPermisoPR
+	QPermisoSECON
+	QRepMovimientos
+	QSeriesDef
+	QSeriesExpo
+	QSeriesExpoRep
+	QSeriesImpo
+	QSeriesImpoRep
+	QSisCMex
+	QSisDef
+	QSisExpo
+	QSisExpoRep
+	QSisGen
+	QSisImpo
+	QTipoActFijo
+	QTiposFactura
+
+}
+TableGroup "SCAII"{
+	SAceesos
+	SBackFlashPL
+	SBOMVer
+	SClasePermiso
+	SClases
+	SComprasMexID
+	SConfigFTP
+	SConfiguracion
+	SCTM
+	SDescargaCTM
+	SDescargaD
+	SDescargaM
+	SDescargaMerDes
+	SDescargaR
+	SDescargaS
+	SDescargaSM
+	SDescargaT
+	SFacEntradaSM
+	SFacEnviaCTM
+	SFacExp
+	SFacExpCobranza
+	SFacImp
+	SFacImpCobranza
+	SFacOrdenVenta
+	SFacReciboCTM
+	SFacRep
+	SFacSalidaSM
+	SFracAmeFact
+	SFracAmeParte
+	SFraccionesAnterioresN
+	sHistoricoReit
+	SIdentificadoresPedimento
+	SImplosion
+	SLocalizacion
+	SMatBOM
+	SMatBOMClase
+	SMermaDesp
+	SModificaciones
+	SPackingList
+	SParPruSuf
+	SParteCliente
+	SPartePais
+	SPartes
+	SPartidasCM
+	SPartidasEntradaSM
+	SPartidasEnviaCTM
+	SPartidasExpo
+	SPartidasImpo
+	SPartidasImposion
+	SPartidasPackingList
+	SPartidasReciboCTM
+	SPartidasRep
+	SPartidasSalidaSM
+	SPedimentos
+	SPedimentosAA
+	SPedimentosConcep
+	SPedimentosEDocument
+	SPermisoSECON
+	SRegulaciones
+	SSaldoCTM
+	SSaldoDef
+	SSaldoRep
+	SSaldoSalidaSM
+	SSaldosBultos
+	SSaldosDetallado
+	SSaldosReglaOctava
+	SSaldoTem
+	SSeriesExpo
+	SSisCMex
+	SSisDef
+	SSisExpo
+	SSisGen
+	SSisImpo
+	STipoMat
+	STiposFactura
+	sTLCS
+
+}
+TableGroup "Sitar"{
+	sAladi2
+	sArchivosDescargados
+	sArchivosProcesados
+	sFracciones
+	sFracciones_USA
+	sFraccionesAnteriores
+	sFraccionesCortas
+	sFraccionesResumidas
+	sProsec
+	sRCG2
+	sRequisitoPrevio
+
+}

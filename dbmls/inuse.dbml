@@ -1,0 +1,6565 @@
+Table GAAduanal {
+  CLAVEAA varchar [pk]
+  NOMBRE varchar
+  DIRECCION varchar
+  CODIGOPOSTAL varchar
+  CIUDAD varchar
+  ESTADO varchar [ref: > GEstados.CLAVEM3]
+  TELEFONO varchar
+  FAX varchar
+  EMAIL varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  RFC varchar
+  CURP varchar
+  PUESTO varchar
+  PATENTE varchar
+  EMPRESA varchar
+  CONTACTO varchar
+  RUTAARCHCER varchar
+  RUTAARCHKEY varchar
+  CLAVEACCESO varchar
+  FORMAGENFIEL varchar
+  RUTALEERARCHAAFIRMA varchar
+  RUTADEPARCHIVO varchar
+  CLAVEACCESOFIEL varchar
+  USUARIOWEBSERVICEVU varchar
+  CLAVEACCESOWEBSERVICEVU varchar
+  EMAILVU varchar
+  TIPOFIGURAVU varchar
+  RUTAARCHIVOSXML varchar
+  RFCCONSULTA varchar
+  RUTAARCHCERDODA varchar
+  RUTAARCHKEYDODA varchar
+  USUARIOWEBSERVICEDODA varchar
+  CLAVEACCESOWEBSERVICEDODA varchar
+  CLAVEACCESOFIELDODA varchar
+  RUTAARCHIVOSXMLDODA varchar
+}
+Table GAAduanalPersonal {
+  CLAVEAA varchar [ref: > GAAduanal.CLAVEAA]
+  LINEA int [pk]
+  NOMBRE varchar
+  RFC varchar
+  CURP varchar
+  PUESTO varchar
+  PATENTE varchar
+  NOMBRES varchar
+  APELLIDOPATERNO varchar
+  APELLIDOMATERNO varchar
+  EMAIL varchar
+}
+
+Table GAccesos {
+  CONSECUTIVO int [pk]
+  FECHAINICIAL int
+  FECHAFINAL int
+  HORAINICIAL int
+  HORAFINAL int
+  HORADEUSO int
+  MAQUINA varchar
+  IP varchar
+  ESTADO varchar
+  SISTEMA varchar
+}
+
+Table GAccesosModulos {
+  CONSECUTIVO int [pk]
+  FECHAINICIAL int
+  FECHAFINAL int
+  HORAINICIAL int
+  HORAFINAL int
+  HORADEUSO int
+  MAQUINA varchar
+  IP varchar
+  ESTADO varchar
+  SISTEMA varchar
+  MODULO varchar
+  INDENTIFICADOR varchar
+}
+
+Table GAduanaSec {
+  ADUANASECCION varchar [pk]
+  NOMBRE varchar
+}
+
+Table GAgencyTariffCodes {
+  CONSECUTIVO int [pk]
+  TARIFFFLAGCODE varchar
+  AGENCYCODE varchar
+  REQUIREDMAYBEREQUIRED varchar
+  PROGRAMCODE varchar
+  TARIFFFLAGCODEDEFINITION varchar
+}
+
+Table GAnexo22App3 {
+  CLAVE varchar [pk]
+  METODOTRANSPORTE varchar
+  TIPOFECHAPAGO varchar
+}
+
+Table GArchivosConsecutivos {
+  ARCHIVO varchar [pk]
+  CONSECUTIVO int
+}
+
+Table GArchivosDescargaSifra {
+  ARCHIVO varchar [pk]
+  FECHA int
+  TIPO char
+}
+
+Table GArchivosSIAA {
+  ARCHIVO varchar [pk]
+  MEDIDA int
+  FECHA int
+  HORA int
+  NUMFACTURA varchar
+  TIPO varchar
+  ESTATUS varchar
+  FOLDER_LLEGADA_FTP varchar
+}
+
+Table GBitacora {
+  SYSID int [pk]
+  REFERENCIA varchar
+  PROCEDIMIENTO varchar
+  MOVIMIENTO varchar
+  USUARIO varchar
+  FECHA int
+  HORA int
+  SISTEMA varchar
+}
+
+Table GBotonLeyendas {
+  NUMBOTON tinyint [pk]
+  BOTONLEYENDA varchar
+  BOTONLEYENDA2 varchar
+}
+
+Table GBultos {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+  DESCRIPCIONI varchar
+  PESOUNI decimal
+  PLURALES varchar
+  PLURALIN varchar
+  CLAVEACE varchar [ref: > GUniMedACE.CLAVEACE]
+  CLAVEAAMEX varchar [ref: > GAAduanal.CLAVEAA]
+}
+
+Table GCatErrores {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+  CLASIFICACION varchar
+}
+
+Table GCatErroresClas {
+  CLASIFICACION varchar [pk]
+  NIVEL varchar
+}
+
+Table GCertOrigen {
+  NUMERO varchar [pk]
+  EXPORTADOR varchar
+  FECHAINICIO int
+  FECHAFINAL int
+  PRODUCTOR varchar
+  IMPORTADOR varchar
+  EMPRESA varchar
+  NOMBRE varchar
+  CARGO varchar
+  FECHAGEN int
+  TELEFONO varchar
+  FAX varchar
+  TIPOFRACCION varchar
+  SISTEMA varchar
+  TAXID1 varchar
+  TAXID2 varchar
+  TAXID3 varchar
+  CORREOELECTRONICO varchar
+  NUMEROEMBARQUE varchar
+  CLIENTEASIGNAR varchar
+  NUMERODEFACTURA varchar
+}
+
+Table GClavePed {
+  CLAVEPED varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GClavePedRegimen {
+  CONSECUTIVO int [pk]
+  CLAVEPED varchar [ref: > GClavePed.CLAVEPED]
+  REGIMENPED varchar [ref: > GRegimenPed.REGIMENPED]
+  TIPO varchar
+}
+
+Table GClientesPro {
+  TIPOEXTNAC varchar
+  CLIENTE varchar [pk]
+  NOMBRE varchar
+  RFC varchar
+  CALLES varchar
+  NUMEXT varchar
+  NUMINT varchar
+  CODIGOPOSTAL varchar
+  COLONIA varchar
+  CIUDAD varchar
+  ESTADO varchar [ref: > GEstados.CLAVEM3]
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  TELEFONO varchar
+  NUMFAX varchar
+  EMAIL varchar
+  CURP varchar
+  CLIENTE_O_PROV varchar
+  PROGRAMA varchar
+  NUMEROPROGRAMA varchar
+  PROSEC tinyint
+  AUTORIZACIONPROSEC varchar
+  FECHAAUTSECON int
+  MANUFACTERID varchar
+  TAXID varchar
+  BROKER varchar
+  BROKERIMPO varchar
+  CLAVETRANSFER varchar
+  CLAVEWEB varchar
+  TRASFORMASUBMAQ varchar
+  AUTORIZACIONSECON varchar
+  PROPORCIONAPLICADA decimal
+  VINCULACION varchar
+  ESEMPRESACERTIFICADA varchar
+  REGISTROEMPCERT varchar
+  INFORMACIONEXTRA varchar
+  CONTACTO varchar
+  NUMAUTDONACION varchar
+  NOMBRECORTO varchar
+  ESPROVNACIONAL varchar
+  MUNICIPIO varchar
+  CTPAT_SVI varchar
+  RESPONSABLE varchar
+  PUESTO varchar
+  HABILITADODESAHABILITADO tinyint
+  NUMREGLTRIBUTARIO varchar
+  REFERENCIA varchar
+  INCOTERM varchar
+  SERVICIOSUBMAQ tinyint
+  FECHASAUTSE int
+  NUMAUTSE varchar
+}
+
+Table GCodigosFCC {
+  CLAVEFCC varchar [pk]
+  CODIGOFCC varchar
+  MARCA varchar
+  CONDICIONIMP varchar
+  MODELO varchar
+  INSPECCION tinyint
+  REQUERIMIENTO varchar
+}
+
+Table GCodigosFDA {
+  CLAVEFDA varchar [pk]
+  DESCRIPCION varchar
+  CODIGOPRO varchar
+  REQUERIMIENTOS varchar
+  MANUFACTERID varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  STATUSALMACEN varchar
+  CODIGOAFI1 varchar
+  CALIFAFI1 varchar
+  CODIGOAFI2 varchar
+  CALIFAFI2 varchar
+  CODIGOAFI3 varchar
+  CALIFAFI3 varchar
+  CODIGOAFI4 varchar
+  CALIFAFI4 varchar
+  CODIGOAFI5 varchar
+  CALIFAFI5 varchar
+  FDA01PRODCODE varchar
+  FDA01COMODITYDESC varchar
+  FDA01BRANDNAME varchar
+  FDA01DISCLAIMER varchar
+  FDA01PGMCODE varchar
+  FDA01PROCCODE varchar
+  FDA01INTNDUSECODE varchar
+  FDA01INTNDUSEDESC varchar
+  FDA01TEMPQUAL varchar
+  FDA01TEMPTYPE varchar
+  FDA01TEMPDEGREES decimal
+  FDA01TEMPNEGATIVE varchar
+  FDA01TEMPLOCATION varchar
+  FDA01QUANTITY1 decimal
+  FDA01QTYUOM1 varchar
+  FDA01QUANTITY2 decimal
+  FDA01QTYUOM2 varchar
+  FDA01QUANTITY3 decimal
+  FDA01QTYUOM3 varchar
+  FDA01LACFCONT1 varchar
+  FDA01LACFCONT2 varchar
+  FDA01LACFCONT3 varchar
+  FDA01CTRYPROD varchar
+  FDA01CTRYSOURCE varchar
+  FDA01CTRYGROWTH varchar
+  FDA01CTRYREFUSAL varchar
+  FDA01CTRYSHIPPING varchar
+  FDA01MANUFKEY varchar
+  FDA01SHIPPERKEY varchar
+  FDA01UITCONSKEY varchar
+  FDA01FDAIMPKEY varchar
+  FDA01PNSUBMKEY varchar
+  FDA01CONSOLKEY varchar
+  FDA01PRODUCERKEY varchar
+  FDA01OWNERKEY varchar
+  FDA01DELIPARTYKEY varchar
+  FDA01GROWERKEY varchar
+  FDA01DEVINIIMPKEY varchar
+  FDA01PNTRANSMITTERKEY varchar
+}
+
+Table GCodigosProductoCP {
+  SYSID int
+  CODIGO varchar
+  DESCRIPCION varchar
+  PALABRASSIMILARES varchar
+  MATPELIGROSO varchar
+  FECHAINICIOVIGENCIA int
+  FECHAFINVIGENCIA int
+}
+
+Table GConceptos {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+  DESCRIPCIONINGLES varchar
+  DESCRIPCIONDETALLADA varchar
+  PRIORIDAD int
+  PRIORIDADAME int
+  PRIMERTOTAL tinyint
+  TIPO varchar
+  SEIMPRIME tinyint
+  SECCION int
+  CLASIFICACION varchar [ref: > GConceptosClasif.CLASIFICACION]
+}
+
+Table GConceptosAAduanal {
+  CLAVEAA varchar [ref: > GAAduanal.CLAVEAA]
+  CONCEPTO varchar
+  IMPORTE decimal
+  PRIORIDAD int
+}
+
+Table GConceptosClasif {
+  CLASIFICACION varchar [pk]
+}
+
+Table GConCobranza {
+  CONCEPTO varchar [ref: > GConceptos.CLAVE]
+}
+
+Table GConductor {
+  CLAVETRANS varchar [ref: > GTransportista.CLAVETRANS]
+  LINEA int [pk]
+  CONDUCTOR varchar
+  NUMLICENCIA varchar
+  IDLINEAEXPRESS varchar
+  IDENTIFICACIONACE varchar
+  FECHANAC int
+  SEXO varchar
+  PAISNACIMIENTO varchar [ref: > GPaises.CLAVEM3]
+  AUTTRANSMATPELIGROSO varchar
+  ESTADOMATPELIGROSO varchar
+  NOMBRE varchar
+  APELLIDOPATERNO varchar
+  CLAVEID1 varchar
+  NUMEROID1 varchar
+  ESTADOID1 varchar [ref: > GEstados.DESCRIPCION]
+  PAISID1 varchar [ref: > GPaises.CLAVEM3]
+  CLAVEID2 varchar
+  NUMEROID2 varchar
+  ESTADOID2 varchar [ref: > GEstados.DESCRIPCION]
+  PAISID2 varchar [ref: > GPaises.CLAVEM3]
+  NUMGAFETE varchar
+  CLASE varchar
+  NUMGAFETEUNICO varchar
+}
+
+Table GConfigReportes {
+  SISTEMA varchar [pk]
+  MODULO varchar [pk]
+  REPORTE varchar [pk]
+  IMPRIMIR tinyint
+  VENTANALLAMAR varchar
+  TIPOFACTURA varchar
+  TIPOUM varchar
+  TIPOMONEDA varchar
+  TIPOPESO varchar
+  IMPRIMIRAGEN tinyint
+  IMPRIMIRTRANSPOR tinyint
+  IMPRIMIRIMPORTADOR tinyint
+  IMPRIMIRAA tinyint
+  CANTCOPIAS int
+  GENPDF tinyint
+}
+
+Table GConfigTablas {
+  TABLA varchar [pk]
+  CAMPO varchar [pk]
+  VENTANA varchar
+}
+
+Table GContenedores {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GConversiones {
+  CLAVEUNI1 varchar [pk]
+  FACTORCONV decimal
+  CLAVEUNI2 varchar [pk]
+}
+
+Table GDestinoAduanero {
+  ID varchar [pk]
+  CLAVE varchar
+  DESTINOADUANERO varchar
+}
+
+Table GDestruccion {
+  OFICIO varchar [pk]
+  FECHADESTRUCCION int
+}
+
+Table GDivisionPeligro {
+  CLASEDEPELIGRO varchar
+  DESCRIPCION varchar
+}
+
+Table GDocumentosDigital {
+  CONSECUTIVO int [pk]
+  IDTIPODOCUMENTO varchar [ref: > GTipoDocDigital.TIPODOCUMENTO]
+  NOMBREARCHIVO varchar
+  EDOCUMENT varchar
+  FECHADIGITALIZACION int
+  INDENTIFICADOR varchar
+  NUMOPERACIONVU varchar
+  MODULO varchar
+  CLAVEAA varchar [ref: > GAAduanal.CLAVEAA]
+  DESCRIPCION varchar
+  RUTAENVIOXML varchar
+  RUTARESPUESTAXML varchar
+  RFCCONSULTA varchar
+  CADENAORIGINALDOC varchar
+  SELLODIGITALSOLICITANTE varchar
+  SELLODIGITALVU varchar
+  FOLIOSOLICITUD varchar
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+}
+
+Table gDODA {
+  SYSID int [pk]
+  NOINTEGRACION varchar
+  FECHADODA int
+  HORADODA int
+  ADUANADESPACHO varchar
+  ADUANASECCIONES varchar
+  PATENTE varchar
+  PEIDMENTOS varchar [ref: > SPedimentos.PEDIMENTO]
+  CAAT varchar
+  IDENTIFICACIONTRANSPORTE varchar
+  FAST_ID varchar
+  TIPOOPERACION varchar
+  SELECCIONADO tinyint
+  USUARIOSELECCIONO varchar
+  ULTIMOUSUARIO varchar
+  RESPONSABLE varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  REMESAS varchar
+  TIPOPEDIMENTO varchar
+  CADENAORIGINAL varchar
+  NUMEROSERIE char
+  FIRMAELECTRONICA varchar
+  NOTRANSACCION varchar
+  ESTATUS varchar
+  LINQSATQR varchar
+  SAT_CERTIFICADO char
+  SAT_SELLODIGITAL text
+  PATHXMLDODAENVIO varchar
+  PATHXMLDODARESPUESTA varchar
+  SAT_CADENAORIGINAL text
+  DESPACHOADUANERO int
+  NUMEROGAFETEUNICO varchar
+}
+
+Table GDotInformation {
+  CLAVEDOT varchar [pk]
+  BOXNUMBER varchar
+  PGMCODE varchar
+  INTNDUSECODE varchar
+  INTNDUSEDESC varchar
+  DISCLAIMER varchar
+  CATTYPECODE varchar
+  CATCODE varchar
+  BRANDNAME varchar
+  MODEL varchar
+  MANUFMONTH varchar
+  MANUFYEAR varchar
+  MODELYEAR varchar
+  DRIVESIDE varchar
+  EMBASSYCO varchar
+  PASSPORTCO varchar
+  PASSPORTNO varchar
+  SURETYCODE varchar
+  BONDSERIAL varchar
+  BONDQUAL varchar
+  BONDAMT int
+  FABMANUFKEY varchar
+  RETDISTKEY varchar
+  CERTINDKEY varchar
+  OWNERKEY varchar
+  OEIKEY varchar
+}
+
+Table GEmails {
+  SYSID int [pk]
+  EMAIL varchar
+  NOMBRE varchar
+  EMPRESA varchar
+  TELEFONOS varchar
+  CATEGORIA varchar
+}
+
+Table GEmpresa {
+  CONSECUTIVO int [pk]
+  NOMBRE varchar
+  RFC varchar
+  CALLES varchar
+  CALLESIND varchar
+  NUMEXT varchar
+  NUMEXTIND varchar
+  CODIGOPOSTAL varchar
+  CODIGOPOSTALIND varchar
+  COLONIA varchar
+  COLONIAIND varchar
+  CIUDAD varchar
+  CIUDADIND varchar
+  ESTADO varchar [ref: > GEstados.DESCRIPCION]
+  ESTADOIND varchar
+  TELEFONO varchar
+  TELEFONOIND varchar
+  NUMFAX varchar
+  NUMFAXIND varchar
+  EMAIL varchar
+  EMAILIND varchar
+  ACTPREPONDERANTE varchar
+  PROGRAMA varchar
+  NUMEROPROGRAMA varchar
+  PROSEC tinyint
+  AUTORIZACIONPROSEC varchar
+  SECTOR1 varchar [ref: > GSectores.CLAVE]
+  SECTOR2 varchar [ref: > GSectores.CLAVE]
+  SECTOR3 varchar [ref: > GSectores.CLAVE]
+  MANUFACTERID varchar
+  BROKER varchar
+  RESPONSABLE varchar
+  RFCRESPONSABLE varchar
+  RESPPATERNO varchar
+  RESPMATERNO varchar
+  RESPNOMBRE varchar
+  PUESTO varchar
+  LOGO varchar
+  ACTETIQUETAS tinyint
+  CLAVEFTP varchar
+  ACTFRACCIONES tinyint
+  RUTASIFRA varchar
+  BUFETEINTERNACIONAL tinyint
+  TIPOVERSION varchar
+  ESEMPRESACERTIFICADA varchar
+  REGISTROEMPCERT varchar
+  TIENELINEAEXPRESS varchar
+  TIPOFORMATOPED varchar
+  CODIGOANTERIOR tinyint
+  ACTIVACAAT tinyint
+  INTERFASETRANS tinyint
+  COSTOSAMERICANOS tinyint
+  SCAFSOLOLECTURA tinyint
+  ESEMPRESASERVICIO varchar
+  SUSTPARTES tinyint
+  NOMBRECLIENTE varchar
+  ACTFACMEXAME tinyint
+  PARTEREFERENCIA tinyint
+  SQLLENGUAJE varchar
+  MODOSUBMAQUILA varchar
+  FECHAINICIALEMPCERT int
+  FECHAFINALEMPCERT int
+  MODOOPERACIONSALDO varchar
+  CURP varchar
+  RUTAARCHCER varchar
+  RUTAARCHKEY varchar
+  CLAVEACCESOFIEL varchar
+  USUARIOWEBSERVICEVU varchar
+  CLAVEACCESOWEBSERVICEVU varchar
+  EMAILVU varchar
+  NOMBREBDINTER varchar
+  TIPOFIGURAVU varchar
+  RUTAVUCENTRAL varchar
+  RUTAARCHIVOSXML varchar
+  RFCCONSULTA varchar
+  TOMACONFIGURACIONVU varchar
+  VUUNIDADESMEDIDA varchar
+  RFCVALIDACIONVU varchar
+  CTPAT_SVI varchar
+  FECHACERTIFICACIONANEXO31 int
+  NUMEROCERTIFICACIONANEXO31 varchar
+  MODALIDADANEXO31 varchar
+  TIPOEMPRESAANEXO31 varchar
+  EMPRESANEEC int
+  RUTAARCHIVOCERCFDI varchar
+  RUTAARCHIVOKEYCFDI varchar
+  FECHAVENCCERCFDI int
+  FECHAVENCKEYCFDI int
+  CONTRASEÑACFDI varchar
+  RUTAGUARDARXML varchar
+  RUTAAPPCFDI varchar
+  RUTAAPPPAC varchar
+  RUTAARCHIVOCANCELACION varchar
+  CONTRASEÑACANCELACION varchar
+  NUMDEEXPORTADORCONFIABLE varchar
+  NUMINTERIOR varchar
+  NUMINTIND varchar
+  MUNICIPIO varchar
+  MUNICIPIOIND varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  PAISIND varchar [ref: > GPaises.CLAVEM3]
+  FECHARENOVACIONCERTIFICACIONA31 int
+  FECHAFINALCERTIFICACIONA31 int
+  EMPRESAOEA tinyint
+  CALLESIND2 varchar
+  COLONIAIND2 varchar
+  CODIGOPOSTALIND2 varchar
+  CIUDADIND2 varchar
+  TELEFONOIND2 varchar
+  MUNICIPIOIND2 varchar
+  NUMEXTIND2 varchar
+  ESTADOIND2 varchar
+  NUMFAXIND2 varchar
+  PAISIND2 varchar [ref: > GPaises.CLAVEM3]
+  EMAILIND2 varchar
+  ADUANAPREVALIDADOR varchar
+  CLAVEPREVALIDADOR varchar
+  PATENTEPREVALIDADOR varchar
+  DESCRIPCIONPREVALIDADOR varchar
+  FOLDERENTRADAAELECTRONICO varchar
+  FOLDERSALIDAAELECTRONICO varchar
+  MASCARAENVIARAELECTRONICO varchar
+  MASCARARESPAELECTRONICO varchar
+  EXTENSIONRESPUESTAAELECTRONICO varchar
+  INICIOCONTADORAELECTRONICO int
+  FINALCONTADORAELECTRONICO int
+  SIGUIENTECONTADORAELECTRONICO int
+}
+
+Table GEncAnexo {
+  MODULO varchar [pk]
+  TITULO varchar
+}
+
+Table GEncFacturas {
+  CONSECUTIVO int [pk]
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURA varchar [ref: > SFacImp.FACTURAIMPO]
+  FECHAFACTURA int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPODOC varchar [ref: > GTipoDoc.CLAVETD]
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTE varchar
+  INCOTERM varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  FLETE decimal
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  TIPOMONEDA varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  AADUANALAME varchar
+  TIPOPESO varchar
+  ADUANA_CRUCE varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  MANIFIESTO varchar [ref: > GManifiesto.MANIFIESTO]
+  ESTATUS varchar
+  MARCAR tinyint
+  SISTEMA varchar
+  MODULO varchar
+}
+
+Table GEquivalenteEnc {
+  IDENTIFICADOR varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GEquivPartidas {
+  ID varchar [pk]
+  CAMPOORIG varchar [pk]
+  CAMPOEXT varchar [pk]
+}
+
+Table GErroresFac {
+  CONSECUTIVO int [pk]
+  LINEA int [pk]
+  CLAVE varchar
+  DESCRIPCION varchar
+  MODULO varchar [pk]
+  CANTIDAD decimal
+}
+
+Table GEstados {
+  CLAVEM3 varchar [pk]
+  CLAVE_MEX varchar
+  CLAVE_AME varchar
+  DESCRIPCION varchar [pk]
+}
+
+Table GExpedienteElecEnc {
+  CONSECUTIVO int [pk]
+  FACTOR varchar
+  DESCRIPCION varchar
+  SISTEMA varchar
+  MOVIMIENTO varchar
+  TIPOFACTURA varchar [ref: > STiposFactura.CLAVE]
+}
+
+Table GExpedienteElecPartidas {
+  CONSECUTIVOEXT int [pk]
+  CONSECUTIVOINT int [pk]
+  RUTA varchar
+  DESCRIPCION varchar
+  TIPODOCUMENTO varchar
+}
+
+Table GFacProforma {
+  NUMEROPROFORMA varchar [pk]
+  NUMERODUNS varchar
+  FECHA int
+  PESOBRUTO decimal
+  PESONETO decimal
+  VALORTOTALME decimal
+  VALORTOTALMN decimal
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  PROVEEDORNAC varchar
+  VENDIDOA varchar
+  REMITIDOA varchar
+  PROVEEDOR varchar
+  CLAVECLIENTE varchar [ref: > GClientesPro.CLIENTE]
+}
+
+Table GFiltros {
+  FILTRO varchar [pk]
+  DESCRIPCION varchar
+  TIPO varchar
+}
+
+Table GFirmas {
+  CLAVEFIRMA varchar [pk]
+  FIRMA varchar
+  PATHFOTO varchar
+}
+
+Table GFormaPago {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GFracAme {
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  PREFIJO varchar
+  ADV decimal
+  UNIDAD varchar
+  DESCRIPCION varchar
+  TIPOADV varchar
+  ADVCOSTOFIJO decimal
+}
+
+Table GFraccionesHistorico {
+  CONSECUTIVO int [pk]
+  FRACCIONHISTORICA varchar
+  UMCLAVE varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  TIPOFRACCION varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  TASAIMNUM decimal
+  TASAEXNUM decimal
+  FECHAPUBLICACION int
+  ESIMMEX varchar
+  TEMPORALIDADNORMAL smallint
+  TEMPORALIDADSERVICIOS smallint
+  TEMPORALIDADCERTIFICADA smallint
+  PORLOG varchar
+  FECHATERMINO int
+}
+
+Table GFracEUACan {
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  ADV decimal
+  UNIDAD varchar
+  CLAVEM3 varchar [ref: > GPaises.CLAVEM3]
+  DESCRIPCION varchar
+}
+
+Table GFracROctava {
+  PERMISO varchar [ref: > GPermisoReglaOct.PERMISO]
+  LINEA int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  CANTIDADCUPO decimal
+  CANTUSADA decimal
+  VALORCUPO decimal
+  VALORUSADA decimal
+  COSTOUNITARIOME decimal
+  UNIMED varchar
+}
+
+Table GIdentificadores {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+  NIVEL varchar
+  COMPLEMENTO varchar
+}
+
+Table GIdentificadoresPartidas {
+  CONSECUTIVOFACTURA int [ref: > SFacImp.FACTURAIMPO]
+  LINEAPARTIDA int
+  ID varchar
+  MODULO varchar
+  COMPLEMENTO1 varchar
+  COMPLEMENTO2 char
+  COMPLEMENTO3 varchar
+}
+
+Table GIncoterm {
+  INCOTERM varchar
+  DESCESPANOL varchar
+  DESCINGLES varchar
+}
+
+Table GINPC {
+  ANIO varchar [pk]
+  MES varchar [pk]
+  VALOR decimal
+}
+
+Table GLeyendas {
+  CLAVELEY int [pk]
+  DESCLEYENDA varchar
+}
+
+Table GManifCoductor {
+  id int [pk]
+  MANIFIESTO varchar [ref: > GManifiesto.MANIFIESTO]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TIPO varchar
+  DIRECCION1 varchar
+  DIRECCION2 varchar
+  CIUDAD varchar
+  ESTADO varchar [ref: > GEstados.DESCRIPCION]
+  CODIGOPOSTAL varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+}
+
+Table GManifestacionAnexo {
+  CONSECUTIVO int [pk]
+  LINEA int [pk]
+  TIPOANEXO varchar
+  NUMERO varchar
+  DOCANEXADO varchar
+}
+
+Table GManifestacionConcepto {
+  CONSECUTIVO int [pk]
+  LINEA int [pk]
+  TIPOANEXO varchar
+  NUMERO varchar
+  MCIAOPROV varchar
+  FACODOC varchar
+  IMPORTE decimal
+  MONEDA varchar
+  CONCEPTOCARGO varchar [ref: > GConceptos.CLAVE]
+}
+
+Table GManifestacionValor {
+  CONSECUTIVO int [pk]
+  NUMEROMANVAL varchar
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  PERIODICIDAD varchar
+  SEMESTRE tinyint
+  ANIO varchar
+  TIPOPEDIMENTO varchar
+  CLAVEAA varchar [ref: > GAAduanal.CLAVEAA]
+  PATENTE varchar
+  NOMBRES varchar
+  APELLIDOPATERNO varchar
+  APELLIDOMATERNO varchar
+  CANTMETODOSUTIL int
+  METVALPORMCIAPRO varchar
+  VALORTRANSACCIÓN tinyint
+  VALTRAMCIASIDENTICAS tinyint
+  VALTRAMCIASSIMILARES tinyint
+  VALPREUNIVENTA tinyint
+  VALRECONSTRUIDO tinyint
+  VALDETART78 tinyint
+  VALDECLARACIONVALORPROV int
+  PRESENTAANEXOS tinyint
+  NUMHOJASANEX varchar
+  PRECIOPAGADOMETVALTRANS decimal
+  PRECIOPREFAC tinyint
+  PRECIOOTROSDOC tinyint
+  CONCEPSENALART66 tinyint
+  CONCEPART66DESGLOSAODOS tinyint
+  ANEXORELART66 varchar
+  PREPAGADOMCIASART65 varchar
+  ANEXORELART65 varchar
+  BASEGRAVNOCOMPRAVENTA varchar
+  EXISTECIRCDISTART67Y71 varchar
+  ANEXOVALADUANA varchar
+  VALDETPROVISIONAL varchar
+  ANEXOCONSTAVALMCIA varchar
+  RFCREPLEGAL varchar
+  REPRESANTANTELEGAL varchar
+  FECHA int
+  FACTURASELECCIONADA varchar
+  OPCIONFACTURA varchar
+  IMPORTADORAUSAR varchar
+}
+
+Table GManifiesto {
+  MANIFIESTO varchar [pk]
+  NOMNUMDESCIMPO varchar
+  NOMPERSACARGO varchar
+  CONSIGNADOA varchar
+  ENVIADOPOR varchar
+  PTOEXTSAL varchar
+  LOCALIZAPTOEXTSAL varchar
+  PTODESTINO varchar
+  LOCALIZAPTODESTINO varchar
+  PTOENTRADA varchar
+  LOCALIZAPTOENTRADA varchar
+  FECHAENTRADA int
+  PESONETO decimal
+  PESOBRUTO decimal
+  VALORTOTAL decimal
+  DESCRIPCION varchar
+  CLAVEBROKER varchar
+  CLAVETRANS varchar [ref: > GTransportista.CLAVETRANS]
+  FACTURAPAG varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  HORAENTRADA int
+  MATERIALPELIGROSO varchar
+  MODTRANS varchar
+  CLAVETRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  ESTATUS varchar
+  DESCRIPCIONESTATUS varchar
+  TIPOMANIFIESTO varchar
+}
+
+Table GMetValor {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GModTransporte {
+  CLAVEMOD varchar [pk]
+  MODOTRANS varchar
+}
+
+Table gMSSQLFile {
+  DS_FIELD1 varchar
+  DS_FIELD2 varchar [pk]
+  DS_FIELD3 varchar
+  DS_FIELD4 varchar
+  DS_FIELD5 varchar
+  DS_FIELD6 varchar
+  DS_FIELD7 varchar
+  DS_FIELD8 varchar
+  DS_FIELD9 varchar
+  DS_FIELD10 varchar
+  DS_FIELD11 varchar
+  DS_FIELD12 varchar
+  DS_FIELD13 varchar
+  DS_FIELD14 varchar
+  DS_FIELD15 varchar
+  DS_FIELD16 varchar
+  DS_FIELD17 varchar
+  DS_FIELD18 varchar
+  DS_FIELD19 varchar
+  DS_FIELD20 varchar
+  DS_FIELD21 varchar
+  DS_FIELD22 varchar
+  DS_FIELD23 varchar
+  DS_FIELD24 varchar
+  DS_FIELD25 varchar
+  DS_FIELD26 varchar
+  DS_FIELD27 varchar
+  DS_FIELD28 varchar
+  DS_FIELD29 varchar
+  DS_FIELD30 varchar
+  DS_FIELD31 varchar
+  DS_FIELD32 varchar
+  DS_FIELD33 varchar
+  DS_FIELD34 varchar
+  DS_FIELD35 varchar
+  DS_FIELD36 varchar
+  DS_FIELD37 varchar
+  DS_FIELD38 varchar
+  DS_FIELD39 varchar
+  DS_FIELD40 varchar
+}
+
+Table GNivelesSeguridad {
+  SYSID int [pk]
+  CLAVE varchar
+  DESCRIPCION varchar
+  SISTEMA varchar
+  ACCAMBIOREGIMEN tinyint
+  ACCOMPRASMEXICANAS tinyint
+  ACREMISIONESENTRADA tinyint
+  ACFACTURASSALIDA tinyint
+  ACFACTURASREPARACION tinyint
+  ACFACTURAIMPOTEMPORAL tinyint
+  ACFACTURAIMPODEFINITIVA tinyint
+  ACREMISIONSALIDA tinyint
+  ACFACTINTEGRACIONCTM tinyint
+  ACREMRECIBOCTM tinyint
+  ACREMENVIOCTM tinyint
+  PERMITECAMBIARCLASE tinyint
+  PERMITEDESSEG tinyint
+  PERMITEDESCOSTOFIJO tinyint
+  RESTRINGIRMODCOSTOFIJO tinyint
+  RESTRINGEDESHABILITARDESCPARTE tinyint
+  PAREXCANTPESODESVSFAC tinyint
+  CANTSERIEVSCANT tinyint
+  PERMITEACTREVCLASE tinyint
+  DESHABILITAUMPARTIDAIMPO tinyint
+  RESTRINGEMODVU tinyint
+  RESTRINGEMODEDOCOPEADEN tinyint
+  RESTRINGEMODFIRMACERFIEL tinyint
+  REPOPEPORNIVEL tinyint
+  ACFACTURASMODULOCTM tinyint
+  AUTACTUALIZAREXPO tinyint
+  PERMITIRMODIFICARPEDIMENTOSPREVIOSALAFECHAACTUAL int
+  SOLICITARPERMISOADMINAGREGARPED int
+  MODIFICARFECHASDEPEDIMENTO tinyint
+  ESTATUSPED tinyint
+}
+
+Table GNivelesSeguridadTablas {
+  SYSIDNIVEL int [pk]
+  TABLA varchar [pk]
+  INSERTAR tinyint
+  EDITAR tinyint
+  BORRAR tinyint
+  PROIMP tinyint
+  TIPO varchar
+}
+
+Table GPaises {
+  CLAVEM3 varchar [pk]
+  PAIS_MEX varchar [ref: > GPaises.CLAVEM3]
+  PAIS_AME varchar [ref: > GPaises.CLAVEM3]
+  DESC_E varchar
+  DESC_I varchar
+}
+
+Table GPaisesGrupoSifra {
+  GRUPO varchar [pk]
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+}
+
+Table GPaisReglaOct {
+  PERMISO varchar [pk]
+  LINEA int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  CLAVEM3 varchar  [ref: > GPaises.CLAVEM3]
+}
+
+Table GParAnexo {
+  MODULO varchar [pk]
+  LINEA int [pk]
+  TITULO varchar
+  DESCRIPCION text
+}
+
+Table GParFacturas {
+  CONSECUTIVO int [pk]
+  FACTURA varchar
+  LINEA int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTIDAD decimal
+  UNIMED varchar
+  COSTOUNITARIOMC decimal
+  NUMPERMISO varchar
+  PAGRENGLON varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESOBRUTO decimal
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS int
+  FRACCIONIMPO varchar [ref: > sFracciones.FRACCION]
+  TIPOFRACCIMPO varchar
+  TIENECO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  FRACCIONAMERICANA varchar
+  ORDENCOMPRAVENTA varchar
+  DESCRIPCIONPARTE varchar
+  VALORAGREGADO decimal
+  TIPOVA varchar
+  VALEMPAQUEUS decimal
+}
+
+Table GPartidasCO {
+  NUMERO varchar [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  DESCRIPCION varchar
+  CLASIFARANCEL varchar
+  CRITERIOPREFERENCIAL varchar
+  ESPRODUCTOR varchar
+  ENCASONO varchar
+  COSTONETO varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+}
+
+Table GPeriodoAnexo31 {
+  CLAVE varchar [pk]
+  PERIODO varchar
+}
+
+Table GPermisoReglaOct {
+  PERMISO varchar [pk]
+  FECHAINICIO int
+  FECHAFINAL int
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  SISTEMA varchar
+}
+
+Table GPrecintos {
+  PRECINTO varchar [pk]
+}
+
+Table GPrevalidadores {
+  CLAVE varchar [pk]
+  ADUANAPREVALIDADOR varchar
+  PATENTEPREVALIDADOR varchar
+  DESCRIPCIONPREVALIDADOR varchar
+}
+
+Table GProcesos {
+  CONSECUTIVO int [pk]
+  SISTEMA varchar
+  IDPROCESO varchar
+  DESCRIPCION varchar
+}
+
+Table GPuertoEnt {
+  PUERTO varchar [pk]
+  DESCRIPCION varchar
+  LOCALIZACION varchar [pk]
+  DESCLOCALIZACION varchar
+}
+
+Table GRecintos {
+  CLAVE varchar [pk]
+  ADUANA varchar [pk]
+  RECINTOFISCALIZADO varchar
+}
+
+Table GRegimenPed {
+  REGIMENPED varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GRelacionFacturas {
+  FOLIO int [pk]
+  FECHAEXP int
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  EDOCUMENT varchar
+  OBSERVACIONESVU varchar
+  NUMOPERACIONVU varchar
+  AADUANAL varchar
+  LINEAPERSONAAA int
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  TIPOIANOIA varchar
+  ESFERROCARRIL varchar
+  ADENDAVU varchar
+  NUMTRASPORTE varchar
+  IMPORTADOREXPORTADOR varchar
+  ESAGRANEL tinyint
+  DESTINOORIGENCOVE varchar
+}
+
+Table GRelFacFacturas {
+  FOLIO int [pk]
+  LINEA int [pk]
+  FACTURA varchar [ref: > SFacImp.FACTURAIMPO]
+  SISTEMA varchar
+  MODULO varchar
+}
+
+Table GRutasGenerales {
+  NOMBRERUTA varchar
+  RUTA varchar
+}
+
+Table GSectores {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+  AUTORIZADO tinyint
+}
+
+Table GSIAA {
+  SYSID int [pk]
+  SIFRA tinyint
+  WINSAAI tinyint
+  REMESAS tinyint
+  WINVAL tinyint
+  FECHAINFORMACIONSIAA int
+  TIPOACTUALIZACION varchar
+  HTTPSERVER varchar
+  MANUALFOLDER varchar
+  NOAJUSTE int
+  SCAII tinyint
+  SCAF tinyint
+  SCON tinyint
+  GERENCIALES tinyint
+  UTILERIAS tinyint
+  SISET tinyint
+  ALMACEN tinyint
+  FECHAINFORMACIONSIFRA int
+  ANEXO31 tinyint
+}
+
+Table GSisManifiesto {
+  CONSECUTIVO int [pk]
+  PREFIJO varchar
+  CONSECUTIVOMAN varchar
+  NOMNUMDESCIMPO varchar
+  NOMPERSACARGO varchar
+  CONSIGNADOA varchar
+  ENVIADOPOR varchar
+  PTOEXTSAL varchar
+  LOCALIZAPTOEXTSAL varchar
+  PTODESTINO varchar
+  LOCALIZAPTODESTINO varchar
+  PTOENTRADA varchar
+  LOCALIZAPTOENTRADA varchar
+  CLAVEBROKER varchar
+  CLAVETRANS varchar [ref: > GTransportista.CLAVETRANS]
+  FACTURAPAG varchar
+  ESCODERCODBARRASSCAC tinyint
+}
+
+Table GSisMultiples {
+  IDENTIFICADOR varchar [pk]
+  PREFIJO varchar
+  CONSECUTIVOIMPO varchar
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  TIPOMOV varchar
+  PROVEEDOREXPORTADOR varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  ENVIADOPORVENDIDOPOR varchar
+  VENDIDOPOR varchar
+}
+
+Table GSQLFile {
+  C1 varchar
+  C2 varchar
+  C3 varchar
+  C4 varchar
+  C5 varchar
+  C6 varchar
+  C7 varchar
+  C8 varchar
+  C9 varchar
+  C10 varchar
+  C11 varchar
+  C12 varchar
+  C13 varchar
+  C14 varchar
+  C15 varchar
+  C16 varchar
+  C17 varchar
+  C18 varchar
+  C19 varchar
+  C20 varchar
+  C21 varchar
+  C22 varchar
+  C23 varchar
+  C24 varchar
+  C25 varchar
+  C26 varchar
+  C27 varchar
+  C28 varchar
+  C29 varchar
+  C30 varchar
+  C31 varchar
+  C32 varchar
+  C33 varchar
+  C34 varchar
+  C35 varchar
+  C36 varchar
+  C37 varchar
+  C38 varchar
+  C39 varchar
+  C40 varchar
+  C41 varchar
+  C42 varchar
+  C43 varchar
+  C44 varchar
+  C45 varchar
+  C46 varchar
+  C47 varchar
+  C48 varchar
+  C49 varchar
+  C50 varchar
+  C51 varchar
+  C52 varchar
+  C53 varchar
+  C54 varchar
+  C55 varchar
+  C56 varchar
+  C57 varchar
+  C58 varchar
+  C59 varchar
+  C60 varchar
+  C61 varchar
+  C62 varchar
+  C63 varchar
+  C64 varchar
+  C65 varchar
+  C66 varchar
+  C67 varchar
+  C68 varchar
+  C69 varchar
+  C70 varchar
+}
+
+Table GSQLFile2 {
+  C1 varchar
+  C2 varchar
+  C3 varchar
+  C4 varchar
+  C5 varchar
+  C6 varchar
+  C7 varchar
+  C8 varchar
+  C9 varchar
+  C10 varchar
+  C11 varchar
+  C12 varchar
+  C13 varchar
+  C14 varchar
+  C15 varchar
+  C16 varchar
+  C17 varchar
+  C18 varchar
+  C19 varchar
+  C20 varchar
+  C21 varchar
+  C22 varchar
+  C23 varchar
+  C24 varchar
+  C25 varchar
+  C26 varchar
+  C27 varchar
+  C28 varchar
+  C29 varchar
+  C30 varchar
+}
+
+Table GSQLFile3 {
+  C1 varchar
+  C2 varchar
+  C3 varchar
+  C4 varchar
+  C5 varchar
+  C6 varchar
+  C7 varchar
+}
+
+Table GSubEmpresa {
+  CLAVESUB varchar [pk]
+  SUBEMPRESA varchar
+  BROKER varchar
+}
+
+Table GTipoCambio {
+  FECHA int [pk]
+  VALOR decimal
+  TIPOMN varchar
+  TIPOME varchar
+}
+
+Table GTipoCambioMM {
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  ANIO varchar [pk]
+  ENERO decimal
+  FEBRERO decimal
+  MARZO decimal
+  ABRIL decimal
+  MAYO decimal
+  JUNIO decimal
+  JULIO decimal
+  AGOSTO decimal
+  SEPTIEMBRE decimal
+  OCTUBRE decimal
+  NOVIEMBRE decimal
+  DICIEMBRE decimal
+}
+
+Table GTipoDoc {
+  CLAVETD varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GTipoDocDigital {
+  IDTIPODOCUMENTO varchar [pk]
+  TIPODOCUMENTO varchar [ref: > GTipoDoc.CLAVETD]
+}
+
+Table GTipoMultiMoneda {
+  CLAVE varchar [ref: > GTiposMoneda.CLAVE]
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  FACTORCONV decimal
+  FECHAPUBLICACION int [pk]
+}
+
+Table GTiposMoneda {
+  CLAVE varchar [pk]
+  MONEDA varchar
+  DESCPAIS varchar
+}
+
+Table GTipoTrailer {
+  CLAVETRAILER varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GTipoTransportes {
+  id int [pk]
+  CLAVETRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  DESCRIPCION varchar
+}
+
+Table GTrailers {
+  NUMTRAILER varchar [pk]
+  NUMTRAILERACE varchar
+  TIPOTRAILER varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  CODENTIDADIIT varchar
+  NUMEROPLACAS varchar
+  ESTADO varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  CLAVECONTENEDOR varchar
+}
+
+Table GTransportes {
+  id int [pk]
+  CLAVETRANSPORTE varchar [ref: > GTransportista.CLAVETRANS]
+  CLAVETRANSACE varchar
+  CLAVETRANS varchar [ref: > GTransportista.CLAVETRANS]
+  NUMIDENTIFICATRANS varchar
+  TIPOTRANSPORTE varchar
+  CODENTIDADIIT varchar
+  NUMTRANSPONDEDOR varchar
+  NUMERODOT varchar
+  NUMEROPLACAS varchar
+  CIUDAD varchar
+  ESTADO varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  NOMEMPASEGURADORA varchar
+  NUMEROASEGURANZA varchar
+  MONTOASEGURANZA decimal
+  FECHAASEGURANZA int
+  NUMEROCAJA varchar
+  MARCA varchar
+  ANIO varchar
+  SERIE varchar
+  DESCRIPCION varchar
+  NUMMOTOR varchar
+  PERMISOSCT varchar
+  COLOR varchar
+  CLAVECONTENEDOR varchar
+}
+
+Table GTransportista {
+  CLAVETRANS varchar 
+  NOMBRE varchar
+  NOMBRECORTO varchar
+  RESPONSABLE varchar
+  RFC varchar
+  CALLES varchar
+  CODIGOPOSTAL varchar
+  CIUDAD varchar
+  ESTADO varchar [ref: > GEstados.DESCRIPCION]
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  CODCARGADOR varchar
+  CODIGOCAAT varchar
+  CODIGOTRANS varchar
+  TIPOINTERFASETRANS varchar
+  SERVIDOR_FTP varchar
+  USUARIO_FTP varchar
+  CLAVEACCESSO_FTP varchar
+  DIRECTORIO_FTP varchar
+  FILLERCODE varchar
+}
+
+Table GUMAduana {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+  UNIDADSCAII varchar
+}
+
+Table GUMAme {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GUMOMA {
+  CLAVEUM varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GUniMed {
+  UNIDAD varchar [pk]
+  DESCRIPCION varchar
+  FACTORCONV decimal
+  UNIDAD_MEX varchar
+  UNIDAD_AME varchar
+  CLAVE_ADUANA varchar
+  CLAVEACE varchar
+}
+
+Table GUniMedACE {
+  CLAVEACE varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table GUniMedida {
+  CLAVEUNI varchar [pk]
+  DESCRIPCION varchar
+  DESCRIPCIONINGLES varchar
+  CLAVE_AMEX varchar
+  CLAVE_AAMER varchar
+  CLAVEACE varchar [ref: > GUniMedACE.CLAVEACE]
+  CLAVEOMA varchar [ref: > GUMOMA.CLAVEUM]
+}
+
+Table GUsuarios {
+  USUARIO varchar [pk]
+  NOMBRE varchar
+  NIVELSEG varchar
+  PUESTO varchar
+  LOGIN varchar
+  CLAVE_ACCESO varchar
+}
+
+Table PedimentosAmericanos {
+  CLAVE int [pk]
+  DESCRIPCION varchar
+  TIPOOPERACION int
+}
+
+Table QAssetTag {
+  CONSECUTIVO int [pk]
+  FACTURAIMPO varchar [ref: > QFacImp.FACTURAIMPO]
+  LINEAIMPO int [pk]
+  ASSETNUMBER varchar [pk]
+  TIPOFACTURA varchar [pk]
+  FOTOPARTE varchar
+}
+
+Table QClaAct {
+  CLASE varchar [pk]
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  TIPOMAQEQUIPO varchar
+  UNIDADMEDIDA varchar
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  FRACCIONIMPO varchar
+  TIPOFRACIMPO varchar
+  FRACCIONEXPO varchar
+  TIPOFRACEXPO varchar
+  TASADEPRECIA decimal
+  FRACCIONAME varchar
+  CLAVESUB varchar
+  REVFISICA tinyint
+  FDA varchar
+  ECCN varchar
+  HABILITADESHABILITACLASE tinyint
+  FRACCIONEXENTAIVA varchar
+}
+
+Table QClasePermiso {
+  CONSECUTIVO int [pk]
+  NUMOFICIO varchar
+  LINEA smallint
+  CLASE varchar [ref: > QClaAct.CLASE]
+  PAGINARENGLON varchar
+  FECHA int
+}
+
+Table QConfiguracion {
+  CONSECUTIVO int [pk]
+  TIPODEFONDOS varchar
+  ACTIMPLEMENTACION tinyint
+  ALTAUSUARIOS tinyint
+  RESPALDO tinyint
+  FOLDER_LLEGADA text
+  ACTIVAR_BUSQUEDA varchar
+  INTERVALO_BUSQUEDA int
+  FTP_SERVER varchar
+  FTP_USERNAME varchar
+  FTP_PASSWORD varchar
+  FTP_DIRECTORY varchar
+  TIPOACTUALIZACION char
+  DIRECCTORIOMANUALSIFRA varchar
+  DIRECCIONHTTP char
+  FTP_FOLDER_LLEGADA varchar
+  FECHAACTUALIZACION int
+  RUTASERVIDOR text
+}
+
+Table QEqeMaq {
+  CONSECUTIVO int [pk]
+  FACTURAEXPO varchar [ref: > QFacExp.FACTURAEXPO]
+  LINEAEXPO int [pk]
+  NUMPARTE varchar [ref: > QPartes.NUMPARTE]
+  FACTURAIMPO varchar [ref: > QFacImp.FACTURAIMPO]
+  LINEAIMPO int
+  TIPOMOVIMPO varchar
+  FECHAFACTURA int
+  CANTEXPO decimal
+  UNIDADMEDIDA varchar
+  COSTOUNITARIOCAPTURA decimal
+  COSTOUNITARIODLLS decimal
+  COSTOUCOMDLLS decimal
+  COSTOACTUALDLLS decimal
+  COSTODEPRECME decimal
+  COSTOUNITARIOPESOS decimal
+  COSTOUCOMPESOS decimal
+  COSTOACTUALMN decimal
+  COSTODEPRECMN decimal
+  VALOREXPOMN decimal
+  VALOREXPOCOMMN decimal
+  VALORACTUALIZADOMN decimal
+  VALOREXPOME decimal
+  VALOREXPOCOMME decimal
+  VALORACTUALIZADOME decimal
+  CLASE varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS smallint
+  DESCBULTOS varchar
+  FRACCIONEXPO varchar
+  TIPOFRACCION varchar
+  TASAEX varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  ADVEXPO decimal
+  TIPOFRAC varchar
+  FRACCIONAMERICANA varchar
+  ADVAME decimal
+  MARCA varchar
+  MODELO varchar
+  LLEVASERIE tinyint
+  DESCARGA tinyint
+  IDENTIFICADOR varchar
+  RECTIFICACION smallint
+  CANT_SERIES int
+  ORDENCOMPRA varchar
+  CERTORIGEN tinyint
+  NOCERTIFICADO varchar
+  SUBPARTIDA smallint
+  INCUYESUBPARTIDAS varchar
+  LLEVACODFDA varchar
+  CLAVEFDA varchar [ref: > GCodigosFDA.CLAVEFDA]
+  PROCEDENCIA varchar
+  TASADEPRECIA decimal
+  FRACCIONREFERENCIA varchar
+  DESCRIPCIONEEXTRA text
+  ENVIADOA varchar
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  TIPOBUSQUEDA varchar
+  ESSUBPARTIDA varchar
+  CONTIENESUBP varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  ADVALORMELINEAPED decimal
+  ADVALORMNLINEAPED decimal
+  PERMISOSPED varchar
+  LINEAPED int
+  CLAVEFCC varchar [ref: > GCodigosFCC.CLAVEFCC]
+  TIPOFACTURAASSET varchar [ref: > QTiposFactura.CLAVE]
+  CANTEXPOUMA decimal
+  CLAVEUMA varchar
+  VALOREXPOMC decimal
+  METVALOR varchar
+  METVALORVALORDETERMINADO decimal
+  METVALORMOTIVODEUSO varchar
+  LOTE varchar
+  NUMENTRADA varchar
+  CONTENEDORREGLA varchar
+  CONSECUTIVOAPHIS int
+}
+
+Table QEqeMaqRep {
+  CONSECUTIVO int [pk]
+  FACTURAEXPO varchar [ref: > QFacExp.FACTURAEXPO]
+  LINEAEXPO int [pk]
+  NUMPARTE varchar [ref: > QPartes.NUMPARTE]
+  FACTURAIMPO varchar [ref: > QFacImp.FACTURAIMPO]
+  LINEAIMPO int
+  TIPOMOVIMPO varchar
+  FECHAFACTURA int
+  CANTEXPO decimal
+  UNIDADMEDIDA varchar
+  COSTOUNITARIOCAPTURA decimal
+  COSTOUNITARIODLLS decimal
+  COSTOUCOMDLLS decimal
+  COSTOACTUALDLLS decimal
+  COSTODEPRECME decimal
+  COSTOUNITARIOPESOS decimal
+  COSTOUCOMPESOS decimal
+  COSTOACTUALMN decimal
+  COSTODEPRECMN decimal
+  VALOREXPOMN decimal
+  VALOREXPOCOMMN decimal
+  VALORACTUALIZADOMN decimal
+  VALOREXPOME decimal
+  VALOREXPOCOMME decimal
+  VALORACTUALIZADOME decimal
+  CLASE varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS smallint
+  DESCBULTOS varchar
+  FRACCIONEXPO varchar
+  TIPOFRACCION varchar
+  TASAEX varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  ADVEXPO decimal
+  TIPOFRAC varchar
+  FRACCIONAMERICANA varchar
+  ADVAME decimal
+  MARCA varchar
+  MODELO varchar
+  LLEVASERIE tinyint
+  DESCARGA tinyint
+  IDENTIFICADOR varchar
+  RECTIFICACION smallint
+  CANT_SERIES int
+  ORDENCOMPRA varchar
+  CERTORIGEN tinyint
+  NOCERTIFICADO varchar
+  SUBPARTIDA smallint
+  INCUYESUBPARTIDAS varchar
+  LLEVACODFDA varchar
+  CLAVEFDA varchar [ref: > GCodigosFDA.CLAVEFDA]
+  PROCEDENCIA varchar
+  TASADEPRECIA decimal
+  ENVIADOA varchar
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  TIPOBUSQUEDA varchar
+  ESSUBPARTIDA varchar
+  CONTIENESUBP varchar
+  CANTRETORNADA decimal
+  VALORRETORNADOME decimal
+  VALORRETORNADOMN decimal
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  ADVALORMELINEAPED decimal
+  ADVALORMNLINEAPED decimal
+  PERMISOSPED varchar
+  LINEAPED int
+  CLAVEFCC varchar [ref: > GCodigosFCC.CLAVEFCC]
+  TIPOFACTURAASSET varchar [ref: > QTiposFactura.CLAVE]
+  DESCRIPCIONEEXTRA text
+  CANTEXPOUMA decimal
+  CLAVEUMA varchar
+  VALOREXPOMC decimal
+  LOTE varchar
+  NUMENTRADA varchar
+}
+
+Table QEqiDef {
+  CONSECUTIVO int [pk]
+  FACTURAIMPODEF varchar [ref: > QFacExp.FACTURAEXPO]
+  FECHAFACTURA int
+  NUMPARTE varchar [ref: > QPartes.NUMPARTE]
+  CLASE varchar
+  CANTIMPODEF decimal
+  CANTEXPOTEMP decimal
+  CANTEXISTENCIA decimal
+  UNIDADMEDIDA varchar
+  COSTOUNITARIOCAPTURA decimal
+  COSTOUNITARIODLLS decimal
+  COSTOUNITARIOPESOS decimal
+  COSTOUNITARIOSUBPDLLS decimal
+  COSTOUNITARIOSUBPPESOS decimal
+  VALORMN decimal
+  VALORSUBPMN decimal
+  SUBVALORIMPOMN decimal
+  IVAIMPOMN decimal
+  VALORME decimal
+  VALORSUBPME decimal
+  SUBVALORIMPOME decimal
+  IVAIMPOME decimal
+  VALORIMPOMC decimal
+  SUBVALORIMPOMC decimal
+  IVAIMPOMC decimal
+  NUMPERMISO varchar
+  PAGRENGLON varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS smallint
+  DESCBULTOS varchar
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  TIPOFRACCION varchar
+  TASAIM varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  FRACCIONIMPO varchar
+  TIPOFRACCIMPO varchar
+  ADVIMPO decimal
+  FRACCIONAMERICANA varchar
+  ADVAME decimal
+  MARCA varchar
+  MODELO varchar
+  LLEVASERIE tinyint
+  CANTRETORNADA decimal
+  CANTRETORNADATEMP decimal
+  VALORRETORNADOMN decimal
+  VALORRETORNADOME decimal
+  RECTIFICACION smallint
+  LOCALIZACION varchar
+  ESSUBPARTIDA varchar
+  CONTIENESUBP varchar
+  SUBPARTIDA int
+  ESREPARACION tinyint
+  ORDENCOMPRA varchar
+  CERTORIGEN tinyint
+  NOCERTIFICADO varchar
+  ASSETNUMBER varchar
+  EQI_MENSAJE varchar
+  EQUIPOPROPIO varchar
+  NUMREFERENCIA varchar
+  CANT_SERIESDEF int
+  FOTOACTIVOFIJO varchar
+  CLAVETIPOIV32 varchar
+  NUMEROIV32 varchar
+  BODEGA varchar
+  PROVEEDOR varchar
+  REQUISITOR varchar
+  PERMISOROCTAVA varchar
+  FRACCIONROCTAVA varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  MONTOIGI decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  LINEARO int
+  ADVALORMELINEAPED decimal
+  ADVALORMNLINEAPED decimal
+  PERMISOSPED varchar
+  LINEAPED int
+  TIPOFACTURAASSET varchar [ref: > QTiposFactura.CLAVE]
+  DESCRIPCIONEEXTRA text
+  METVALOR varchar
+  CANTIMPOUMA decimal
+  CLAVEUMA varchar
+  ESMCIAMILITAR tinyint
+  METVALORVALORDETERMINADO decimal
+  METVALORMOTIVODEUSO varchar
+  LOTE varchar
+  NUMENTRADA varchar
+  CONTENEDORPARTESII varchar
+  TIPOMAT varchar
+}
+
+Table QEqiMaq {
+  CONSECUTIVO int [pk]
+  FACTURAIMPO varchar [ref: > QFacImp.FACTURAIMPO]
+  LINEAIMPO int [pk]
+  FECHADEPRECIACION int
+  NUMPARTE varchar [ref: > QPartes.NUMPARTE]
+  CLASE varchar
+  CANTIMPO decimal
+  CANTEXPOTEMP decimal
+  CANTEXISTENCIA decimal
+  UNIDADMEDIDA varchar
+  COSTOUNITARIOCAPTURA decimal
+  COSTOUNITARIODLLS decimal
+  COSTOUNITARIOPESOS decimal
+  COSTOUNITARIOSUBPDLLS decimal
+  COSTOUNITARIOSUBPPESOS decimal
+  VALORIMPOMN decimal
+  VALORSUBPMN decimal
+  VALORIMPOME decimal
+  VALORSUBPME decimal
+  VALORIMPOMC decimal
+  NUMPERMISO varchar
+  PAGRENGLON varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS smallint
+  DESCBULTOS varchar
+  FRACCIONIMPO varchar
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  ADVIMPO decimal
+  TASAIM varchar
+  TIPOFRACCIMPO varchar
+  TIPOFRACCION varchar
+  FRACCIONAMERICANA varchar
+  ADVAME decimal
+  MARCA varchar
+  MODELO varchar
+  LLEVASERIE tinyint
+  CANTRETORNADA decimal
+  CANTRETORNADATEMP decimal
+  VALORRETORNADOMN decimal
+  VALORDEPRECIADOMN decimal
+  VALORRETORNADOME decimal
+  VALORDEPRECIADOME decimal
+  RECTIFICACION smallint
+  LOCALIZACION varchar
+  ESSUBPARTIDA varchar
+  CONTIENESUBP varchar
+  SUBPARTIDA int
+  ESREPARACION tinyint
+  ORDENCOMPRA varchar
+  CERTORIGEN tinyint
+  NOCERTIFICADO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  ASSETNUMBER varchar
+  NUMREFERENCIA varchar
+  CANT_SERIES int
+  FOTOACTIVOFIJO varchar
+  CLAVETIPOIV32 varchar
+  NUMEROIV32 varchar
+  FECHAFACIMPORET int
+  FACTURAIMPORET varchar
+  DESCRIPCIONEEXTRA text
+  BODEGA varchar
+  PROVEEDOR varchar
+  REQUISITOR varchar
+  PERMISOROCTAVA varchar
+  FRACCIONROCTAVA varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  MONTOIGI decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  LINEARO int
+  ADVALORMELINEAPED decimal
+  ADVALORMNLINEAPED decimal
+  PERMISOSPED varchar
+  LINEAPED int
+  TIPOFACTURAASSET varchar [ref: > QTiposFactura.CLAVE]
+  METVALOR varchar
+  CANTIMPOUMA decimal
+  CLAVEUMA varchar
+  ESMCIAMILITAR tinyint
+  LOTE varchar
+  VALORIVAMN decimal
+  VALORIVAME decimal
+  VALORIVAMNUSADO decimal
+  VALORIVAMEUSADO decimal
+  METVALORVALORDETERMINADO decimal
+  METVALORMOTIVODEUSO varchar
+  NUMENTRADA varchar
+  OMITITENANEXO31 tinyint
+  CONTENEDORPARTESII varchar
+  TIPOMAT varchar
+}
+
+Table QEqiMaqRep {
+  CONSECUTIVO int [pk]
+  FACTURAIMPO varchar [ref: > QFacImp.FACTURAIMPO]
+  LINEAIMPO int [pk]
+  NUMPARTE varchar [ref: > QPartes.NUMPARTE]
+  FACTURAEXPO varchar
+  LINEAEXPO int
+  TIPOMOVIMPO varchar
+  FECHADEPRECIACION int
+  CLASE varchar
+  CANTIMPO decimal
+  UNIDADMEDIDA varchar
+  COSTOUNITARIOCAPTURA decimal
+  COSTOUNITARIODLLS decimal
+  COSTOUNITARIOPESOS decimal
+  COSTOUNITARIOSUBPDLLS decimal
+  COSTOUNITARIOSUBPPESOS decimal
+  VALORIMPOMN decimal
+  VALORSUBPMN decimal
+  VALORIMPOME decimal
+  VALORSUBPME decimal
+  VALORIMPOMC decimal
+  NUMPERMISO varchar
+  PAGRENGLON varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS smallint
+  DESCBULTOS varchar
+  FRACCIONIMPO varchar
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  ADVIMPO decimal
+  TASAIM varchar
+  TIPOFRACCIMPO varchar
+  TIPOFRACCION varchar
+  FRACCIONAMERICANA varchar
+  ADVAME decimal
+  MARCA varchar
+  MODELO varchar
+  LLEVASERIE tinyint
+  CANTRETORNADA decimal
+  VALORRETORNADOMN decimal
+  VALORDEPRECIADOMN decimal
+  VALORRETORNADOME decimal
+  VALORDEPRECIADOME decimal
+  RECTIFICACION smallint
+  LOCALIZACION varchar
+  ESSUBPARTIDA varchar
+  CONTIENESUBP varchar
+  SUBPARTIDA int
+  ESREPARACION tinyint
+  ORDENCOMPRA varchar
+  CERTORIGEN tinyint
+  NOCERTIFICADO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  ASSETNUMBER varchar
+  NUMREFERENCIA varchar
+  CANT_SERIES int
+  FOTOACTIVOFIJO varchar
+  CLAVETIPOIV32 varchar
+  NUMEROIV32 varchar
+  DESCARGA tinyint
+  FRACCIONALTERNA varchar
+  BODEGA varchar
+  PROVEEDOR varchar
+  PERMISOROCTAVA varchar
+  FRACCIONROCTAVA varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  MONTOIGI decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  TIPOBUSQUEDA varchar
+  ADVALORMELINEAPED decimal
+  ADVALORMNLINEAPED decimal
+  PERMISOSPED varchar
+  LINEAPED int
+  TIPOFACTURAASSET varchar [ref: > QTiposFactura.CLAVE]
+  DESCRIPCIONEEXTRA text
+  METVALOR varchar
+  CANTIMPOUMA decimal
+  CLAVEUMA varchar
+  ESMCIAMILITAR tinyint
+}
+
+Table QFacExp {
+  CONSECUTIVO int [pk]
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOEXPO varchar [ref: > QPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURAEXPO varchar [pk]
+  FECHAFACTURA int
+  CAMBIOREGIMEN tinyint
+  DEFINITIVA tinyint
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPODOC varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  ENVIADOPORVENDIDOPOR varchar
+  VENDIDOPOR varchar
+  AADUANAL varchar
+  MANIFIESTO varchar [ref: > GManifiesto.MANIFIESTO]
+  ESTATUS varchar
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS smallint
+  VALOREXPOMN decimal
+  VALORACTUALIZADOMN decimal
+  VALOREXPOME decimal
+  VALORACTUALIZADOME decimal
+  CANTEXPO decimal
+  CANT_PARTIDAS smallint
+  TRANSPORTISTA varchar
+  TRANSPORTISTAAME varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportista.CLAVETRANS]
+  NUMTRASPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTECOMPLE varchar
+  MODTRANS varchar
+  BILLNUMBER varchar
+  INCOTERM varchar
+  IDENTIFICADOR varchar
+  COMPLEMENTO1 varchar
+  IDENTIFICADOR2 varchar
+  COMPLEMENTO2 varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETE decimal
+  OBSERVACIONES varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar
+  TIPOMN varchar
+  TIPOME varchar
+  TIPOFACTURA varchar [ref: > QTiposFactura.CLAVE]
+  CLAVETIPOIV18 varchar
+  NUMEROIV18 varchar
+  FECHAACTUAL int
+  HORAACTUAL int
+  ESCAMBIOREGIMEN varchar
+  CUALTIPOCAMBIO varchar
+  GENERAID varchar
+  ACTVALOR varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  NUMEROPROFORMA varchar
+  OFICIO varchar
+  NUMEROGUIA varchar
+  NUMEMBARQUE varchar
+  RECIBIDOPOR varchar
+  FECHAENTREGA int
+  ENTREGADO varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  PEDIMENTOR1 varchar [ref: > QPedimentos.PEDIMENTO]
+  AADUANALAME varchar
+  TIPOPESO varchar
+  ADUANA_CRUCE varchar
+  TIPOMOVIMIENTO varchar
+  FACTURAALTERNA varchar
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  COMENTARIOSESTATUS varchar
+  METVALOR varchar
+  TOTALINCREMMN decimal
+  TOTALINCREMME decimal
+  NUMFACTURABROKER varchar
+  FECHAFACBROKER int
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  GENPARTIDAS varchar
+  FECHAFACTURA_ISO datetime
+  COMOFUEPROCESADA varchar
+  PROVEEDOREXPORTADOR varchar
+  EDOCUMENT varchar
+  NUMOPERACIONVU varchar
+  LINEAPERSONAAA int
+  TIPOCAMBIOMM decimal
+  VALOREXPOMC decimal
+  OBSERVACIONESVU varchar
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  ADENDAVU varchar
+  ESFERROCARRIL varchar
+  DESTINOORIGENCOVE varchar
+  FECHAEMISION int
+  ESMIXTO varchar
+  MODOCONTINGENCIA tinyint
+  RAZONEXPORTACION varchar
+  ORDENCOMPRA varchar
+  TERMINOSPAGO varchar
+  MANIOBRAS decimal
+  RECINTO varchar
+  SEMAFOROEXPO varchar
+  OPCIONIV18 varchar
+  TIPODEGUIAAIDENTIFICAR varchar
+  CFDIUUID varchar
+  CFDIPATHPDF varchar
+  CFDIPATHXML varchar
+  CLAVEDOT varchar [ref: > GDotInformation.CLAVEDOT]
+  SUBDIVISION varchar
+  FUNGIRCOMOCO varchar
+  ENAJENACIONBIENES tinyint
+  APENDICE17 tinyint
+}
+
+Table QFacExpCobranza {
+  CONSECUTIVO int [pk]
+  FACTURA varchar [ref: > QFacExp.FACTURAEXPO]
+  LINEA int [pk]
+  CONCEPTO varchar [ref: > GConceptos.CLAVE]
+  COBRADO tinyint
+  FECHACOBRANZA int
+  VALOR decimal
+  DEPTOCOBRANZA varchar
+  FACTCOBRADOR varchar
+  NOMBRECOBRADOR varchar
+}
+
+Table QFacExpRep {
+  CONSECUTIVO int [pk]
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOEXPO varchar [ref: > QPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURAEXPO varchar [ref: > QFacExp.FACTURAEXPO]
+  FECHAFACTURA int
+  CAMBIOREGIMEN tinyint
+  DEFINITIVA tinyint
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPODOC varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  ENVIADOPORVENDIDOPOR varchar
+  VENDIDOPOR varchar
+  AADUANAL varchar
+  MANIFIESTO varchar [ref: > GManifiesto.MANIFIESTO]
+  ESTATUS varchar
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS smallint
+  VALOREXPOMN decimal
+  VALORACTUALIZADOMN decimal
+  VALOREXPOME decimal
+  VALORACTUALIZADOME decimal
+  CANTEXPO decimal
+  CANT_PARTIDAS smallint
+  TRANSPORTISTA varchar
+  TRANSPORTISTAAME varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportista.CLAVETRANS]
+  NUMTRASPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTECOMPLE varchar
+  MODTRANS varchar
+  BILLNUMBER varchar
+  INCOTERM varchar
+  IDENTIFICADOR varchar
+  COMPLEMENTO1 varchar
+  IDENTIFICADOR2 varchar
+  COMPLEMENTO2 varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETE decimal
+  OBSERVACIONES varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar
+  TIPOMN varchar
+  TIPOME varchar
+  TIPOFACTURA varchar [ref: > QTiposFactura.CLAVE]
+  CLAVETIPOIV18 varchar
+  NUMEROIV18 varchar
+  FECHAACTUAL int
+  HORAACTUAL int
+  ESCAMBIOREGIMEN varchar
+  CUALTIPOCAMBIO varchar
+  GENERAID varchar
+  ACTVALOR varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  NUMEROPROFORMA varchar
+  OFICIO varchar
+  NUMEROGUIA varchar
+  NUMEMBARQUE varchar
+  RECIBIDOPOR varchar
+  FECHAENTREGA int
+  ENTREGADO varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  PEDIMENTOR1 varchar [ref: > QPedimentos.PEDIMENTO]
+  AADUANALAME varchar
+  TIPOPESO varchar
+  ADUANA_CRUCE varchar
+  TIPOMOVIMIENTO varchar
+  FACTURAALTERNA varchar
+  FORMADESCARGA varchar
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  COMENTARIOSESTATUS varchar
+  METVALOR varchar
+  TOTALINCREMMN decimal
+  TOTALINCREMME decimal
+  NUMFACTURABROKER varchar
+  FECHAFACBROKER int
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  FECHAFACTURA_ISO datetime
+  COMOFUEPROCESADA varchar
+  PROVEEDOREXPORTADOR varchar
+  EDOCUMENT varchar
+  NUMOPERACIONVU varchar
+  LINEAPERSONAAA int
+  TIPOCAMBIOMM decimal
+  VALOREXPOMC decimal
+  OBSERVACIONESVU varchar
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  ADENDAVU varchar
+  ESFERROCARRIL varchar
+  DESTINOORIGENCOVE varchar
+  ESMIXTO varchar
+  MODOCONTINGENCIA tinyint
+  RAZONEXPORTACION varchar
+  ORDENCOMPRA varchar
+  TERMINOSPAGO varchar
+  MANIOBRAS decimal
+  RECINTO varchar
+  SEMAFOROEXPO varchar
+  OPCIONIV18 varchar
+  TIPODEGUIAAIDENTIFICAR varchar
+  CFDIUUID varchar
+  CFDIPATHPDF varchar
+  CFDIPATHXML varchar
+  CLAVEDOT varchar [ref: > GDotInformation.CLAVEDOT]
+}
+
+Table QFacImp {
+  CONSECUTIVO int [pk]
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOIMPO varchar [ref: > QPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURAIMPO varchar [pk]
+  FECHAFACTURA int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOCAMBIOMM decimal
+  TIPODOC varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar
+  ESTATUS varchar
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS smallint
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORIMPOMC decimal
+  CANTIMPO decimal
+  CANT_PARTIDAS smallint
+  CANTRETORNADA decimal
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTE varchar
+  INCOTERM varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETE decimal
+  SUJECION varchar
+  OBSERVACIONES varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  TIPOMN varchar
+  TIPOME varchar
+  CLAVETIPOIV18 varchar
+  NUMEROIV18 varchar
+  FECHAACTUAL int
+  HORAACTUAL int
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  MODTRANS varchar
+  CUALTIPOCAMBIO varchar
+  FECHAEMISION int
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  PEDIMENTOR1 varchar [ref: > QPedimentos.PEDIMENTO]
+  SELLOVALOR2500 tinyint
+  TOTALINCREMMN decimal
+  TOTALINCREMME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  FACTURAALTERNA varchar
+  AADUANALAME varchar
+  TIPOPESO varchar
+  TIPOMOVIMIENTO varchar
+  ADUANA_CRUCE varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  ESMIXTO varchar
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  COMENTARIOSESTATUS varchar
+  METVALOR varchar
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  FECHAFACTURA_ISO datetime
+  COMOFUEPROCESADA varchar
+  EDOCUMENT varchar
+  NUMOPERACIONVU varchar
+  LINEAPERSONAAA int
+  OBSERVACIONESVU varchar
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  ADENDAVU varchar
+  ESFERROCARRIL varchar
+  DESTINOORIGENCOVE varchar
+  PUERTOENTRADA varchar [ref: > GPuertoEnt.PUERTO]
+  FUEREVISADAMCIA tinyint
+  MODOCONTINGENCIA tinyint
+  RECINTO varchar
+  SEMAFOROIMPO varchar
+  FACTORIVA varchar
+  VALORIVAMN decimal
+  VALORIVAME decimal
+  TIPODEGUIAAIDENTIFICAR varchar
+  CLAVEDOT varchar [ref: > GDotInformation.CLAVEDOT]
+  SUBDIVISION varchar
+  FUNGIRCOMOCO varchar
+  APENDICE17 tinyint
+  APLICAPARTESII tinyint
+}
+
+Table QFacImpCobranza {
+  CONSECUTIVO int [pk]
+  FACTURA varchar [ref: > QFacExp.FACTURAEXPO]
+  LINEA int [pk]
+  CONCEPTO varchar [ref: > GConceptos.CLAVE]
+  COBRADO tinyint
+  FECHACOBRANZA int
+  VALOR decimal
+  DEPTOCOBRANZA varchar
+  FACTCOBRADOR varchar
+  NOMBRECOBRADOR varchar
+}
+
+Table QFacImpDef {
+  CONSECUTIVO int [pk]
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOIMPODEF varchar [ref: > QPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURAIMPODEF varchar [pk]
+  FECHAFACTURA int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOCAMBIOMM decimal
+  PROVIMPODEFCR varchar
+  TIPODOC varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar
+  ESTATUS varchar
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS smallint
+  VALORIMPOMN decimal
+  SUBVALORIMPOMN decimal
+  IVAIMPOMN decimal
+  VALORIMPOME decimal
+  SUBVALORIMPOME decimal
+  IVAIMPOME decimal
+  VALORIMPOMC decimal
+  SUBVALORIMPOMC decimal
+  IVAIMPOMC decimal
+  FACTORIVA decimal
+  CANTIMPODEF decimal
+  CANT_PARTIDAS smallint
+  CANTRETORNADA decimal
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTE varchar
+  INCOTERM varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETE decimal
+  SUJECION varchar
+  OBSERVACIONES varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar
+  TIPOMN varchar
+  TIPOME varchar
+  CLAVETIPOIV18 varchar
+  NUMEROIV18 varchar
+  FECHAACTUAL int
+  HORAACTUAL int
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  MODTRANS varchar
+  CUALTIPOCAMBIO varchar
+  FECHAEMISION int
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  PEDIMENTOR1 varchar [ref: > QPedimentos.PEDIMENTO]
+  SELLOVALOR2500 tinyint
+  TOTALINCREMMN decimal
+  TOTALINCREMME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  FACTURAALTERNA varchar
+  AADUANALAME varchar
+  TIPOPESO varchar
+  TIPOMOVIMIENTO varchar
+  ADUANA_CRUCE varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  ESMIXTO varchar
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  COMENTARIOSESTATUS varchar
+  METVALOR varchar
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  FECHAFACTURA_ISO datetime
+  COMOFUEPROCESADA varchar
+  EDOCUMENT varchar
+  NUMOPERACIONVU varchar
+  LINEAPERSONAAA int
+  OBSERVACIONESVU varchar
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  ADENDAVU varchar
+  ESFERROCARRIL varchar
+  DESTINOORIGENCOVE varchar
+  PUERTOENTRADA varchar [ref: > GPuertoEnt.PUERTO]
+  FUEREVISADAMCIA tinyint
+  MODOCONTINGENCIA tinyint
+  RECINTO varchar
+  SEMAFOROIMPO varchar
+  TIPODEGUIAAIDENTIFICAR varchar
+  CLAVEDOT varchar [ref: > GDotInformation.CLAVEDOT]
+  SUBDIVISION varchar
+  FUNGIRCOMOCO varchar
+  APENDICE17 tinyint
+  APLICAPARTESII tinyint
+}
+
+Table QFacImpRep {
+  CONSECUTIVO int [pk]
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOIMPO varchar [ref: > QPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURAIMPO varchar [ref: > QFacExp.FACTURAEXPO]
+  FECHAFACTURA int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOCAMBIOMM decimal
+  TIPODOC varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar
+  ESTATUS varchar
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS smallint
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORIMPOMC decimal
+  CANTIMPO decimal
+  CANT_PARTIDAS smallint
+  CANTRETORNADA decimal
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTE varchar
+  INCOTERM varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETE decimal
+  SUJECION varchar
+  OBSERVACIONES varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar
+  TIPOMN varchar
+  TIPOME varchar
+  CLAVETIPOIV18 varchar
+  NUMEROIV18 varchar
+  FECHAACTUAL int
+  HORAACTUAL int
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  MODTRANS varchar
+  CUALTIPOCAMBIO varchar
+  FECHAEMISION int
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  PEDIMENTOR1 varchar [ref: > QPedimentos.PEDIMENTO]
+  SELLOVALOR2500 tinyint
+  TOTALINCREMMN decimal
+  TOTALINCREMME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  FACTURAALTERNA varchar
+  AADUANALAME varchar
+  TIPOPESO varchar
+  TIPOMOVIMIENTO varchar
+  ADUANA_CRUCE varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  COMENTARIOSESTATUS varchar
+  METVALOR varchar
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  FECHAFACTURA_ISO datetime
+  ESCAMBIOREGIMEN varchar
+  COMOFUEPROCESADA varchar
+  EDOCUMENT varchar
+  NUMOPERACIONVU varchar
+  LINEAPERSONAAA int
+  OBSERVACIONESVU varchar
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  ADENDAVU varchar
+  ESFERROCARRIL varchar
+  DESTINOORIGENCOVE varchar
+  ESMIXTO varchar
+  PUERTOENTRADA varchar [ref: > GPuertoEnt.PUERTO]
+  FUEREVISADAMCIA tinyint
+  MODOCONTINGENCIA tinyint
+  RECINTO varchar
+  SEMAFOROIMPO varchar
+  TIPODEGUIAAIDENTIFICAR varchar
+  CLAVEDOT varchar [ref: > GDotInformation.CLAVEDOT]
+}
+
+Table QInfDepre {
+  CONSECUTIVO int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  SUPUESTO varchar
+  PORCENTAJE decimal
+}
+
+Table QLocalizacion {
+  CLAVE varchar [pk]
+  LOCALIZACION varchar
+}
+
+Table QLocalizacionExt {
+  CLAVE varchar
+  DEPARTAMENTO varchar
+  RESPONSABLE varchar
+  OBSERVACIONES varchar
+}
+
+Table QNiveles {
+  NIVEL varchar [pk]
+  TIPO varchar
+  MENUARCHIVO tinyint
+  CONFIGIMPRESORA tinyint
+  RESPSCAF tinyint
+  IMPLEMENTACION tinyint
+  MENUCONFIGURACION tinyint
+  DATOSEMPRESA tinyint
+  SUBPARAMETROS tinyint
+  GENERALES tinyint
+  IMPOTEMPORAL tinyint 
+  IMPODEFINITIVA tinyint 
+  EXPORTACION tinyint
+  MENUCATALOGOS tinyint
+  SUBGENERALES tinyint
+  SUBEMPRESA tinyint
+  LOCALIZACIONES tinyint
+  UNIDADESADUANA tinyint
+  UNIDADESMEDIDA tinyint
+  TIPOSCAMBIO tinyint
+  TIPOSMONEDA tinyint
+  TIPOSDOCUMENTO tinyint
+  PUERTOS tinyint
+  PAISES tinyint
+  BULTOS tinyint
+  IDENTIFICADORES tinyint
+  INCOTERMS tinyint
+  LEYENDASFIJAS tinyint
+  SUBFRACCIONES tinyint
+  FRACIMPOEXPO tinyint
+  AMERICANAS tinyint
+  SECTORES tinyint
+  SUBACTIVOFIJO tinyint
+  TIPOSAF tinyint
+  CLASESAF tinyint
+  SUBPEDIMENTOS tinyint
+  CATPEDIMENTO tinyint
+  REGIMENES tinyint
+  CLAVESPED tinyint
+  CLIENTESPRO tinyint
+  AADUANALES tinyint [ref: > GAAduanal.CLAVEAA]
+  TRANSPORTISTA tinyint [ref: > GTransportista.CLAVETRANS]
+  MENUPERMISO tinyint
+  PERSECON tinyint
+  SUBREPSECON tinyint
+  BOTONCLASES tinyint
+  BOTONPERMISO tinyint
+  PERACTFIJO tinyint
+  SUBREPACTFIJO tinyint
+  BOTONCLASESAF tinyint
+  BOTONPERMISOAF tinyint
+  MENUIMPORTACION tinyint
+  SUBTEMPORAL tinyint
+  CATIMPOTEMP tinyint
+  BITACTUALIZAR tinyint
+  BITDESACTUALIZAR tinyint
+  SUBREPIMPOTEMP tinyint
+  BITBUSQUEDAS tinyint
+  BITCONSPED tinyint
+  BITRANGOCLASE tinyint
+  BITRANGOPED tinyint
+  BITVALORDIS tinyint
+  BITSAFEH tinyint
+  SUBDEFINITIVA tinyint
+  CATIMPODEF tinyint
+  BIDACTUALIZAR tinyint
+  BIDDESACTUALIZAR tinyint
+  SUBREPIMPODEF tinyint
+  BIDBUSQUEDAS tinyint
+  BIDCONSPED tinyint
+  BIDRANGOCLASE tinyint
+  BIDRANGOPED tinyint
+  CATCREGIMEN tinyint
+  BCRACTUALIZAR tinyint
+  BCRDESCTUALIZAR tinyint
+  TRANSELECIMPO tinyint
+  BIASIGPEDPEN tinyint
+  BIASIGPEDRECT tinyint
+  MENUEXPORTACION tinyint
+  SUBEXPOTEMPORAL tinyint
+  BETACTUALIZAR tinyint
+  BETDESACTUALIZAR tinyint
+  SUBEXPODEFINITIVO tinyint
+  BEDACTUALIZAR tinyint
+  BEDDESACTUALIZAR tinyint
+  MANIFIESTO tinyint [ref: > GManifiesto.MANIFIESTO]
+  TRANSELECEXPO tinyint
+  BEASIGPEDPEN tinyint
+  BEASIGPEDRECT tinyint
+  SUBREPEXPO tinyint
+  BEBUSQUEDAS tinyint
+  BECONSPED tinyint
+  BERANGOCLASE tinyint
+  BERANGOPED tinyint
+  MENUDIVERSOS tinyint
+  SUBREPORTES tinyint
+  REPMOVTEM tinyint
+  REPMOVDEF tinyint
+  HOJACALCULO tinyint
+  MANIFESTACION tinyint
+  REPANUAL tinyint
+  SUBCATALOGOS tinyint
+  REPCLASESAF tinyint
+  DESCLASESAF tinyint
+  REPPEDIMENTOS tinyint
+  REPFRACCIONES tinyint
+  REPCLIENTES tinyint
+  MENUSEGURIDAD tinyint
+  NIVELES tinyint
+  USUARIOS tinyint
+  INSCATALOGOS tinyint
+  EDITCATALOGOS tinyint
+  BORRARCATALOGOS tinyint
+  INSPERMISOS tinyint
+  EDITPERMISOS tinyint
+  BORRARPERMISOS tinyint
+  INSIMPO tinyint
+  EDITIMPO tinyint
+  BORRARIMPO tinyint
+  INSEXPO tinyint
+  EDITEXPO tinyint
+  BORRAREXPO tinyint
+  INSSEG tinyint
+  EDITSEG tinyint
+  BORRARSEG tinyint
+}
+
+Table QPartes {
+  NUMPARTE varchar [pk]
+  NUMPARTECOM varchar
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  CLASE varchar
+  UNIMED varchar
+  COSTOUNITARIO decimal
+  TIPOMONEDA varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  PESOUNITARIO decimal
+  TIPOPESO varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  TIPOFRACCION varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  FECHAMODIFICA int
+  FOTOPARTE varchar
+  FECHAMODIFICA_ISO datetime
+  FRACCIONAME varchar
+  HABILITADADESHABILITADA tinyint
+  FECHACREACIONPARTE int
+  CLAVEFDA varchar [ref: > GCodigosFDA.CLAVEFDA]
+  CLAVEFCC varchar [ref: > GCodigosFCC.CLAVEFCC]
+  LICENSECODE varchar
+  ECCN varchar
+  EXPORTCODE varchar
+  SIMBOLOEXCLIC varchar
+}
+
+Table QPedimentos {
+  PEDIMENTO varchar [pk]
+  TIPO varchar
+  CLAVEPED varchar [ref: > GClavePed.CLAVEPED]
+  REGIMEN varchar [ref: > GRegimenPed.REGIMENPED]
+  FECHA_INICIO int
+  FECHA_FIN int
+  FECHA_PAGO int
+  ACUSEELECTRONICO varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  FACTOR decimal
+  ADUANA_CRUCE varchar
+  PEDRECTIFICA varchar
+  SERECTIFICO varchar
+  OBSRECTIFICA varchar
+  INDIVIDUALCONS varchar
+  DTA decimal
+  VALORIVA decimal
+  PEDIMENTODESCARGO varchar
+  PREVALIDACION decimal
+  MONTOTIGIE decimal
+  PAGOIMPUESTO varchar
+  ESMIXTO varchar
+  ESTATUS varchar
+  SERECTIFICO2 varchar
+  PEDRECTIFICA2 varchar
+  FECHA_REC_1 int
+  FECHA_REC_2 int
+  FECHA_CIERRE int
+  FECHA_REVISION int
+  FECHA_AUTORIZACION int
+  FECHA_RECIBIDO int
+  ERRORES varchar
+  PERSONAREV varchar
+  REPRESANTANTEAA varchar
+  CLAVEDESTORIGEN varchar
+  VALORME decimal
+  VALORADUANAS decimal
+  CLAVETRANSPORTACION varchar
+  TOTALINCREMMN decimal
+  FACTORINCREMENTABLE decimal
+  FEA varchar
+  FECHA_PAGO_ISO datetime
+  FECHA_ENTRADARECINTO int
+  FECHA_EXTRACCIONRECINTO int
+  FLETE decimal
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  FORMAPAGODTA varchar
+  FORMAPAGOPREVAL varchar
+  FORMAPAGOIGI varchar
+  FORMAPAGOIVA varchar
+  RECARGOS decimal
+  IVADEPREV decimal
+  CUOTASCOMPENS varchar
+  MULTAS decimal
+  IDENTIFICADORES varchar
+  CNT decimal
+  IEPS decimal
+  OPCIONDESTINO varchar
+  TIPOPEDIMENTOTRANSPORTEE varchar
+  TIPOPEDIMENTOTRANSPORTEA varchar
+  TIPOPEDIMENTOTRANSPORTES varchar
+  PEDIMENTO18 varchar
+  IEPS2 decimal
+  DTA2 decimal
+  IVA2 decimal
+  IGI2 decimal
+  PREVALIDACION2 decimal
+  CNT2 decimal
+  IEPS2FP varchar
+  DTA2FP varchar
+  IVA2FP varchar
+  IGI2FP varchar
+  PREVALIDACION2FP varchar
+  CNT2FP varchar
+  IDPEDVIEJONUEVO int
+}
+
+Table QPedimentosAA {
+  id int pk
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  CLAVEAA varchar [ref: > GAAduanal.CLAVEAA]
+  FACTURA varchar [ref: > QFacExp.FACTURAEXPO]
+  FECHAFAC int
+  FECHAREC int
+  FECHAENT int
+  FECHAVENC int
+  SECCION int
+}
+
+Table QPedimentosConcep {
+  id int pk
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  CLAVEAA varchar [ref: > GAAduanal.CLAVEAA]
+  CONCEPTO varchar [ref: > GConceptos.CLAVE]
+  IMPORTE decimal
+  TIPO varchar
+  TIPOMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+}
+
+Table QPermiso {
+  NUMSOLICITUD varchar [pk]
+  FECHA_ENTREGA int [pk]
+  PERMISO varchar
+  FECHA_INICIO int
+}
+
+Table QPermisoClase {
+  NUMSOLICITUD varchar [ref: > QPermiso.NUMSOLICITUD]
+  FECHA_ENTREGA int [pk]
+  LINEA smallint [pk]
+  PAGINARENGLON varchar
+  CLASE varchar [pk]
+}
+
+Table QPermisoPR {
+  NUMSOLICITUD varchar [ref: > QPermiso.NUMSOLICITUD]
+  FECHA_ENTREGA int [pk]
+  LINEA smallint [pk]
+  PAGINARENGLON varchar
+  DESCRIPCION varchar
+}
+
+Table QPermisoSECON {
+  CONSECUTIVO int [pk]
+  NUMOFICIO varchar
+  PERMISO varchar
+  FECHA int
+}
+
+Table QRepMovimientos {
+  FACTURAIMPO varchar [ref: > QFacExp.FACTURAEXPO]
+  FECHA int
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  LINEAIMPO smallint
+  DESCRIPCIONE varchar
+  CANTIDADIMPO decimal
+  UNIMED varchar
+  VALORIMPOMN decimal
+  CANTRETORNADA decimal
+  VALORRETORNADO decimal
+  CANTSALDO decimal
+  MARCA varchar
+  MODELO varchar
+  SERIE varchar
+}
+
+Table QSeriesDef {
+  CONSECUTIVO int [pk]
+  FACTURAIMPODEF varchar [ref: > QFacImpDef.FACTURAIMPODEF]
+  SERIEEXPO tinyint
+  LINEAIMPODEF int [pk]
+  RENGLON int [pk]
+  SERIEIMPO varchar
+  MODELOIMPO varchar
+  SUBMODELOIMPO varchar
+  PARTEIMPO varchar
+  NUMIDIMPO varchar
+}
+
+Table QSeriesExpo {
+  CONSECUTIVO int [pk]
+  FACTURAEXPO varchar [ref: > QFacExp.FACTURAEXPO]
+  LINEAEXPO int [pk]
+  RENGLON int [pk]
+  SERIEEXPO varchar
+  MODELOEXPO varchar
+  SUBMODELOEXPO varchar
+  MARCA tinyint
+  PARTEEXPO varchar
+  LINEASERIEIMPO int
+  NUMIDEXPO varchar
+}
+
+Table QSeriesExpoRep {
+  CONSECUTIVO int [pk]
+  FACTURAEXPO varchar [ref: > QFacExp.FACTURAEXPO]
+  LINEAEXPO int [pk]
+  RENGLON int [pk]
+  SERIEEXPO varchar
+  MODELOEXPO varchar
+  SUBMODELOEXPO varchar
+  MARCA tinyint
+  PARTEEXPO varchar
+  SERIEIMPO tinyint
+  LINEASERIEIMPO int
+  NUMIDEXPO varchar
+}
+
+Table QSeriesImpo {
+  CONSECUTIVO int [pk]
+  FACTURAIMPO varchar [ref: > QFacExp.FACTURAEXPO]
+  SERIEEXPO tinyint
+  LINEAIMPO int [pk]
+  RENGLON int [pk]
+  SERIEIMPO varchar
+  MODELOIMPO varchar
+  SUBMODELOIMPO varchar
+  PARTEIMPO varchar
+  NUMIDIMPO varchar
+}
+
+Table QSeriesImpoRep {
+  CONSECUTIVO int [pk]
+  FACTURAIMPO varchar [ref: > QFacImpRep.FACTURAIMPO]
+  SERIEEXPO tinyint
+  LINEAIMPO int [pk]
+  RENGLON int [pk]
+  SERIEIMPO varchar
+  MODELOIMPO varchar
+  SUBMODELOIMPO varchar
+  PARTEIMPO varchar
+  MARCA tinyint
+  LINEASERIEEXPOREP int
+  NUMIDIMPO varchar
+}
+
+Table QSisCMex {
+  CONSECUTIVO int [pk]
+  PREFIJOCM varchar
+  CONSECUTIVOCM varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  FLETE decimal
+  PAISORIGENMEX tinyint
+  FIRMAFMEX varchar
+  FRACCIONIMP tinyint
+  TIPOFRACCMEX tinyint
+  TASAFRACCMEX tinyint
+  IMPORDENCOMP tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  PACKINGORDENCOMPRA int
+  IMPRIMIRLOTE int
+  IMPRIMIRNUMENTRADA int
+}
+
+Table QSisDef {
+  CONSECUTIVO int [pk]
+  PREFIJOIMPO varchar
+  CONSECUTIVOIMPO varchar
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  TIPO varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  INCOTERM varchar
+  FLETE decimal
+  IDENTIFICADOR varchar
+  FIRMAFMEX varchar
+  FIRMAFAME varchar
+  GENERARASSETTAG tinyint
+  CODIGOBARRAS tinyint
+  FRACCIONIMP tinyint
+  TASAFRACCMEX tinyint
+  TIPOFRACCMEX tinyint
+  FRACCIONAME tinyint
+  PAISORIGENMEX tinyint
+  PAISORIGENAME tinyint
+  IMPORDENCOMP tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar
+  TIPOMN varchar
+  TIPOME varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  CONTROLREMESA varchar
+  REMESAINICIO smallint
+  REMESAFINAL smallint
+  CANTLIMITE decimal
+  PESOLIMITE decimal
+  VALORLIMITE decimal
+  METVALOR varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANALAME varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  NUMPARTEMEX tinyint
+  NUMPARTEAME tinyint
+  CANTLIMITEMIN decimal
+  PESOLIMITEMIN decimal
+  VALORLIMITEMIN decimal
+  ACTUALIZARPARTEPARTIDA tinyint
+  PACKINGORDENCOMPRA int
+  SOLICITARCONTRASENAADMINISTRADOR int
+  IMPRIMIRLOTE int
+  IMPRIMIRNUMENTRADA int
+}
+
+Table QSisExpo {
+  TIPOFACTURA varchar [ref: > QTiposFactura.CLAVE]
+  ESCAMBIOREGIMEN varchar [pk]
+  PREFIJOEXPO varchar
+  CONSECUTIVOEXPO varchar
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  TIPO varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  VENDIDOPOR varchar
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  INCOTERM varchar
+  FLETE decimal
+  IDENTIFICADOR varchar
+  CODIGOBARRAS tinyint
+  CANTPNCODBAR tinyint
+  DTACEROCODBAR tinyint
+  CBARRASVALOR varchar
+  FIRMAFMEX varchar
+  FRACCIONEXP tinyint
+  TASAFRACCMEX tinyint
+  TIPOFRACCMEX tinyint
+  NUMPARTEMEX tinyint
+  PAISORIGENMEX tinyint
+  COSTOUNITMEX tinyint
+  OCULTAREMPAQUEMEX tinyint
+  FIRMAFAME varchar
+  FRACCIONAME tinyint
+  PAISORIGENAME tinyint
+  FDAINFORMACIONAME tinyint
+  NUMPARTEAME tinyint
+  CODIGOSCAC tinyint
+  IMPORDENCOMP tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  TIPOMN varchar
+  TIPOME varchar
+  MOSTRARVALACT tinyint
+  PEPSPORCLASE tinyint
+  PEPSPORFRACCION tinyint
+  PEPSPORDESCRIPCION tinyint
+  PEPSPORFRACCALTERNA tinyint
+  CANTLIMITE decimal
+  PESOLIMITE decimal
+  VALORLIMITE decimal
+  VENTQUEUEACT tinyint
+  VALFACTTC varchar
+  METVALOR varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  COLCANTPORPESO tinyint
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANALAME varchar
+  ENVIADOPORVENDIDOPOR varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  PROVEEDOREXPORTADOR varchar
+  CANTLIMITEMIN decimal
+  PESOLIMITEMIN decimal
+  VALORLIMITEMIN decimal
+  SOLICITARPSWDACTUAL tinyint
+  SOLICITARPSWDDESACTUAL tinyint
+  PACKINGORDENVENTA int
+  IMPRIMIRPO int
+  PACKINGPEDCLAVE int
+  GENERAFACTURAIMD varchar
+  GENERAFACTURAIMDENBASEA varchar
+  SOLICITARCONTRASENAADMINISTRADOR int
+  IMPRIMIRLOTE int
+  IMPRIMIRNUMENTRADA int
+}
+
+Table QSisExpoRep {
+  TIPOFACTURA varchar [ref: > QTiposFactura.CLAVE]
+  PREFIJOEXPO varchar
+  CONSECUTIVOEXPO varchar
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  TIPO varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  VENDIDOPOR varchar
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  INCOTERM varchar
+  FLETE decimal
+  IDENTIFICADOR varchar
+  CODIGOBARRAS tinyint
+  CANTPNCODBAR tinyint
+  DTACEROCODBAR tinyint
+  CBARRASVALOR varchar
+  FIRMAFMEX varchar
+  FRACCIONEXP tinyint
+  TASAFRACCMEX tinyint
+  TIPOFRACCMEX tinyint
+  NUMPARTEMEX tinyint
+  PAISORIGENMEX tinyint
+  FIRMAFAME varchar
+  FRACCIONAME tinyint
+  PAISORIGENAME tinyint
+  NUMPARTEAME tinyint
+  CODIGOSCAC tinyint
+  IMPORDENCOMP tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  TIPOMN varchar
+  TIPOME varchar
+  MOSTRARVALACT tinyint
+  PEPSPORCLASE tinyint
+  PEPSPORFRACCION tinyint
+  PEPSPORDESCRIPCION tinyint
+  CANTLIMITE decimal
+  PESOLIMITE decimal
+  VALORLIMITE decimal
+  VENTQUEUEACT tinyint
+  VALFACTTC varchar
+  METVALOR varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANALAME varchar
+  ENVIADOPORVENDIDOPOR varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  PROVEEDOREXPORTADOR varchar
+  CANTLIMITEMIN decimal
+  PESOLIMITEMIN decimal
+  VALORLIMITEMIN decimal
+  SOLICITARPSWDACTUAL tinyint
+  SOLICITARPSWDDESACTUAL tinyint
+  PACKINGORDENVENTA int
+  IMPRIMIRPO int
+  FDAINFORMACIONAME int
+  PACKINGPEDCLAVE int
+  SOLICITARCONTRASENAADMINISTRADOR int
+  IMPRIMIRLOTE int
+  IMPRIMIRNUMENTRADA int
+}
+
+Table QSisGen {
+  CONSECUTIVO int [pk]
+  DTA int
+  DTAEXPO int
+  SUBEMPRESA varchar
+  PATHARCH varchar
+  PATHARCHTRANSMISION varchar
+  PATHRESPUESTA varchar
+  PATHARCHPED varchar
+  PATHARCHPEDCONSM varchar
+  PATHGENIMPOTEMP varchar
+  PATHGENEXPO varchar
+  APLICAPERMAT tinyint
+  ACTSEGURIDAD tinyint
+  CONTROLDES tinyint
+  DIADESACTUAL int
+  FECHADES int
+  UBIPLANTA varchar
+  DATOSHISTORICOS tinyint
+  TIPOVENRO varchar
+  CANTVENRO int
+  OMITIRIMPOSUBPCODBARRAS varchar
+  MUESTRAARCHCODBARRAS tinyint
+  CALVALBASETCPED tinyint
+  CALVALBASETCPEDEXPO tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  FACTORIVA decimal
+  FILTROCANTIDAD decimal
+  FIRMAPACKING tinyint
+  ESCONDAAMEXPACKING tinyint
+  ADVERTENCIATM tinyint
+  CALCDEPRECIACION varchar
+  VALMANIFUSADO tinyint
+  VALIDADECENCANT tinyint
+  MOSTRARADVERTENCIARO tinyint
+  USARTRANSPAMEDOCAME tinyint
+  CANTVSCANTSERIES tinyint
+  COVEFECHAEMISION tinyint
+  INTERFACEAACONSOLIDADA tinyint
+  INTERFACEAATCFPFF varchar
+  INCLUIROBSCOVEOBSIMPO tinyint
+  AGREGARINCREIMPO tinyint
+  REPDESCARGOLINEAL tinyint
+  IDENTIFICADORNODOSERIECOVE tinyint
+  ACTPDFREPORTES tinyint
+  PATHARCHPDFIMPO varchar
+  PATHARCHPDFEXPO varchar
+  MENSAJESVURFC int
+  MOSTRARPACKINGLISTINGLES int
+  ENVIARSUBPARTIDASCOVE int
+  RESTRINGEPAISIMPO int
+  RESTRINGEPAISEXPO int
+  UTILIZARFECHAPAGOPEDDEUNDIAANTERIOR int
+  UTILIZARTITULOSALTERNATIVOSIMPRESIONFACTURA int
+  USARTCDELAFECHAPAGOPEDIMPOENDESCARGA int
+  USARVUDE128O256 int
+  AGREGARNUMEROEMBARQUE int
+  UTILIZARUMDEEXISTENCIAENTRANSMISIONVU int
+  UTILIZARCODIGODEBROKERDECLIENTEENMAINX30 int
+  HOJACALCULOSEPARARINCREMENTABLESANEXO3 int
+  HOJACALCULODESGLOSEFACTURAANEXO3 int
+  UTILIZARNOMBREGENERICOMAINX30 int
+  UTILIZARTCRESPECTOATIPOPED int
+  UTILIZARSOLOPARTESNAFTAENCO int
+  CAMBIARPESOSPORCOSTOUNITARIO int
+  BLOQUEODEEDICIONDEFACTURAS int
+  CALCULARCOSTOUNITARIOENBASEAVALORTOTALSCAF tinyint
+  IMPRESIONFACTURAALTERNA tinyint
+  TRANSMITIRFACALTERNA tinyint
+}
+
+Table QSisImpo {
+  CONSECUTIVO int [pk]
+  PREFIJOIMPO varchar
+  CONSECUTIVOIMPO varchar
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  TIPO varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar
+  INCOTERM varchar
+  FLETE decimal
+  IDENTIFICADOR varchar
+  FIRMAFMEX varchar
+  FIRMAFAME varchar
+  CODIGOBARRAS tinyint
+  FRACCIONIMP tinyint
+  TASAFRACCMEX tinyint
+  TIPOFRACCMEX tinyint
+  FRACCIONAME tinyint
+  PAISORIGENMEX tinyint
+  PAISORIGENAME tinyint
+  IMPORDENCOMP tinyint
+  GENERARASSETTAG tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  TIPOMN varchar
+  TIPOME varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  CONTROLREMESA varchar
+  REMESAINICIO smallint
+  REMESAFINAL smallint
+  PERPAGRENGLON tinyint
+  CANTLIMITE decimal
+  PESOLIMITE decimal
+  VALORLIMITE decimal
+  METVALOR varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANALAME varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  NUMPARTEMEX tinyint
+  NUMPARTEAME tinyint
+  CANTLIMITEMIN decimal
+  PESOLIMITEMIN decimal
+  VALORLIMITEMIN decimal
+  ACTUALIZARPARTEPARTIDA tinyint
+  PACKINGORDENCOMPRA int
+  SOLICITARCONTRASENAADMINISTRADOR int
+  IMPRIMIRLOTE int
+  IMPRIMIRNUMENTRADA int
+}
+
+Table QSisImpoRep {
+  TIPOFACTURA varchar [ref: > QTiposFactura.CLAVE]
+  CONSECUTIVO int
+  PREFIJOIMPO varchar
+  CONSECUTIVOIMPO varchar
+  PEDIMENTO varchar [ref: > QPedimentos.PEDIMENTO]
+  TIPO varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  INCOTERM varchar
+  FLETE decimal
+  IDENTIFICADOR varchar
+  FIRMAFMEX varchar
+  FIRMAFAME varchar
+  CODIGOBARRAS tinyint
+  FRACCIONIMP tinyint
+  TASAFRACCMEX tinyint
+  TIPOFRACCMEX tinyint
+  FRACCIONAME tinyint
+  PAISORIGENMEX tinyint
+  PAISORIGENAME tinyint
+  IMPORDENCOMP tinyint
+  GENERARASSETTAG tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  TIPOMN varchar
+  TIPOME varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  CONTROLREMESA varchar
+  REMESAINICIO smallint
+  REMESAFINAL smallint
+  PERPAGRENGLON tinyint
+  CANTLIMITE decimal
+  PESOLIMITE decimal
+  VALORLIMITE decimal
+  VENTQUEUEACT tinyint
+  METVALOR varchar
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANALAME varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  NUMPARTEMEX tinyint
+  NUMPARTEAME tinyint
+  CANTLIMITEMIN decimal
+  PESOLIMITEMIN decimal
+  VALORLIMITEMIN decimal
+  PACKINGORDENCOMPRA int
+  SOLICITARCONTRASENAADMINISTRADOR int
+}
+
+Table QTipoActFijo {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+}
+
+Table QTiposFactura {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+  OBSERVACION varchar
+}
+
+Table SAceesos {
+  CONSECUTIVO int [pk]
+  FECHAENTRADA int
+  FECHASALIDA int
+  HORAENTRADA int
+  HORASALIDA int
+  NOMBRECOMPUTADORA char
+  DIRECCIONIP char
+}
+
+Table sAladi2 {
+  SYSID int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  ACUERDO varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  TASATXT varchar
+  TIPOTASA int
+  DOF char
+  NOTAS varchar
+  OBSERVACIONES text
+  TASANUM decimal
+  TASACALCULADA varchar
+}
+
+Table sArchivosDescargados {
+  ARCHIVO varchar [pk]
+  FECHA int
+  HORA int
+}
+
+Table sArchivosProcesados {
+  ARCHIVO varchar [pk]
+  FECHA int
+  HORA int
+}
+
+Table SBackFlashPL {
+  CONSECUTIVO int [pk]
+  PACKINGLIST varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTIDAD decimal
+  UNIMED varchar
+}
+
+Table SBOMVer {
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  VERSION int [pk]
+  FECHAMODIFICA int
+}
+
+Table SClasePermiso {
+  CONSECUTIVO int [pk]
+  NUMOFICIO varchar
+  LINEA int
+  CLASE varchar [pk]
+  PAGINARENGLON varchar
+  FECHA int
+  CANTIDAD decimal
+  CANTUSADA decimal
+}
+
+Table SClases {
+  CLASE varchar [pk]
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  TIPOMAT varchar [ref: > STipoMat.CLAVE]
+  UNIMED varchar
+  UMEXISTENCIA varchar
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  FRACCIONAME varchar
+  MATERIALPPAL tinyint
+  CLAVESUB varchar
+  REVFISICA tinyint
+  FRACCIONEXENTAIVA varchar
+  FRACCIONAMERICANAUSA varchar
+}
+
+Table SComprasMexID {
+  CONSECUTIVO int [pk]
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOIMPODEF varchar [ref: > SPedimentos.PEDIMENTO]
+  PEDIMENTOR1 varchar [ref: > SPedimentos.PEDIMENTO]
+  PEDIMENTOK1 varchar [ref: > SPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACCMIMPODEF varchar [ref: > SFacImp.FACTURAIMPO]
+  FECHAFACTURA int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOCAMBIOMM decimal
+  PROVDECR varchar
+  TIPODOC varchar [ref: > GTipoDoc.CLAVETD]
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  ESTATUS varchar
+  ESTATUSREC tinyint
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS int
+  VALORIMPOMN decimal
+  SUBVALORIMPOMN decimal
+  IVAIMPOMN decimal
+  VALORIMPOME decimal
+  SUBVALORIMPOME decimal
+  IVAIMPOME decimal
+  VALORIMPOMC decimal
+  SUBVALORIMPOMC decimal
+  IVAIMPOMC decimal
+  FACTORIVA decimal
+  INCREMENTOS decimal
+  CANTIDAD decimal
+  CANT_PARTIDAS smallint
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTE varchar
+  INCOTERM varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETES decimal
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  TIPOFACTURA varchar [ref: > STiposFactura.CLAVE]
+  MODTRANS varchar
+  CUALTIPOCAMBIO varchar
+  FECHAEMISION int
+  SELLOVALOR2500 tinyint
+  TOTALINCREMMN decimal
+  TOTALINCREMME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  FECHAACTUAL int
+  HORAACTUAL int
+  ESAGRANEL tinyint
+  FACTORPESO decimal
+  FACTURAALTERNA varchar
+  AADUANALAME varchar
+  TIPOPESO varchar
+  TIPOMOVIMIENTO varchar
+  ADUANA_CRUCE varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  DESTINO varchar
+  GENERARSALDOS varchar
+  ESMIXTO varchar
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  COMENTARIOSESTATUS varchar
+  METVALOR varchar
+  ESDUENOMCIA varchar
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  FECHAFACTURA_ISO datetime
+  COMOFUEPROCESADA varchar
+  FUEREVISADAMCIA tinyint
+  EDOCUMENT varchar
+  NUMOPERACIONVU varchar
+  LINEAPERSONAAA int
+  OBSERVACIONESVU varchar
+  ORIGENUBICACION varchar
+  DESTINOUBICACION varchar
+  ITINERARIOTRANPORTE varchar
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  ADENDAVU varchar
+  ESFERROCARRIL varchar
+  DESTINOORIGENCOVE varchar
+  PUERTOENTRADA varchar [ref: > GPuertoEnt.PUERTO]
+  MODOCONTINGENCIA tinyint
+  RECINTO varchar
+  SEMAFOROIMPO varchar
+  TIPODEGUIAAIDENTIFICAR varchar
+  LOCALIZACION varchar
+  CLAVEDOT varchar [ref: > GDotInformation.CLAVEDOT]
+  SUBDIVISION varchar
+  FUNGECOMOCO varchar
+  APENDICE17 tinyint
+  TIPOMOV varchar
+  IDFERRORCARRIL varchar
+}
+
+Table SConfigFTP {
+  CONSECUTIVO int [pk]
+  SERVIDOR_FTP varchar
+  USUARIO_FTP varchar
+  CLAVEACCESSO_FTP varchar
+  DIRECTORIO_FTP varchar
+  FOLDER_LLEGADA_FTP varchar
+  FOLDER_HISTORICO_LOCAL varchar
+  PUERTO int
+  FTPTRANSBINARIA tinyint
+  TIPOFACTURA varchar [ref: > STiposFactura.CLAVE]
+  CONSOLIDAFACTURA tinyint
+  TIPOMONEDA varchar
+}
+
+Table SConfiguracion {
+  CONSECUTIVO int [pk]
+  TIPODEFONDOS varchar
+  ACTIMPLEMENTACION tinyint
+  ALTAUSUARIOS tinyint
+  RESPALDO tinyint
+  FOLDER_LLEGADA text
+  ACTIVAR_BUSQUEDA varchar
+  INTERVALO_BUSQUEDA int
+  FTP_SERVER varchar
+  FTP_USERNAME varchar
+  FTP_PASSWORD varchar
+  FTP_DIRECTORY varchar
+  TIPOACTUALIZACION char
+  DIRECCTORIOMANUALSIFRA varchar
+  DIRECCIONHTTP char
+  FTP_FOLDER_LLEGADA varchar
+  FECHAACTUALIZACION int
+  RUTASERVIDOR text
+}
+
+Table SCTM {
+  CONSECUTIVO int [pk]
+  FOLIO varchar
+  FECHAINICIO int
+  FECHAEXPEDICION int
+  ENVIADOA varchar
+}
+
+Table SDescargaCTM {
+  CONSECUTIVO int [pk]
+  FACTRECIBO varchar
+  FACTENVIO varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTDESC decimal
+  UNIMED varchar
+  VALORMN decimal
+  VALORME decimal
+  FECHAENT int
+  NUMPARTEEXPO varchar [ref: > SPartes.NUMPARTE]
+  LINEA int
+}
+
+Table SDescargaD {
+  CONSECUTIVO int [pk]
+  FACTEXPO varchar [ref: > SFacExp.FACTURAEXPO]
+  FACREFERENCIA varchar
+  FACTIMPODEF varchar [ref: > SFacImp.FACTURAIMPO]
+  PEDIMENTOIMPODEF varchar [ref: > SPedimentos.PEDIMENTO]
+  PEDIMENTOEXPO varchar [ref: > SPedimentos.PEDIMENTO]
+  CLASE varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTDESC decimal
+  UNIMED varchar
+  VALORMN decimal
+  VALORME decimal
+  PESONETO decimal
+  PESOBRUTO decimal
+  PAISMERCANCIA varchar
+  FECHADESC int
+  TIPOFRACCION varchar
+  ADVALOREMIMPO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  NUMPARTEEXPO varchar [ref: > SPartes.NUMPARTE]
+  LINEAEXPO int
+  PARTEORIGINAL varchar
+  TIPODESC varchar
+  MONTOIGI decimal
+  PAGOIMPUESTO varchar
+  TIENECERT varchar
+  ORDENVENTA varchar
+  ACTUALREPARACION varchar
+  TIPOMATEXPO varchar
+  CONSECPARCIAL int
+  LINEAEXPOREF int
+  APARTADOCTM char
+  PORUTILERIA tinyint
+  DESCARGASM varchar
+}
+
+Table SDescargaM {
+  CONSECUTIVO int [pk]
+  CONSECUTIVOEXPO int
+  FACTURAEXPO varchar
+  LINEA int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLASE varchar
+  CANTIDAD decimal
+  UNIMED varchar
+  FACTURAIMPO varchar
+  NUMPARTEMP varchar [ref: > SPartes.NUMPARTE]
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESOBRUTO decimal
+  TIPOFRACCION varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  FACTURADEF varchar
+  PROCEDENCIA varchar
+  FACTURA varchar
+  TIPODESPERDICIO varchar
+  ORDENVENTA varchar
+  TOMARSALDOBASEALPT varchar
+}
+
+Table SDescargaMerDes {
+  CONSECUTIVO int [pk]
+  FACTURAEXPO varchar
+  PEDIMENTOEXPO varchar [ref: > SPedimentos.PEDIMENTO]
+  NUMPARTEPAREXPO varchar [ref: > SPartes.NUMPARTE]
+  FACTEXPOSCRAP varchar
+  PEDIMENTOEXPOSCRAP varchar [ref: > SPedimentos.PEDIMENTO]
+  CLASE varchar
+  TIPO varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTDESC decimal
+  UNIMED varchar
+  VALORMN decimal
+  VALORME decimal
+  PESONETO decimal
+  FECHADESC int
+  NUMPARTEEXPO varchar [ref: > SPartes.NUMPARTE]
+  LINEAEXPO int
+  PROCEDENCIA varchar
+}
+
+Table SDescargaR {
+  CONSECUTIVOEXPO int [pk]
+  LINEA int [pk]
+  FACTURAEXPO varchar [ref: > SFacExp.FACTURAEXPO]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  NUMPARTEMP varchar [ref: > SPartes.NUMPARTE]
+  CANTIDAD decimal
+  UNIMED varchar
+  PROCEDENCIA varchar
+  CANTEQUIVALENTE decimal
+  UMEQUIVALENTE varchar
+  LINEAEXPO int
+}
+
+Table SDescargaS {
+  FACTEXPO varchar [pk]
+  FACTURAEXPO varchar [ref: > SFacExp.FACTURAEXPO]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  TIPO varchar [pk]
+  CANTDESC decimal
+  UNIMED varchar
+  VALORMN decimal
+  VALORME decimal
+  PESONETO decimal
+}
+
+Table SDescargaSM {
+  CONSECUTIVO int [pk]
+  REMISIONENTRADA varchar
+  REMISIONSALIDA varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTDESC decimal
+  UNIMED varchar
+  VALORMN decimal
+  VALORME decimal
+  FECHAENT int
+  NUMPARTEEXPO varchar [ref: > SPartes.NUMPARTE]
+  LINEA int
+}
+
+Table SDescargaT {
+  CONSECUTIVO int [pk]
+  FACTEXPO varchar
+  FACREFERENCIA varchar
+  FACTIMPO varchar
+  PEDIMENTOIMPO varchar [ref: > SPedimentos.PEDIMENTO]
+  PEDIMENTOEXPO varchar [ref: > SPedimentos.PEDIMENTO]
+  CLASE varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTDESC decimal
+  UNIMED varchar
+  VALORMN decimal
+  VALORME decimal
+  VALORIVAMN decimal
+  VALORIVAME decimal
+  PESONETO decimal
+  PESOBRUTO decimal
+  PAISMERCANCIA varchar
+  FECHADESC int
+  TIPOFRACCION varchar
+  ADVALOREMIMPO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  NUMPARTEEXPO varchar [ref: > SPartes.NUMPARTE]
+  LINEAEXPO int
+  PARTEORIGINAL varchar
+  TIPODESC varchar
+  MONTOIGI decimal
+  PAGOIMPUESTO varchar
+  TIENECERT varchar
+  ORDENVENTA varchar
+  ACTUALREPARACION varchar
+  TIPOMATEXPO varchar
+  CONSECPARCIAL int
+  LINEAEXPOREF int
+  APARTADOCTM char
+  PORUTILERIA tinyint
+  DESCARGASM varchar
+  CANTIDADRETORNADASM decimal
+}
+
+Table SFacEntradaSM {
+  CONSECUTIVO int [pk]
+  FACTURAREMISION varchar
+  FECHAENTRADA int
+  ENVIADOPOR varchar
+  ESTATUS varchar
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  VALORENTMN decimal
+  VALORENTME decimal
+  FECHAACTUAL int
+  HORAACTUAL int
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  SEM int
+}
+
+Table SFacEnviaCTM {
+  CONSECUTIVO int [pk]
+  FACTURAENVIO varchar
+  FECHAENVIO int
+  NUMVEHICULO varchar
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  ESTATUS varchar
+  ENVIADOPOR varchar
+  ENVIADOA varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTE varchar [ref: > GTransportes.NUMIDENTIFICATRANS]
+  OBSERVACIONE varchar
+}
+
+Table SFacExp {
+  CONSECUTIVO int [pk]
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOEXPO varchar [ref: > SPedimentos.PEDIMENTO]
+  PEDIMENTOR1 varchar [ref: > SPedimentos.PEDIMENTO]
+  PEDIMENTOK1 varchar [ref: > SPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURAEXPO varchar
+  FECHAFACTURA int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPODOC varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  VENDIDOPOR varchar
+  AADUANAL varchar
+  MANIFIESTO varchar [ref: > GManifiesto.MANIFIESTO]
+  ESTATUS varchar
+  ESTATUSREC tinyint
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS int
+  VALOREXPOMN decimal
+  VALORMPMN decimal
+  VALORAGREMN decimal
+  IVAEXPOMN decimal
+  VALORVMEXMN decimal
+  VALEMPAQUENACMN decimal
+  VALOREXPOME decimal
+  VALORMPME decimal
+  VALORAGREME decimal
+  IVAEXPOME decimal
+  VALORVMEXME decimal
+  VALEMPAQUENACME decimal
+  FACTORIVA decimal
+  CANTEXPO decimal
+  CANT_PARTIDAS smallint
+  TRANSPORTISTA varchar
+  TRANSPORTISTAAME varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar
+  NUMTRASPORTE varchar
+  NUMTRASPORTECOMPLE varchar
+  INCOTERM varchar
+  IDENTIFICADOR varchar
+  COMPLEMENTO1 varchar
+  IDENTIFICADOR2 varchar
+  COMPLEMENTO2 varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETE decimal
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  TIPOFACTURA varchar [ref: > STiposFactura.CLAVE]
+  GENERAID varchar
+  ACTVALOR varchar
+  MODTRANS varchar
+  BILLNUMBER varchar
+  APLICADESCMANUAL varchar
+  DESTINOMCIA varchar
+  FECHAPAGO int
+  NUMRECIBOPAGO varchar
+  VALORIMPUESTOME decimal
+  TIPODESPERDICIO varchar
+  ESCAMBIOREGIMEN varchar
+  CUALTIPOCAMBIO varchar
+  TOTALINCREMMN decimal
+  TOTALINCREMME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  ESTATUSREP varchar
+  FECHAACTUAL int
+  HORAACTUAL int
+  DESCARGASUST tinyint
+  DESCARGACLASE tinyint
+  DESCARGADEF tinyint
+  ESAGRANEL tinyint
+  NUMEROPROFORMA varchar
+  NUMEROGUIA varchar
+  NUMEMBARQUE varchar
+  RECIBIDOPOR varchar
+  FECHAENTREGA int
+  ENTREGADO varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  ENVIADOPORVENDIDOPOR varchar
+  NUMREFERENCIA varchar
+  OFICIO varchar
+  AADUANALAME varchar
+  TIPOPESO varchar
+  ADUANA_CRUCE varchar
+  TIPOMOVIMIENTO varchar
+  FACTURAALTERNA varchar
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  COMENTARIOSESTATUS varchar
+  SEMAFORO varchar
+  NUMPROYECTO varchar
+  METVALOR varchar
+  TIPOSCRAP varchar
+  NUMFACTURABROKER varchar
+  FECHAFACBROKER int
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  GENDESCPARTIDAS varchar
+  FECHAFACTURA_ISO datetime
+  COMOFUEPROCESADA varchar
+  FACTURAEXPOREF varchar
+  ESMIXTO varchar
+  PROVEEDOREXPORTADOR varchar
+  EDOCUMENT varchar
+  NUMOPERACIONVU varchar
+  LINEAPERSONAAA int
+  TIPOCAMBIOMM decimal
+  VALOREXPOMC decimal
+  VALORAGREMC decimal
+  IVAEXPOMC decimal
+  VALEMPAQUENACMC decimal
+  VALORVMEXMC decimal
+  OBSERVACIONESVU varchar
+  ORIGENUBICACION varchar
+  DESTINOUBICACION varchar
+  ITINERARIOTRANPORTE varchar
+  SETRATAPROCESOCTM varchar
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  ADENDAVU varchar
+  ESFERROCARRIL varchar
+  DESTINOORIGENCOVE varchar
+  FECHAEMISION int
+  MODOCONTINGENCIA tinyint
+  RAZONEXPORTACION varchar
+  ORDENCOMPRA varchar
+  TERMINOSPAGO varchar
+  MANIOBRAS decimal
+  RECINTO varchar
+  SEMAFOROEXPO varchar
+  OPCIONIV18 varchar
+  TIPODEGUIAAIDENTIFICAR varchar
+  LOCALIZACION varchar
+  CFDIUUID varchar
+  CFDIPATHPDF varchar
+  CFDIPATHXML varchar
+  CLAVEDOT varchar [ref: > GDotInformation.CLAVEDOT]
+  SUBDIVISION varchar
+  FUNGECOMOCO varchar
+  ENAJENACIONBIENES tinyint
+  APENDICE17 tinyint
+  TIPOMOV varchar
+  IDFERRORCARRIL varchar
+}
+
+Table SFacExpCobranza {
+  CONSECUTIVO int [pk]
+  FACTURA varchar
+  LINEA int [pk]
+  CONCEPTO varchar [ref: > GConceptos.CLAVE]
+  COBRADO tinyint
+  FECHACOBRANZA int
+  VALOR decimal
+  DEPTOCOBRANZA varchar
+  FACTCOBRADOR varchar
+  NOMBRECOBRADOR varchar
+}
+
+Table SFacImp {
+  CONSECUTIVO int [pk]
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOIMPO varchar [ref: > SPedimentos.PEDIMENTO]
+  PEDIMENTOR1 varchar [ref: > SPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURAIMPO varchar
+  FECHAFACTURA int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOCAMBIOMM decimal
+  TIPODOC varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar
+  ESTATUS varchar
+  ESTATUSREC tinyint
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS int
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORIMPOMC decimal
+  CANTIMPO decimal
+  CANT_PARTIDAS smallint
+  TRANSPORTISTA varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar
+  NUMTRASPORTE varchar
+  INCOTERM varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETE decimal
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  MODTRANS varchar
+  CUALTIPOCAMBIO varchar
+  FECHAEMISION int
+  SELLOVALOR2500 tinyint
+  TOTALINCREMMN decimal
+  TOTALINCREMME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  FECHAACTUAL int
+  HORAACTUAL int
+  ESAGRANEL tinyint
+  FACTORPESO decimal
+  FACTURAALTERNA varchar
+  AADUANALAME varchar
+  TIPOPESO varchar
+  TIPOMOVIMIENTO varchar
+  ADUANA_CRUCE varchar
+  NUMTRAILER varchar [ref: > GTrailers.NUMTRAILER]
+  DESTINO varchar
+  GENERARSALDOS varchar
+  ESMIXTO varchar
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  COMENTARIOSESTATUS varchar
+  METVALOR varchar
+  ESDUENOMCIA varchar
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  FECHAFACTURA_ISO datetime
+  COMOFUEPROCESADA varchar
+  FUEREVISADAMCIA tinyint
+  EDOCUMENT varchar
+  NUMOPERACIONVU varchar
+  LINEAPERSONAAA int
+  OBSERVACIONESVU varchar
+  ORIGENUBICACION varchar
+  DESTINOUBICACION varchar
+  ITINERARIOTRANPORTE varchar
+  FIRMAELECTRONICA varchar
+  NUMEROCERTIFICADO varchar
+  CONTENEDORESTIPO varchar
+  DATOSVEHICULO varchar
+  NUMERONIU varchar
+  CANTGUIASEMBARQUE varchar
+  ADENDAVU varchar
+  ESFERROCARRIL varchar
+  DESTINOORIGENCOVE varchar
+  PUERTOENTRADA varchar [ref: > GPuertoEnt.PUERTO]
+  MODOCONTINGENCIA tinyint
+  RECINTO varchar
+  PEDIMENTOK1 varchar [ref: > SPedimentos.PEDIMENTO]
+  FACTORIVA varchar
+  VALORIVAMN decimal
+  VALORIVAME decimal
+  SEMAFOROIMPO varchar
+  TIPODEGUIAAIDENTIFICAR varchar
+  LOCALIZACION varchar
+  CLAVEDOT varchar [ref: > GDotInformation.CLAVEDOT]
+  SUBDIVISION varchar
+  FUNGECOMOCO varchar
+  APENDICE17 tinyint
+  TIPOMOV varchar
+  IDFERRORCARRIL varchar
+}
+
+Table SFacImpCobranza {
+  CONSECUTIVO int [pk]
+  FACTURA varchar 
+  LINEA int [pk]
+  CONCEPTO varchar [ref: > GConceptos.CLAVE]
+  COBRADO tinyint
+  FECHACOBRANZA int
+  VALOR decimal
+  DEPTOCOBRANZA varchar
+  FACTCOBRADOR varchar
+  NOMBRECOBRADOR varchar
+}
+
+Table SFacOrdenVenta {
+  CONSECUTIVO int [pk]
+  FACTURAEXPO varchar 
+  LINEA int [pk]
+  ORDENVENTA varchar
+  COLORES varchar
+  CANTBULTOS int
+  COLORCUADRITO char
+}
+
+Table SFacReciboCTM {
+  CONSECUTIVO int [pk]
+  FACTURARECIBO varchar
+  FECHARECIBO int
+  NUMVEHICULO varchar
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOMONEDA varchar
+  ESTATUS varchar
+  ENVIADOPOR varchar
+}
+
+Table SFacRep {
+  PED_PENDIENTE_ASIGNAR tinyint
+  PEDIMENTOIMPO varchar [ref: > SPedimentos.PEDIMENTO]
+  PEDIMENTOR1 varchar [ref: > SPedimentos.PEDIMENTO]
+  REMESA smallint
+  FACTURAIMPO varchar [pk]
+  FECHAFACTURA int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOCAMBIOMM decimal
+  TIPODOC varchar [ref: > GTipoDoc.CLAVETD]
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  ESTATUS varchar
+  ESTATUSREC tinyint
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS int
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORIMPOMC decimal
+  CANTIMPO decimal
+  CANT_PARTIDAS smallint
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRASPORTE varchar
+  INCOTERM varchar
+  PRECINTO varchar [ref: > GPrecintos.PRECINTO]
+  SUBEMPRESA varchar
+  FLETE decimal
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  MODTRANS varchar [ref: > GModTransporte.CLAVEMOD]
+  CUALTIPOCAMBIO varchar
+  IDRELDOC int
+  CLAVEFIRMA varchar [ref: > GFirmas.CLAVEFIRMA]
+  SEMAFOROEXPO varchar
+}
+
+Table SFacSalidaSM {
+  CONSECUTIVO int [pk]
+  FACTURASALIDA varchar
+  FECHAENVIO int
+  ENVIADOPOR varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  ESTATUS varchar
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  VALORSALMN decimal
+  VALORSALME decimal
+  FECHAACTUAL int
+  HORAACTUAL int
+  USUARIOACT varchar
+  USUARIOCAP varchar
+  FECHACAPTURA int
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  SEM int
+}
+
+Table SFracAmeFact {
+  CONSECUTIVO int [pk]
+  CONSECUTIVOEXPO int
+  FACTURAEXPO varchar
+  LINEA int
+  LINEAPARTE int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  FRACCIONAME varchar
+  TASA decimal
+  VALOR decimal
+  TIPOVALOR varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  TIPOADVALOREM varchar
+  PREFIJO varchar
+  AR decimal
+  OH decimal
+}
+
+Table SFracAmeParte {
+  CONSECUTIVO int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  FRACCIONAME varchar
+  VALOR decimal
+  TIPOVALOR varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  PREFIJO varchar
+  FRACCIONAMERICANASIFRA varchar
+  AR decimal
+  OH decimal
+}
+
+Table sFracciones {
+  SYSID int [pk]
+  FRACCION varchar 
+  FRACCIONPUNTO varchar
+  DESCRIPCION text
+  UMCLAVE varchar
+  UMABREVIACION varchar
+  ADVIMPOTXT varchar
+  ADVIMPONUM decimal
+  TIPOTASAADVIMPO int
+  ADVEXPOTXT varchar
+  ADVEXPONUM decimal
+  TIPOTASAADVEXPO int
+  TASAIVAFRANJA decimal
+  TASAIVAINTERIOR decimal
+  TASAISAN decimal
+  ARANCELMIXTO char
+  TASAMIXTA decimal
+  DOF char
+  NOTAS text
+  HISTORICO text
+  ARANCELESPECIFICO char
+  TIPOVEHICULO char
+  APLICAISAN char
+  APLICAIEPS char
+  NIVEL int
+}
+
+Table sFracciones_USA {
+  CONSECUTIVO int [pk]
+  FRACCION_SIN_PUNTO varchar
+  FRACCION_CON_PUNTO varchar
+  FRACCION_MOSTRAR varchar
+  ESPECIFICO varchar
+  NIVEL int
+  DESCRIPCION varchar
+  UNIDADCANTIDAD varchar
+  TARIFA1 varchar
+  TLC varchar
+  TARIFA2 varchar
+  NOTAS varchar
+}
+
+Table sFraccionesAnteriores {
+  SYSID int [pk]
+  FRACCIONACTUAL varchar
+  FRACCIONANTERIOR varchar
+}
+
+Table SFraccionesAnterioresN {
+  SysID int
+  FraccionActual varchar
+  FraccionAnterior varchar
+}
+
+Table sFraccionesCortas {
+  CONSECUTIVO int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  DECRIPCIONCORTA varchar
+  DESCRIPCIONLARGA varchar
+}
+
+Table sFraccionesResumidas {
+  CONSECUTIVO int [pk]
+  FRACCION_SIN_PUNTO varchar
+  FRACCION_CON_PUNTO varchar
+  DESCRIPCION text
+}
+
+Table sHistoricoReit {
+  SYSID int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  ARTICULO varchar
+  FUNDAMENTO varchar
+  ACUERDO varchar
+  DOF char
+  DOF2 char
+  DOF3 char
+  PERMISO char
+  DOCUMENTO varchar
+  TEMPORALIDAD smallint
+  TEMPORALIDADSERVICIOS smallint
+  TEMPORALIDADEMPRESACERTIFICADA smallint
+}
+
+Table SIdentificadoresPedimento {
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  CLAVEID varchar
+  COMPLEMENTO1 varchar
+  COMPLEMENTO2 varchar
+  COMPLEMENTO3 varchar
+}
+
+Table SImplosion {
+  CONSECUTIVO int [pk]
+  FOLIOIMPLOSION varchar
+  FECHAIMPOSION int
+  TIPOCAMBIO decimal [ref: > GTipoCambio.VALOR]
+  ESTATUS varchar
+  PESONETO decimal
+  PESOBRUTO decimal
+  CANTBULTOS int
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORIMPOMC decimal
+  CANTIMPLO decimal
+  CANT_PARTIDAS smallint
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  FECHAACTUAL int
+  HORAACTUAL int
+  TIPOPESO varchar
+  FACTURAIMPO varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  TIPOFRACIMPO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  PROCEDENCIA varchar
+}
+
+Table SLocalizacion {
+  CLAVE varchar [pk]
+  LOCALIZACION varchar
+}
+
+Table SMatBOM {
+  CONSECUTIVO int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  NUMPARTEBOM varchar
+  CANTIDAD decimal
+  UNIMED varchar
+  PROCEDENCIA varchar
+  CANTMP decimal
+  CANTDESP decimal
+  CANTMERMA decimal
+  CANTEQUIVALENTE decimal
+  UMEQUIVALENTE varchar
+  CANTDESPEQUI decimal
+  CANTMERMAEQUI decimal
+  DESCDESPAPARTADO tinyint
+  PORCENTAJEMP decimal
+  PORCENTAJEDESP decimal
+  PORCENTAJEMERMA decimal
+  TIPODESPMERMA varchar
+}
+
+Table SMatBOMClase {
+  CONSECUTIVO int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLASE varchar
+  PORCENTAJE decimal
+}
+
+Table SMermaDesp {
+  FACTURAEXPO varchar [pk]
+  FECHAEXPO int
+  PEDIMENTOEXPO varchar [ref: > SPedimentos.PEDIMENTO]
+  CLASE varchar
+  TIPO varchar [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  NUMPARTEPAREXPO varchar [pk]
+  CANTIDAD decimal
+  CANTIDADUSADA decimal
+  UNIMED varchar
+  VALORMN decimal
+  VALORUSADOMN decimal
+  VALORME decimal
+  VALORUSADOME decimal
+  PESONETO decimal
+  PESOUSADO decimal
+  PROCEDENCIA varchar [pk]
+}
+
+Table SModificaciones {
+  MOVIMIENTO varchar
+  LINEA int [pk]
+  TABLA varchar
+  CAMPOREF1 varchar
+  CAMPOREF2 varchar
+  FECHA int
+  HORA int
+  LOGIN varchar
+  CLAVE_ACCESO varchar
+}
+
+Table SPackingList {
+  CONSECUTIVO int [pk]
+  NUMPACKINGLIST varchar
+  EXPORTADOR varchar
+  EXPORTADOA varchar
+  ENVIADOA varchar
+  ENVIADOPOR varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  FECHA int
+  FACTURAREFERENCIA varchar
+  ESTATUS varchar
+}
+
+Table SParPruSuf {
+  FACTURAEXPO varchar [pk]
+  LINEA int [pk]
+  LINEAEXPO int [pk]
+  ADVALOREM decimal
+  VALORME decimal
+}
+
+Table SParteCliente {
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLIENTE varchar [ref: > GClientesPro.CLIENTE]
+  ESTATUS varchar
+}
+
+Table SPartePais {
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  PAISDEFAULT tinyint [ref: > GPaises.CLAVEM3]
+  PAISDEFAULTEXPO tinyint
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  TIPOFRACCION varchar [pk]
+  TASAIM varchar
+  TASAEX varchar
+  TIENECERT varchar
+  NOCERTIFICADO varchar
+  FECHAFINALCO int
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  TASAIMNUM decimal
+}
+
+Table SPartes {
+  NUMPARTE varchar [pk]
+  TIPOPARTE varchar
+  NUMPARTECOM varchar
+  NUMPARTEREF varchar
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  CLASE varchar
+  UNIMED varchar
+  UNIMEDEQUIV varchar
+  FACTORCONV decimal
+  COSTOUNITARIO decimal
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  PESOUNITARIO decimal
+  TIPOMAT varchar
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  FRACCIONAME varchar
+  ADVALOREMAME decimal
+  FRACCAMEEXPONDUTY varchar
+  FRACEUA varchar
+  FRACCANADA varchar
+  SUBEMPRESA varchar
+  UMEXISTENCIA varchar
+  VALORAGREGADO decimal
+  TIPOVA varchar
+  FECHAMODIFICA int
+  UNIMEDALTERNA varchar
+  CLAVEFDA varchar [ref: > GCodigosFDA.CLAVEFDA]
+  LEYENDASEG varchar
+  VALORNOORIG decimal
+  IMPPAGAR decimal
+  DESCESPSCRAP varchar
+  DESCINGSCRAP varchar
+  FRACEXPOSCRAP varchar
+  FRACAMESCRAP varchar
+  FECHACOSTO int
+  FOTOPARTE varchar
+  CAPXUMAUXILIAR varchar
+  FACTORAUXILIAR decimal
+  UMAUXILIAR varchar
+  COSTOUAUXILIAR decimal
+  CAPTXKILO varchar
+  CANTKILO decimal
+  COSTOVENTA decimal
+  CANTPZXCJ decimal
+  VERSIONBILL int
+  NUMPARTESUS varchar
+  ESREPARACION varchar
+  COSTOUNITARIOREP decimal
+  USACANTALTERNA tinyint
+  FECHAMODBOM int
+  FECHAMODFRACAME int
+  VALORAGREGADOREP decimal
+  ESMATPELIGROSO varchar
+  NUMEMERGENCIA varchar
+  CLASEDEPELIGRO varchar
+  NUMIDENTIFICACIONUN varchar
+  GRUPOEMBALAJE varchar
+  NOMAPROPIADOEMB varchar
+  NOTASMATPELIGROSO varchar
+  VALORDUTY decimal
+  FLETEDUTY decimal
+  VALORTOTALDUTY decimal
+  VALORNODUTY decimal
+  FLETENODUTY decimal
+  VALORTOTALNDUTY decimal
+  VALORTOTAL decimal
+  TRABAJODIREC decimal
+  GASTOGRALES decimal
+  OTROSGASTOS decimal
+  TOTALGASTOS decimal
+  DEPRECIACION decimal
+  TOOLING decimal
+  MATCONSUMED decimal
+  VALORSCRAP decimal
+  FORENGDESDEV decimal
+  VALTOTALASIST decimal
+  VALEMPAQUEFOR decimal
+  GANANCIA decimal
+  DUTIABLEVALUE7 decimal
+  OTROSNDUTIABLE decimal
+  COSTOESTIMADO decimal
+  TOTALNDUTIABLE decimal
+  ACTUALDUTIABLE decimal
+  VALEMPAQUEUS decimal
+  VALEMPAQUENAC decimal
+  FECHACOSTOAME int
+  ESTEXTIL varchar
+  PROVEEDOR varchar
+  ECCN varchar
+  SIMBOLOEXCLIC varchar
+  CAMPOOPCIONAL varchar
+  UNIMEDEQUIV2 varchar
+  FACTORCONV2 decimal
+  LABORCOST decimal
+  EXPORTCODE varchar
+  LICENSECODE varchar
+  CAMPOOPCIONALBOM varchar
+  TIPOPESO varchar
+  TIPOIMMEX varchar
+  CLAVEFCC varchar [ref: > GCodigosFCC.CLAVEFCC]
+  NUMPARTESCRAP varchar
+  NUMPARTEMERMA varchar
+  FACTORDESP decimal
+  HABILITADADESHABILITADA tinyint
+  FECHAMODIFICA_ISO datetime
+  VERSIONBOM int
+  ORDENVENTA varchar
+  CLIENTEASIGNADO varchar [ref: > GClientesPro.CLIENTE]
+  ANCHURA varchar
+  ESPESOR varchar
+  SPEC varchar
+  FACTORCONVERSION decimal
+  UMCONVERSION varchar
+  NOTIFICARSIPARTEUSAREGLA8VA int
+  FECHACREACIONPARTE int
+  LLENARINFOSUGERIDAR8 int
+  RESULTADOCALCULONAFTA varchar
+  PORCENTAJECALCULONAFTA decimal
+  MDI varchar
+  CONSECUTIVOATF int
+  FRACCIONAMERICANASIFRA varchar
+  NUMPARTEREFFLEX varchar
+  DTA varchar
+  DTB varchar
+  DTG varchar
+  IDENTIFICADOR varchar
+  CONSECUTIVOAPHIS int
+}
+
+Table SPartidasCM {
+  CONSECUTIVO int [pk]
+  FACCMIMPODEF varchar
+  LINEACMIMPDEF int [pk]
+  FECHAFACTURA int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLASE varchar
+  CANTIMPO decimal
+  UNIMED varchar
+  CANTALTERNA decimal
+  UNIMEDALTERNA varchar
+  COSTOUNITARIOME decimal
+  COSTOUNITARIOMN decimal
+  COSTOUNITARIOMC decimal
+  VALORIMPOMN decimal
+  SUBVALORIMPOMN decimal
+  IVAIMPOMN decimal
+  VALORIMPOME decimal
+  SUBVALORIMPOME decimal
+  IVAIMPOME decimal
+  VALORIMPOMC decimal
+  SUBVALORIMPOMC decimal
+  IVAIMPOMC decimal
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  DESCRIPCIONE varchar
+  DESCRIPCIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS int
+  DESCBULTOS varchar
+  FRACCIONIMPO varchar
+  TIPOFRACCIMPO varchar
+  ADVIMPO varchar
+  ADVIMPONUM decimal
+  TIENECO varchar
+  NOCERTIFICADO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  FRACCIONAMERICANA varchar
+  ADVAME decimal
+  ORDENCOMPRA varchar
+  INFOADICIONESP varchar
+  INFOADICIONING varchar
+  MONTOIGI decimal
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  NUMEROGUIA varchar
+  PROVEEDOR varchar
+  CANTIMPOAUXILIAR decimal
+  UNIMEDAUXILIAR varchar
+  COSTOUAUXILIARME decimal
+  VALORIMPOAUXILIARME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  CLIENTEFACTURAR varchar [ref: > GClientesPro.CLIENTE]
+  FRACCIONROCTAVA varchar
+  PERMISOROCTAVA varchar
+  BODEGA varchar
+  REQUISITOR varchar
+  LINEARO int
+  ADVALORMELINEAPED decimal
+  ADVALORMNLINEAPED decimal
+  PERMISOSPED varchar
+  LINEAPED int
+  CAMPOCOMODIN varchar
+  ESMCIAMILITAR tinyint
+  METVALOR varchar
+  DESCRIPCIONPARTE varchar
+  CANTIMPOUMA decimal
+  CLAVEUMA varchar
+  NUMPARTECOM varchar [ref: > SPartes.NUMPARTE]
+  NOCAJAS varchar
+  VALIDACIONZERO int
+  VALIDACIONUNO int
+  METVALORVALORDETERMINADO decimal
+  METVALORMOTIVODEUSO varchar
+  CLIENTEASIGNADO varchar [ref: > GClientesPro.CLIENTE]
+  NUMERODEENTRADA varchar
+  LOCALIZACION varchar
+  LOTE varchar
+}
+
+Table SPartidasEntradaSM {
+  CONSECUTIVO int [pk]
+  FACTURAREMISION varchar
+  LINEAREMISION int [pk]
+  FACTURASALIDA varchar
+  LINEASALIDA int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTENTRADA decimal
+  UNIDADMEDIDA varchar [ref: > GUniMed.UNIDAD]
+  COSTOUNITARIOMC decimal
+  COSTOMN decimal
+  COSTOME decimal
+  VALORENTMN decimal
+  VALORENTME decimal
+  TIPODENUMPARTE varchar
+  TIPODEORDEN varchar
+  CONCEPTODELAPARTIDA varchar
+  FRACCIONDELAPRENDA varchar
+}
+
+Table SPartidasEnviaCTM {
+  CONSECUTIVO int [pk]
+  LINEAENVIO int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTENVIO decimal
+  UNIDADMEDIDA varchar [ref: > GUniMed.UNIDAD]
+  COSTOUNITARIOMC decimal
+  COSTOMN decimal
+  COSTOME decimal
+  VALORMN decimal
+  VALORME decimal
+  PESONETO decimal
+  PESOBRUTO decimal
+  MARCA varchar
+  MODELO varchar
+  SERIES varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  VALORAGREMC decimal
+  VALORAGREME decimal
+  VALORAGREMN decimal
+  VALEMPAQUENACMC decimal
+  VALEMPAQUENACME decimal
+  VALEMPAQUENACMN decimal
+  CANTBULTOS int
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  ORDENVENTA varchar
+}
+
+Table SPartidasExpo {
+  CONSECUTIVO int [pk]
+  FACTURAEXPO varchar
+  LINEA int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLASE varchar
+  CANTEXPO decimal
+  UNIMED varchar
+  PAISDESTINO varchar [ref: > GPaises.CLAVEM3]
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS int
+  DESCBULTOS varchar
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  DESCRIPCIONPARTE varchar
+  DESCRIPCIONCLASE varchar
+  COSTOUNITARIOMC decimal
+  COSTOUNITARIOME decimal
+  COSTOVENTAME decimal
+  VALORTOTALME decimal
+  VALORMPTEMPME decimal
+  VALORAGREME decimal
+  VALORMPDEFME decimal
+  IVAEXPOME decimal
+  COSTOVENTAMN decimal
+  VALORTOTALMN decimal
+  VALORMPTEMPMN decimal
+  COSTOUNITARIOMN decimal
+  VALORAGREMN decimal
+  VALORMPDEFMN decimal
+  IVAEXPOMN decimal
+  CANTBULCONT smallint
+  DESCCONTENEDOR varchar
+  ORDENCOMPRA varchar
+  CANTEXISTENCIA decimal
+  UNIMEDEXISTENCIA varchar
+  INFOADICIONESP varchar
+  INFOADICIONING varchar
+  FRACCIONEXPO varchar
+  ADVALOREMEXPO varchar
+  TIPOFRACEXPO varchar
+  VERSIONBILL int
+  FRACCIONTLCAN varchar
+  ADVTLCAN decimal
+  VALORTLCAN decimal
+  VALORNOORIGINARIOME decimal
+  VALORORIGINARIOME decimal
+  MONTOIGIME decimal
+  MONTOEXCENTOME decimal
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  TIENECO varchar
+  FACTURASCRAP varchar
+  CONSECUTIVODES int
+  COSTOUNICOMERCIAL decimal
+  VALORTOTALCOMERCIAL decimal
+  PROCSCRAP varchar
+  VALORAGREMC decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  PAISOPCIONAL varchar [ref: > GPaises.CLAVEM3]
+  ENVIADOA varchar
+  VALEMPAQUENACMN decimal
+  VALEMPAQUENACME decimal
+  VALEMPAQUENACMC decimal
+  VALEMPAQUEUSME decimal
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  ADVALORMELINEAPED decimal
+  ADVALORMNLINEAPED decimal
+  PERMISOSPED varchar
+  LINEAPED int
+  REVISARDESP varchar
+  CANTEXPOUMA decimal
+  CLAVEUMA varchar
+  VALORTOTALMC decimal
+  VALORMPTEMPMC decimal
+  VALORMPDEFMC decimal
+  IVAEXPOMC decimal
+  APARTADOCTM char
+  NUMPARTECOM varchar [ref: > SPartes.NUMPARTE]
+  VERSIONBOM int
+  METVALOR varchar
+  METVALORVALORDETERMINADO decimal
+  METVALORMOTIVODEUSO varchar
+  VALIDACIONZERO int
+  VALIDACIONUNO int
+  NUMERODEGUIA varchar
+  CLIENTEASIGNADO varchar [ref: > GClientesPro.CLIENTE]
+  NUMERODEENTRADA varchar
+  LOCALIZACION varchar
+  TOMARCOMOPT int
+  FRACAMESELEXTRA varchar
+  LOTE varchar
+  PALLET2 smallint
+}
+
+Table SPartidasImpo {
+  CONSECUTIVO int [pk]
+  FACTURAIMPO varchar
+  LINEAIMPO int [pk]
+  FECHAFACTURA int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLASE varchar
+  CANTIMPO decimal
+  UNIMED varchar
+  CANTALTERNA decimal
+  UNIMEDALTERNA varchar
+  COSTOUNITARIOME decimal
+  COSTOUNITARIOMN decimal
+  COSTOUNITARIOMC decimal
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORIMPOMC decimal
+  VALORIVAMN decimal
+  VALORIVAME decimal
+  NUMPERMISO varchar
+  PAGRENGLON varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS int
+  DESCBULTOS varchar
+  FRACCIONIMPO varchar
+  TIPOFRACCIMPO varchar
+  ADVIMPO varchar
+  ADVIMPONUM decimal
+  TIENECO varchar
+  NOCERTIFICADO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  FRACCIONAMERICANA varchar
+  ADVAME decimal
+  ORDENCOMPRA varchar
+  INFOADICIONESP varchar
+  INFOADICIONING varchar
+  MONTOIGI decimal
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  NUMEROGUIA varchar
+  PROVEEDOR varchar
+  CANTIMPOAUXILIAR decimal
+  UNIMEDAUXILIAR varchar
+  COSTOUAUXILIARME decimal
+  VALORIMPOAUXILIARME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  CLIENTEFACTURAR varchar [ref: > GClientesPro.CLIENTE]
+  FRACCIONROCTAVA varchar
+  PERMISOROCTAVA varchar
+  BODEGA varchar
+  REQUISITOR varchar
+  LINEARO int
+  ADVALORMELINEAPED decimal
+  ADVALORMNLINEAPED decimal
+  PERMISOSPED varchar
+  LINEAPED int
+  CAMPOCOMODIN varchar
+  ESMCIAMILITAR tinyint
+  METVALOR varchar
+  DESCRIPCIONPARTE varchar
+  CANTIMPOUMA decimal
+  CLAVEUMA varchar
+  NUMPARTECOM varchar [ref: > SPartes.NUMPARTE]
+  NOCAJAS varchar
+  VALIDACIONZERO int
+  VALIDACIONUNO int
+  METVALORACIONVALORDETERMINADO decimal
+  METVALORACIONMOTIVODEUSO varchar
+  CLIENTEASIGNADO varchar [ref: > GClientesPro.CLIENTE]
+  NUMERODEENTRADA varchar
+  LOCALIZACION varchar
+  LOTE varchar
+  FORMAPAGOTIGI varchar
+}
+
+Table SPartidasImposion {
+  CONSECUTIVO int [pk]
+  FACTURAIMPO varchar
+  LINEAIMPO int [pk]
+  FECHAFACTURA int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLASE varchar
+  CANTIMPO decimal
+  UNIMED varchar
+  CANTALTERNA decimal
+  UNIMEDALTERNA varchar
+  COSTOUNITARIOME decimal
+  COSTOUNITARIOMN decimal
+  COSTOUNITARIOMC decimal
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORIMPOMC decimal
+  NUMPERMISO varchar
+  PAGRENGLON varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESONETOKGS decimal
+  PESONETOLBS decimal
+  PESOBRUTO decimal
+  PESOBRUTOKGS decimal
+  PESOBRUTOLBS decimal
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS int
+  DESCBULTOS varchar
+  FRACCIONIMPO varchar
+  TIPOFRACCIMPO varchar
+  ADVIMPO varchar
+  ADVIMPONUM decimal
+  TIENECO varchar
+  NOCERTIFICADO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  FRACCIONAMERICANA varchar
+  ADVAME decimal
+  ORDENCOMPRA varchar
+  INFOADICIONESP varchar
+  INFOADICIONING varchar
+  MONTOIGI decimal
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  NUMEROGUIA varchar
+  PROVEEDOR varchar
+  CANTIMPOAUXILIAR decimal
+  UNIMEDAUXILIAR varchar
+  COSTOUAUXILIARME decimal
+  VALORIMPOAUXILIARME decimal
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  CLIENTEFACTURAR varchar [ref: > GClientesPro.CLIENTE]
+  FRACCIONROCTAVA varchar
+  PERMISOROCTAVA varchar
+  BODEGA varchar
+  REQUISITOR varchar
+}
+
+Table SPartidasPackingList {
+  CONSECUTIVO int [pk]
+  LINEA int [pk]
+  NUMPACKINGLIST varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  DESCRIPCION varchar
+  CANTIDAD decimal
+  UNIMED varchar
+  CANTBULTOS int
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  PESONETO decimal
+  PESOBRUTO decimal
+}
+
+Table SPartidasReciboCTM {
+  CONSECUTIVO int [pk]
+  LINEARECIBO int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTENVIO decimal
+  UNIDADMEDIDA varchar [ref: > GUniMed.UNIDAD]
+  COSTOUNITARIOMC decimal
+  COSTOMN decimal
+  COSTOME decimal
+  VALORMN decimal
+  VALORME decimal
+  PESONETO decimal
+  MARCA varchar
+  MODELO varchar
+  SERIES varchar
+  OPCION char
+  FACTURASALIDA varchar
+}
+
+Table SPartidasRep {
+  FACTURAIMPO varchar [pk]
+  LINEAIMPO int [pk]
+  FECHAFACTURA int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLASE varchar
+  CANTIMPO decimal
+  UNIMED varchar [ref: > GUniMed.UNIDAD]
+  CANTALTERNA decimal
+  UNIMEDALTERNA varchar
+  COSTOUNITARIOME decimal
+  COSTOUNITARIOMN decimal
+  COSTOUNITARIOMC decimal
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORIMPOMC decimal
+  NUMPERMISO varchar
+  PAGRENGLON varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  PESONETO decimal
+  PESOBRUTO decimal
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  CANTBULTOS int
+  DESCBULTOS varchar
+  FRACCIONIMPO varchar
+  TIPOFRACCIMPO varchar
+  ADVIMPO varchar
+  TIENECO varchar
+  NOCERTIFICADO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  FRACCIONAMERICANA varchar [ref: > SFracAmeParte.FRACCIONAME]
+  ADVAME decimal
+  ORDENCOMPRA varchar
+  INFOADICIONESP varchar
+  INFOADICIONING varchar
+}
+
+Table SPartidasSalidaSM {
+  CONSECUTIVO int [pk]
+  FACTURASALIDA varchar
+  LINEASALIDA int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTSALIDA decimal
+  UNIDADMEDIDA varchar [ref: > GUniMed.UNIDAD]
+  COSTOUNITARIOMC decimal
+  COSTOMN decimal
+  COSTOME decimal
+  VALORSALMN decimal
+  VALORSALME decimal
+  TIPODENUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  TIPODEORDEN varchar
+  CONCEPTODELAPARTIDA varchar
+  FRACCIONDELAPARTIDA varchar
+}
+
+Table SPedimentos {
+  PEDIMENTO varchar [pk]
+  TIPO varchar
+  CLAVEPED varchar
+  REGIMEN varchar [ref: > GRegimenPed.REGIMENPED]
+  FECHA_INICIO int
+  FECHA_FIN int
+  FECHA_PAGO int
+  ACUSEELECTRONICO varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  FACTOR decimal
+  ADUANA_CRUCE varchar
+  PEDRECTIFICA varchar
+  SERECTIFICO varchar
+  OBSRECTIFICA varchar
+  INDIVIDUALCONS varchar
+  DTA decimal
+  VALORIVA decimal
+  PEDIMENTODESCARGO varchar
+  PREVALIDACION decimal
+  MONTOTIGIE decimal
+  PAGOIMPUESTO varchar
+  ESMIXTO varchar
+  ESTATUS varchar
+  SERECTIFICO2 varchar
+  PEDRECTIFICA2 varchar
+  FECHA_REC_1 int
+  FECHA_REC_2 int
+  FECHA_CIERRE int
+  FECHA_REVISION int
+  FECHA_AUTORIZACION int
+  FECHA_RECIBIDO int
+  ERRORES varchar
+  PERSONAREV varchar
+  REPRESANTANTEAA varchar
+  CLAVEDESTORIGEN varchar
+  VALORME decimal
+  VALORADUANAS decimal
+  CLAVETRANSPORTACION varchar
+  PEDIMENTOCOMPLEMENTARIO varchar
+  TOTALINCREMMN decimal
+  FACTORINCREMENTABLE decimal
+  FEA varchar
+  FECHA_PAGO_ISO datetime
+  FECHA_ENTRADARECINTO int
+  FECHA_EXTRACCIONRECINTO int
+  FLETE decimal
+  VALSEGUROS decimal
+  SEGUROS decimal
+  EMBALAJES decimal
+  OTROSINCREMENTA decimal
+  FORMAPAGODTA varchar
+  FORMAPAGOPREVAL varchar
+  FORMAPAGOIGI varchar
+  FORMAPAGOIVA varchar
+  RECARGOS decimal
+  IVADEPREV decimal
+  CUOTASCOMPENS varchar
+  MULTAS decimal
+  IDENTIFICADORES varchar
+  CNT decimal
+  CLIENTEASIGNADO varchar [ref: > GClientesPro.CLIENTE]
+  SEDESISTIO varchar
+  PEDDESISTIDO varchar
+  IEPS decimal
+  OPCIONDESTINO varchar
+  TIPOPEDIMENTOTRANSPORTEE varchar
+  TIPOPEDIMENTOTRANSPORTEA varchar
+  TIPOPEDIMENTOTRANSPORTES varchar
+  PEDIMENTO18 varchar
+  SUBDIVISION varchar
+  IEPS2 decimal
+  DTA2 decimal
+  IVA2 decimal
+  IGI2 decimal
+  PREVALIDACION2 decimal
+  CNT2 decimal
+  IEPS2FP varchar
+  DTA2FP varchar
+  IVA2FP varchar
+  IGI2FP varchar
+  PREVALIDACION2FP varchar
+  CNT2FP varchar
+  IDPEDVIEJONUEVO int
+}
+
+Table SPedimentosAA {
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  CLAVEAA varchar [ref: > GAAduanal.CLAVEAA]
+  FACTURA varchar
+  FECHAFAC int
+  FECHAREC int
+  FECHAENT int
+  FECHAVENC int
+  SECCION int
+}
+
+Table SPedimentosConcep {
+  id int [pk]
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  CLAVEAA varchar [ref: > GAAduanal.CLAVEAA]
+  CONCEPTO varchar [ref: > GConceptos.CLAVE]
+  IMPORTE decimal
+  TIPO varchar
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+}
+
+Table SPedimentosEDocument {
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  CONSECUTIVO int [pk]
+  EDOCUMENT varchar
+  RUTA_XML varchar
+  OPERACION varchar
+}
+
+Table SPermisoSECON {
+  CONSECUTIVO int [pk]
+  NUMOFICIO varchar
+  PERMISO varchar
+  FECHA int
+  FECHAVIGENCIA int
+  PROGRAMA varchar
+}
+
+Table sProsec {
+  SYSID int
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  ARTICULO varchar [pk]
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  TASATXT varchar
+  TASANUM decimal
+  TIPOTASA int
+  DOF char
+  OBSERVACION text
+}
+
+Table sRCG2 {
+  SYSID int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  ANEXO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  REGIMEN varchar [ref: > GRegimenPed.REGIMENPED]
+  CONDICION varchar
+  ADUANAS varchar
+  DOF char
+  ARCHIVOCRITERIO varchar
+  TIPO varchar
+  IMPO int
+  EXPO int
+  WEB_DOCUMENTO_ID int
+}
+
+Table SRegulaciones {
+  SYSID int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  IMPORTACION varchar
+  EXPORTACION varchar
+  PERMISO varchar
+  ACUERDO varchar
+  CONDICION text
+  FUNDAMENTO text
+  DOF varchar
+  FORMATONOM varchar
+  INSTRUCCIONES varchar
+  CRITERIO varchar
+  COMPLEMENTO varchar
+  CRITERIOESPECIAL varchar
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+}
+
+Table sREIT {
+  SYSID int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  ARTICULO varchar
+  FUNDAMENTO varchar
+  ACUERDO varchar
+  PERMISO char
+  DOF char
+  DOCUMENTO varchar
+  TEMPORALIDAD smallint
+  TEMPORALIDADSERVICIO smallint
+  TEMPORALIDADCERTIFICADA smallint
+}
+
+Table sRequisitoPrevio {
+  SYSID int [pk]
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  DESCRIPCION varchar
+  OBSERVACION varchar
+  DOF char
+  VIGENCIA char
+  PERMISO char
+  NUMEROACUERDO int
+  NUMEROCRITERIO int
+  NUMEROFORMATO int
+  NUMEROINSTRUCCIONES int
+  HISTORICO varchar
+  NOTA varchar
+}
+
+Table SSaldoCTM {
+  FACTENVIO varchar [pk]
+  FECHAENVIO int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CANTENVIO decimal
+  CANTEXITENCIA decimal
+  UMEXITENCIA varchar
+  CANTPARTIDA decimal
+  CANTUSADA decimal
+  UMPARTIDA varchar
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORUSADOMN decimal
+  VALORUSADOME decimal
+  VENCIMIENTO int
+}
+
+Table SSaldoDef {
+  TIPOSALDO varchar
+  FACTURAIMPO varchar [pk]
+  PEDIMENTOIMPODEF varchar [ref: > SPedimentos.PEDIMENTO]
+  FECHAFACTURA int
+  SUBEMPRESA varchar
+  CLASE varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  DESCRIPCIONE varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  ESNAFTA varchar
+  NOCERTIFICADO varchar
+  CANTIDADCLASE decimal
+  UNIMEDCLASE varchar
+  CANTUSADA decimal
+  CANTUSADADESP decimal
+  PESONETO decimal
+  PESOUSADO decimal
+  PESOBRUTO decimal
+  PESOBRUTOUSADO decimal
+  CANTEXITENCIA decimal
+  CANTGENDESP decimal
+  UMEXITENCIA varchar
+  CANTPARTIDA decimal
+  UMPARTIDA varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  DESCBULTO varchar
+  CANTBULTOS int
+  SUBVALORIMPOMN decimal
+  IVAIMPOMN decimal
+  VALORIMPOMN decimal
+  VALORUSADOMN decimal
+  SUBVALORIMPOME decimal
+  IVAIMPOME decimal
+  VALORIMPOME decimal
+  VALORUSADOME decimal
+  NUMSOLICITUD varchar
+  PAGRENGLON varchar
+  FRACCIONIMPO varchar
+  ADVIMPO varchar
+  TIPOFRACIMPO varchar [pk]
+  FRACCIONAMERICANA varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  CANTALTERNA decimal
+  UMALTERNA varchar
+  MONTOIGI decimal
+  MONTOIGIUSADO decimal
+  FORMAPAGO varchar
+  PAGOIMPUESTO varchar
+  CANTAUXILIAR decimal
+  UMAUXILIAR varchar
+  VALORAUXILIARIMPOME decimal
+  ORDENCOMPRA varchar
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  ESREPARACION varchar
+  FECHAFACTURA_ISO datetime
+  FECHAVENC_ISO datetime
+  NUMPARTECOM varchar [ref: > SPartes.NUMPARTE]
+}
+
+Table SSaldoRep {
+  FACTURAIMPO varchar [pk]
+  PEDIMENTOIMPO varchar [ref: > SPedimentos.PEDIMENTO]
+  FECHAFACTURA int
+  SUBEMPRESA varchar
+  CLASE varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  DESCRIPCIONE varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  ESNAFTA varchar
+  NOCERTIFICADO varchar
+  CANTIDADCLASE decimal
+  UNIMEDCLASE varchar
+  PESONETO decimal
+  PESOBRUTO decimal
+  PESOUSADO decimal
+  CANTUSADA decimal
+  CANTEXITENCIA decimal
+  UMEXITENCIA varchar
+  CANTPARTIDA decimal
+  UMPARTIDA varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  DESCBULTO varchar
+  CANTBULTOS int
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORUSADOMN decimal
+  VALORUSADOME decimal
+  NUMSOLICITUD varchar
+  PAGRENGLON varchar
+  FRACCIONIMPO varchar
+  ADVALOREMIMPO varchar
+  TIPOFRACIMPO varchar [pk]
+  FRACCIONAMERICANA varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  CANTALTERNA decimal
+  UMALTERNA varchar
+  FECHAVENC int
+}
+
+Table SSaldoSalidaSM {
+  REMISIONSALIDA varchar [pk]
+  FECHASALIDA int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  DESCRIPCIONE varchar
+  CANTUSADA decimal
+  CANTEXITENCIA decimal
+  UMEXITENCIA varchar
+  CANTPARTIDA decimal
+  UMPARTIDA varchar
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORUSADOMN decimal
+  VALORUSADOME decimal
+}
+
+Table SSaldosBultos {
+  FACTURAIMPO varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  CLASE varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  TIPOFRACIMPO varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  PROCEDENCIA varchar [ref: > GSectores.CLAVE]
+  CANTBULTOS int
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  DESCBULTO varchar
+}
+
+Table SSaldosDetallado {
+  FACTURAIMPO varchar [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  TIPOFRACIMPO varchar [pk]
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  CAMPOCOMODIN varchar [pk]
+  PROCEDENCIA varchar [pk]
+  CANTEXISTENCIA decimal
+  CANTUSADA decimal
+}
+
+Table SSaldosReglaOctava {
+  FACTURAIMPO varchar [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  TIPOFRACIMPO varchar [pk]
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  PERMISOROCTAVA varchar [pk]
+  LINEA int [pk]
+  CANTEXITENCIA decimal
+  UNIMED varchar
+  CLASE varchar
+  FRACCIONIMPO varchar
+  FRACCIONROCTAVA varchar
+  VALORME decimal
+  PROCEDENCIA varchar [pk]
+  SISTEMA varchar [pk]
+}
+
+Table SSaldoTem {
+  FACTURAIMPO varchar [pk]
+  PEDIMENTOIMPO varchar [ref: > SPedimentos.PEDIMENTO]
+  FECHAFACTURA int
+  SUBEMPRESA varchar
+  CLASE varchar
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  DESCRIPCIONE varchar
+  PAISORIGEN varchar [ref: > GPaises.CLAVEM3]
+  ESNAFTA varchar
+  NOCERTIFICADO varchar
+  CANTIDADCLASE decimal
+  UNIMEDCLASE varchar
+  PESONETO decimal
+  PESOBRUTO decimal
+  PESOUSADO decimal
+  PESOBRUTOUSADO decimal
+  CANTUSADA decimal
+  CANTUSADADESP decimal
+  CANTEXITENCIA decimal
+  CANTGENDESP decimal
+  UMEXITENCIA varchar
+  CANTPARTIDA decimal
+  UMPARTIDA varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  DESCBULTO varchar
+  CANTBULTOS int
+  VALORIMPOMN decimal
+  VALORIMPOME decimal
+  VALORUSADOMN decimal
+  VALORUSADOME decimal
+  NUMSOLICITUD varchar
+  VALORIVAMN decimal
+  VALORIVAME decimal
+  VALORIVAMNUSADO decimal
+  VALORIVAMEUSADO decimal
+  PAGRENGLON varchar
+  FRACCIONIMPO varchar
+  ADVALOREMIMPO varchar
+  TIPOFRACIMPO varchar [pk]
+  FRACCIONAMERICANA varchar
+  SECTOR varchar [ref: > GSectores.CLAVE]
+  CANTALTERNA decimal
+  UMALTERNA varchar
+  FECHAVENC int
+  MONTOIGI decimal
+  MONTOIGIUSADO decimal
+  FORMAPAGO varchar
+  PAGOIMPUESTO varchar
+  CANTAUXILIAR decimal
+  UMAUXILIAR varchar
+  VALORAUXILIARIMPOME decimal
+  ORDENCOMPRA varchar
+  VALORADUANASMN decimal
+  VALORADUANASME decimal
+  ESREPARACION varchar
+  SALDOSIMPLOSION varchar
+  FECHAFACTURA_ISO datetime
+  FECHAVENC_ISO datetime
+  NUMPARTECOM varchar [ref: > SPartes.NUMPARTE]
+}
+
+Table SSeriesExpo {
+  CONSECUTIVO int [pk]
+  FACTURAEXPO varchar
+  LINEAEXPO int [pk]
+  RENGLON int [pk]
+  SERIEEXPO varchar
+  MODELOEXPO varchar
+  SUBMODELOEXPO varchar
+  MARCA tinyint
+  NUMIDEXPO varchar
+  MARCAEXPO varchar
+}
+
+Table SSisCMex {
+  CONSECUTIVO int [pk]
+  PREFIJOCM varchar
+  CONSECUTIVOCM varchar
+  PORPARTECLASEMEX varchar
+  PORPARTECLASEAME varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  FLETE decimal
+  PAISORIGENMEX tinyint
+  NUMPARTEMEX tinyint
+  FIRMAFMEX varchar
+  FRACCIONIMP tinyint
+  TIPOFRACCMEX tinyint
+  TASAFRACCMEX tinyint
+  UMEQUIVALENTEMEX tinyint
+  NUMPARTEAME tinyint [ref: > SPartes.NUMPARTE]
+  FRACCIONAME tinyint
+  PAISORIGENAME tinyint
+  UMEQUIVALENTEAME tinyint
+  FIRMAFAME varchar
+  IMPORDENCOMP tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  UMAUXILIARMEX tinyint
+  UMALTERNAMEX tinyint
+  TRANSPORTISTA varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar
+  NUMTRANSPORTE varchar
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  PACKINGORDENCOMPRA int
+  FIRMAELECTRONICA varchar
+  INCLUIRLINEADELPO int
+  LINEAPERSONAAA int
+  AGREGARVAENPRODTERMINADOS int
+  OCULTARFECHAHORA tinyint
+}
+
+Table SSisDef {
+  CONSECUTIVO int [pk]
+  PREFIJOIMPO varchar
+  CONSECUTIVOIMPO varchar
+  PORPARTECLASEMEX varchar
+  PORPARTECLASEAME varchar
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  TIPO varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar
+  INCOTERM varchar
+  FLETE decimal
+  IDENTIFICADOR varchar
+  FIRMAFMEX varchar
+  FIRMAFAME varchar
+  CODIGOBARRAS tinyint
+  NUMPARTEMEX tinyint
+  NUMPARTEAME tinyint
+  FRACCIONIMP tinyint
+  TASAFRACCMEX tinyint
+  TIPOFRACCMEX tinyint
+  PAISORIGENMEX tinyint
+  UMEQUIVALENTEMEX tinyint
+  UMAUXILIARMEX tinyint
+  FRACCIONAME tinyint
+  PAISORIGENAME tinyint
+  UMEQUIVALENTEAME tinyint
+  IMPORDENCOMP tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CANTLIMITE decimal
+  PESOLIMITE decimal
+  VALORLIMITE decimal
+  UMALTERNAMEX tinyint
+  RESTRINGEIMPOPT tinyint
+  PARTECOMPLEMENTARIAMEX tinyint
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  METVALOR varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANALAME varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  PACKINGPEDCLAVE tinyint
+  PORORDENPOROCPACK varchar
+  ACTUALIZARPARTEPARTIDA tinyint
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  PARTECOMPLEMEXPARTIDA tinyint
+  CANTLIMITEMIN decimal
+  PESOLIMITEMIN decimal
+  VALORLIMITEMIN decimal
+  PACKINGORDENCOMPRA int
+  FIRMAELECTRONICA varchar
+  SOLICITARCONTRASENAADMINISTRADOR int
+  INCLUIRLINEADELPO int
+  LINEAPERSONAAA int
+  AGREGARVAENPRODTERMINADOS int
+  IMPRIMIRLOTE int
+  IMPRIMIRNUMENTRADA int
+  OCULTARFECHAHORA tinyint
+}
+
+Table SSisExpo {
+  TIPOFACTURA varchar [ref: > STiposFactura.CLAVE]
+  PORPARTECLASEMEX varchar
+  PORPARTECLASEAME varchar
+  PREFIJOEXPO varchar
+  CONSECUTIVOEXPO varchar
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  VENDIDOPOR varchar
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  TIPO varchar
+  INCOTERM varchar
+  FLETE decimal
+  IDENTIFICADOR varchar
+  TIPOMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  MONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  NUMPARTEMEX tinyint
+  PAISORIGENMEX tinyint
+  FRACCIONEXP tinyint
+  TASAFRACCMEX tinyint
+  COSTOUNITMEX tinyint
+  ORDENCOMPMEX tinyint
+  CONSFACMEX tinyint
+  UMEQUIVALENTEMEX tinyint
+  OCULTAREMPAQUEMEX tinyint
+  OCULTAREMPAQUEAME tinyint
+  COSTOUNITMPMEX tinyint
+  CODIGOBARRAS tinyint
+  PARTECOMPLEMENTARIAMEX tinyint
+  VALORDLLSMEXPESOS tinyint
+  CANTPNCODBAR tinyint
+  DTACEROCODBAR tinyint
+  FIRMAFMEX varchar
+  NUMPARTEAME tinyint
+  FIRMAFAME varchar
+  FRACCIONAME tinyint
+  PAISORIGENAME tinyint
+  ORDENCOMPAME tinyint
+  UMEQUIVALENTEAME tinyint
+  FDAINFORMACIONAME tinyint
+  PAISOPCAME tinyint
+  MUESTRAFREE tinyint
+  FRACCMEXDES tinyint
+  TIPOFRACCMEXDES tinyint
+  COLVALORDES tinyint
+  COLPESODES tinyint
+  DESCARGACLASE tinyint
+  DESCARGASUST tinyint
+  DESCARGADEF tinyint
+  VENTQUEUEACT tinyint
+  CODIGOSCAC tinyint
+  FORMADESPERDICIO varchar
+  CALVALORBASECOSTO tinyint
+  CALVABASECAPT tinyint
+  CALPESOBASEDESCARGA tinyint
+  CALEMPAQUEBASECAPT tinyint
+  OCULTCANTCONS tinyint
+  PREFIJOFRACCMULT tinyint
+  CANTLIMITE decimal
+  PESOLIMITE decimal
+  VALORLIMITE decimal
+  COSTAMEPAISPARTE tinyint
+  BASECOSTOMPOTOTAL varchar
+  UMEQUIVALENTEMEX2 tinyint
+  UMEQUIVALENTEAME2 tinyint
+  TOTALEQUIVMEX tinyint
+  TOTALEQUIVAME tinyint
+  INFOADICIONAL varchar
+  RESTRINGEEXPOMP tinyint
+  CALVATOTAGREMP varchar
+  ACTIVAADVPEDRTV1 tinyint
+  ASIGNAFRACC9801 tinyint
+  VALOREXCFRACC9801 decimal
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  SCRAPSOLONODUTY tinyint
+  DESCEXTRAAMEPARTES tinyint
+  INCAMBIOREGDESC tinyint
+  ESCAMBIOREGIMEN varchar [pk]
+  DESCNOCONTEMCANT tinyint
+  METVALOR varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANALAME varchar
+  PESONETODESDIFFAC decimal
+  ENVIADOPORVENDIDOPOR varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  OCULTACOLVA tinyint
+  CALCCOSTOSAMEBASEMEX tinyint
+  PROVEEDOREXPORTADOR varchar
+  TIPOFRACCMEX tinyint
+  PARTECOMPLEMEXPARTIDA tinyint
+  VALIDACANTPARCANDES tinyint
+  CANTLIMITEMIN decimal
+  PESOLIMITEMIN decimal
+  VALORLIMITEMIN decimal
+  COSTOSAMEPAIS char
+  INCLUIRFRACAMEBIL tinyint
+  SOLICITARPSWDACTUAL tinyint
+  SOLICITARPSWDDESACTUAL tinyint
+  BUSCARSALDOSRECIENTES tinyint
+  PACKINGORDENVENTA int
+  IMPRIMIRORDENVENTA int
+  FIRMAELECTRONICA varchar
+  MPF int
+  VALORMPF decimal
+  COLCANTPORPESO int
+  PACKINGPEDCLAVE int
+  GENERAFACTURAIMD varchar
+  GENERAFACTURAIMDENBASEA varchar
+  SOLICITARCONTRASENAADMINISTRADOR int
+  INCLUIRLINEADELPO int
+  VALORPACKING1DLLS tinyint
+  TOMARVALORMEXENFACAME int
+  LINEAPERSONAAA int
+  CALAMEBASEMEXMP tinyint
+  CALAMEBASEMEXVA tinyint
+  CALAMEBASEMEXEMPAQUE tinyint
+  USARVAENFACTURAAMERICANA tinyint
+  ACTIVARFECHACORTESALDOS tinyint
+  FECHACORTESALDOS int
+  IMPRIMIRLOTE int
+  IMPRIMIRNUMENTRADA int
+  RESPALDARDESCARGAENDESCARGAM tinyint
+  OCULTARFECHAHORA tinyint
+  CALCULARVALORESAMERICANOSENBASEAPARTIDA tinyint
+  VALIDARESTATUSPED tinyint
+  DESCAPAIS tinyint
+}
+
+Table SSisGen {
+  CONSECUTIVO int [pk]
+  DTA int
+  DTAEXPO int
+  SUBEMPRESA varchar
+  PATHARCH varchar
+  PATHARCHTRANSMISION varchar
+  PATHTRANSEXPO varchar
+  PATHRESPUESTA varchar
+  PATHARCHPED varchar
+  PATHARCHPEDCONSM varchar
+  PATHGENIMPOTEMP varchar
+  PATHGENEXPO varchar
+  ACTSEGURIDAD tinyint
+  CONTROLDES tinyint
+  DIADESACTUAL int
+  DIAVENCIMIENTO int
+  MENSAJEVENC tinyint
+  FECHADES int
+  FACTORIVA decimal
+  VALIDASIFRA tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  CALVALBASETCPED tinyint
+  CALVALBASETCPEDEXPO tinyint
+  FILTROCANTIDAD decimal
+  MUESTRAARCHCODBARRAS tinyint
+  DATOSHIST tinyint
+  TIPOVENRO varchar
+  CANTVENRO int
+  COSTOPLANTA decimal
+  FIRMAPACKING tinyint
+  ESCONDAAMEXPACKING tinyint
+  ADVERTENCIATM tinyint
+  COSTOIMPOFIJO tinyint
+  TOMARSALDOSVENC tinyint
+  VALPARTEEXISTE tinyint
+  VALMANIFUSADO tinyint
+  TEMPORALFECHAPAGO tinyint
+  ASIGNADIASANTDESC tinyint
+  DIASANTDESC int
+  DESHABILITARDESCPARTE tinyint
+  DESHABILITARDESCPARTEING tinyint
+  ASIGNAFRACAMEPARTE tinyint
+  VALIDADECENCANT tinyint
+  MOSTRARADVERTENCIARO tinyint
+  USARTRANSPAMEDOCAME tinyint
+  CALCDUTYPACKING tinyint
+  PARAMMULTIPLES tinyint
+  FRACCNIVELPAIS tinyint
+  COVEFECHAEMISION tinyint
+  VALORDLLSTCFACTURAEXPO tinyint
+  INTERFACEAACONSOLIDADA tinyint
+  INTERFACEAATCFPFF varchar
+  INCLUIROBSCOVEOBSIMPO tinyint
+  AGREGARINCREIMPO tinyint
+  COMPONENTEBOM tinyint
+  LIMITESUBENSAMBLE int
+  ACTPDFREPORTES tinyint
+  PATHARCHPDFIMPO varchar
+  PATHARCHPDFEXPO varchar
+  NOIMPRIMIRCONS tinyint
+  MOSTRARADVERTENCIAROVALOR tinyint
+  PARTESYPEDIMENTOSPORCLIENTE varchar
+  MENSAJESVURFC int
+  MOSTRARPACKINGLISTINGLES int
+  OMITIREMPAQUEENCODIGOBARRAS int
+  RESTRINGEPAISIMPO int
+  RESTRINGPAISEXPO int
+  BLOQUEOALDESACTIVARNUMERODEPARTE int
+  GENINFORMEANEXO31 varchar
+  UTILIZARFECHAPAGOPEDDEUNDIAANTERIOR int
+  UTILIZARTITULOSALTERNATIVOSIMPRESIONFACTURA int
+  UTILIZAREQUIVALENCIASDEUMPORNUMERODEPARTE int
+  USARFACTORCONVERSIONPORNUMERODEPARTE int
+  USARTCDELAFECHAPAGOPEDIMPOENDESCARGA int
+  USARVUDE128O256 int
+  SOLICITARCONTRASENAADMINISTRADOR int
+  AGREGARNUMEROEMBARQUE int
+  UTILIZARUMDEEXISTENCIAENTRANSMISIONVU int
+  UTILIZARCODIGODEBROKERDECLIENTEENMAINX30 int
+  HOJACALCULOSEPARARINCREMENTABLESANEXO3 int
+  HOJACALCULODESGLOSEFACTURAANEXO3 int
+  USARVALORAGREGADOENFACTURAAMERICANA int
+  OCULTARINFORMACIONFRACCION int
+  VALORAGREGADOENFACTURAMEXICANA int
+  RESALTARSALDOSTEMPCONCOLOR int
+  VALIDARSECTORPROSECR8 int
+  AGREGARSUBTOTALINTERFAZAA int
+  UTILIZARNOMBREGENERICOMAINX30 int
+  UTILIZARTCRESPECTOATIPOPED int
+  TOMARDECIMALESCOMPLETOS int
+  INCLUIRREMESAENINTERFAZAAWINSAAI int
+  CAMBIARPESOSPORCOSTOUNITARIO int
+  UTILIZARSOLOPARTESNAFTAENCO int
+  BLOQUEODEEDICIONDEFACTURAS int
+  REASIGNAFRACCIONCLASE tinyint
+  CALCULARCOSTOUNITARIOENBASEAVALORTOTAL tinyint
+  PARAMETROAUXILIAR tinyint
+  USARCONTROLDEFECHASDEVERSION tinyint
+  DESACTIVACIONDEMODULOS tinyint
+  IMPRIMIRFACTURAALTERNA tinyint
+  ACTIVAREXPEDIENTEELECTRONICO tinyint
+  INFORMACIONAMERICANASUBTOTAL tinyint
+  ACTIVARCATALOGOFRACCIONESAMERICANASSIFRA tinyint
+  MOSTRARPROGRAMAIMMEXPROSEC tinyint
+  COSTOUNITARIOPOREMPAQUEFAC tinyint
+  TRANSMITIRFACALTERNA tinyint
+}
+
+Table SSisImpo {
+  CONSECUTIVO int [pk]
+  PREFIJOIMPO varchar
+  PREFIJOCR varchar
+  CONSECUTIVOIMPO varchar
+  CONSECUTIVOCR int
+  PORPARTECLASEMEX varchar
+  PORPARTECLASEAME varchar
+  PEDIMENTO varchar [ref: > SPedimentos.PEDIMENTO]
+  TIPO varchar
+  PROVEEDOR varchar
+  VENDIDOCONSIGNADO varchar
+  VENDIDOA varchar
+  ENVIADOTRANSFERIDO varchar
+  ENVIADOA varchar
+  AADUANAL varchar [ref: > GAAduanal.CLAVEAA]
+  INCOTERM varchar
+  FLETE decimal
+  IDENTIFICADOR varchar
+  NUMPARTEMEX tinyint
+  NUMPARTEAME tinyint
+  FIRMAFMEX varchar
+  FIRMAFAME varchar
+  CODIGOBARRAS tinyint
+  FRACCIONIMP tinyint
+  TASAFRACCMEX tinyint
+  TIPOFRACCMEX tinyint
+  PAISORIGENMEX tinyint
+  UMEQUIVALENTEMEX tinyint
+  UMAUXILIARMEX tinyint
+  PERPAGRENGLON tinyint
+  FRACCIONAME tinyint
+  PAISORIGENAME tinyint
+  UMEQUIVALENTEAME tinyint
+  IMPORDENCOMP tinyint
+  DECIMALESPESO tinyint
+  DECIMALESCANT tinyint
+  DECIMALESVALOR tinyint
+  DECIMALESCOSTO tinyint
+  TIPOMONEDA varchar [ref: > GTiposMoneda.MONEDA]
+  CLAVEMONEDA varchar [ref: > GTiposMoneda.CLAVE]
+  CANTLIMITE decimal
+  PESOLIMITE decimal
+  VALORLIMITE decimal
+  VALORLIMITEPAR decimal
+  UMALTERNAMEX tinyint
+  RESTRINGEIMPOPT tinyint
+  CONTROLREMESA varchar
+  REMESAINICIO smallint
+  REMESAFINAL smallint
+  LEYENDAFACAME varchar
+  CALCIGIBASECAPT tinyint
+  UMEQUIVALENTEMEX2 tinyint
+  UMEQUIVALENTEAME2 tinyint
+  PARTECOMPLEMENTARIAMEX tinyint
+  PAGOIMPUESTO varchar
+  FORMAPAGO varchar
+  METVALOR varchar
+  TRANSPORTISTA varchar [ref: > GTransportista.CLAVETRANS]
+  AADUANALAME varchar
+  CONDUCTOR varchar [ref: > GConductor.CONDUCTOR]
+  TRANSPORTE varchar [ref: > GTransportes.CLAVETRANSPORTE]
+  NUMTRANSPORTE varchar
+  PACKINGPEDCLAVE tinyint
+  PORORDENPOROCPACK varchar
+  ACTUALIZARPARTEPARTIDA tinyint
+  OBSERVACIONE varchar
+  OBSERVACIONI varchar
+  CLAVEBULTOS varchar [ref: > GBultos.CLAVE]
+  PARTECOMPLEMEXPARTIDA tinyint
+  CANTLIMITEMIN decimal
+  PESOLIMITEMIN decimal
+  VALORLIMITEMIN decimal
+  VALORLIMITEPARMIN decimal
+  PACKINGORDENCOMPRA int
+  FIRMAELECTRONICA varchar
+  SOLICITARCONTRASENAADMINISTRADOR int
+  INCLUIRLINEADELPO int
+  LINEAPERSONAAA int
+  AGREGARVAENPRODTERMINADOS int
+  IMPRIMIRLOTE int
+  IMPRIMIRNUMENTRADA int
+  OCULTARFECHAHORA tinyint
+}
+
+Table STipoMat {
+  CLAVE varchar [pk]
+  DESCRIPCION varchar
+  TIPOMAT varchar
+}
+
+Table STiposFactura {
+  CLAVE varchar [pk]
+  DESCRIPCION char
+  OBSERVACION char
+}
+
+Table sTLCS {
+  SYSID int pk
+  FRACCION varchar [ref: > sFracciones.FRACCION]
+  PAIS varchar [ref: > GPaises.CLAVEM3]
+  ORDEN int
+  TASATXT varchar
+  TIPOTASA int
+  TASA1NUM decimal
+  FACTOR1 decimal
+  TASA2NUM decimal
+  FACTOR2 decimal
+  DOF char
+  NOTAS varchar
+}
+
+Table SVerBOM {
+  CONSECUTIVO int [pk]
+  VERSION int
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  NUMPARTEBOM varchar [ref: > SPartes.NUMPARTE]
+  CANTIDAD decimal
+  UNIMED varchar
+  PROCEDENCIA varchar
+  CANTMP decimal
+  CANTDESP decimal
+  CANTMERMA decimal
+  CANTEQUIVALENTE decimal
+  UMEQUIVALENTE varchar
+  CANTDESPEQUI decimal
+  CANTMERMAEQUI decimal
+  DESCDESPAPARTADO tinyint
+  PORCENTAJEMP decimal
+  PORCENTAJEDESP decimal
+  PORCENTAJEMERMA decimal
+  TIPODESPMERMA varchar
+}
+
+Table SVerBOMEnc {
+  VERSION int [pk]
+  NUMPARTE varchar [ref: > SPartes.NUMPARTE]
+  FECHA int
+  IDENTIFICADOR varchar
+  FECHAFINAL int
+}
+
+Table sysdiagrams {
+  name sysname
+  principal_id int
+  diagram_id int [pk]
+  version int
+  definition varbinary
+}
+
+
+
+TableGroup "Aduanal"{
+	GAAduanal
+	GAAduanalPersonal
+	GAduanaSec
+	GConceptosAAduanal
+	GDestinoAduanero
+	GUMAduana
+
+}
+TableGroup "General"{
+	GAccesos
+	GAccesosModulos
+	GClientesPro
+	GCodigosFCC
+	GCodigosFDA
+	GCodigosProductoCP
+	GConceptos
+	GConceptosClasif
+	GConfigReportes
+	GConfigTablas
+	GContenedores
+	GConversiones
+	GDestruccion
+	GDivisionPeligro
+	GDotInformation
+	GEmails
+	GEmpresa
+	GEncAnexo
+	GEquivalenteEnc
+	GFacProforma
+	GFiltros
+	GFirmas
+	GFormaPago
+	GIncoterm
+	GINPC
+	GLeyendas
+	GMetValor
+	gMSSQLFile
+	GNivelesSeguridad
+	GNivelesSeguridadTablas
+	GPrevalidadores
+	GProcesos
+	GSIAA
+	GSisManifiesto
+	GSisMultiples
+	GSQLFile
+	GSQLFile2
+	GSQLFile3
+	GSubEmpresa
+	GUMAme
+	GUMOMA
+	GUsuarios
+	sHistoricoReit
+
+}
+TableGroup "Sin Asignar"{
+	GAgencyTariffCodes
+	GAnexo22App3
+	GArchivosConsecutivos
+	GArchivosDescargaSifra
+	GArchivosSIAA
+	GBitacora
+	GBotonLeyendas
+	GBultos
+	GCatErrores
+	GCatErroresClas
+	GCertOrigen
+	QAssetTag
+	QClaAct
+	QClasePermiso
+	QEqeMaq
+	QEqiDef
+	QEqiMaq
+	QEqiMaqRep
+	QInfDepre
+	QNiveles
+	QPermiso
+	QPermisoClase
+	QPermisoPR
+	QPermisoSECON
+	QRepMovimientos
+	QSisCMex
+	QSisDef
+	QSisExpo
+	QSisExpoRep
+	QSisGen
+	QSisImpo
+	QTipoActFijo
+	QTiposFactura
+	SAceesos
+	sAladi2
+	sArchivosDescargados
+	sArchivosProcesados
+	SBackFlashPL
+	SBOMVer
+	SClasePermiso
+	SClases
+	SComprasMexID
+	SCTM
+	SImplosion
+	SMatBOMClase
+	SMermaDesp
+	SModificaciones
+	SPackingList
+	SPermisoSECON
+	sProsec
+	sRCG2
+	SRegulaciones
+	sRequisitoPrevio
+	SSisCMex
+	SSisDef
+	SSisExpo
+	SSisGen
+	SSisImpo
+	STipoMat
+	sTLCS
+
+}
+TableGroup "Pedimentos"{
+	GClavePed
+	GClavePedRegimen
+	GRegimenPed
+	PedimentosAmericanos
+	QPedimentos
+	QPedimentosAA
+	QPedimentosConcep
+	SIdentificadoresPedimento
+	SPedimentos
+	SPedimentosAA
+	SPedimentosConcep
+	SPedimentosEDocument
+
+}
+TableGroup "Cobranza"{
+	GConCobranza
+
+}
+TableGroup "Transporte"{
+	GConductor
+	GManifCoductor
+	GModTransporte
+	GTipoTrailer
+	GTipoTransportes
+	GTrailers
+	GTransportes
+	GTransportista
+
+}
+TableGroup "Documentos"{
+	GDocumentosDigital
+	GTipoDoc
+	GTipoDocDigital
+
+}
+TableGroup "Dodas"{
+	gDODA
+
+}
+TableGroup "Facturacion"{
+	GEncFacturas
+	GEquivPartidas
+	GErroresFac
+	GParFacturas
+	GPartidasCO
+	GRelacionFacturas
+	GRelFacFacturas
+	QFacExp
+	QFacExpCobranza
+	QFacExpRep
+	QFacImp
+	QFacImpCobranza
+	QFacImpDef
+	QFacImpRep
+	SFacEntradaSM
+	SFacEnviaCTM
+	SFacExp
+	SFacExpCobranza
+	SFacImp
+	SFacImpCobranza
+	SFacOrdenVenta
+	SFacReciboCTM
+	SFacRep
+	SFacSalidaSM
+	SPartidasCM
+	SPartidasEntradaSM
+	SPartidasEnviaCTM
+	SPartidasExpo
+	SPartidasImpo
+	SPartidasImposion
+	SPartidasPackingList
+	SPartidasReciboCTM
+	SPartidasRep
+	SPartidasSalidaSM
+	STiposFactura
+
+}
+TableGroup "Localizacion"{
+	GEstados
+	GPaises
+	GPaisesGrupoSifra
+	GPaisReglaOct
+	GPrecintos
+	GPuertoEnt
+	GRecintos
+	GRutasGenerales
+	GSectores
+	QLocalizacion
+	QLocalizacionExt
+	SLocalizacion
+
+}
+TableGroup "Expedientes"{
+	GExpedienteElecEnc
+	GExpedienteElecPartidas
+
+}
+TableGroup "Fracciones"{
+	GFracAme
+	GFraccionesHistorico
+	GFracEUACan
+	GFracROctava
+	SFracAmeFact
+	SFracAmeParte
+	sFracciones
+	sFracciones_USA
+	sFraccionesAnteriores
+	SFraccionesAnterioresN
+	sFraccionesCortas
+	sFraccionesResumidas
+
+}
+TableGroup "Identificadores"{
+	GIdentificadores
+	GIdentificadoresPartidas
+
+}
+TableGroup "Manifiestos"{
+	GManifestacionAnexo
+	GManifestacionConcepto
+	GManifiesto
+
+}
+TableGroup "Anexos"{
+	GParAnexo
+	GPeriodoAnexo31
+
+}
+TableGroup "Permisos"{
+	GPermisoReglaOct
+
+}
+TableGroup "Monedas"{
+	GTipoCambio
+	GTipoCambioMM
+	GTipoMultiMoneda
+	GTiposMoneda
+
+}
+TableGroup "Unidades"{
+	GUniMed
+	GUniMedACE
+	GUniMedida
+
+}
+TableGroup "Configuracion"{
+	QConfiguracion
+	SConfigFTP
+	SConfiguracion
+
+}
+TableGroup "Partes"{
+	QPartes
+	SParPruSuf
+	SParteCliente
+	SPartePais
+	SPartes
+
+}
+TableGroup "Series"{
+	QSeriesDef
+	QSeriesExpo
+	QSeriesExpoRep
+	QSeriesImpo
+	QSeriesImpoRep
+	SSeriesExpo
+
+}
+TableGroup "Descargas"{
+	SDescargaCTM
+	SDescargaD
+	SDescargaM
+	SDescargaMerDes
+	SDescargaR
+	SDescargaS
+	SDescargaSM
+	SDescargaT
+
+}
+TableGroup "nan"{
+	SMatBOM
+
+}
+TableGroup "Saldos"{
+	SSaldoCTM
+	SSaldoDef
+	SSaldoRep
+	SSaldoSalidaSM
+	SSaldosBultos
+	SSaldosDetallado
+	SSaldosReglaOctava
+	SSaldoTem
+
+}
