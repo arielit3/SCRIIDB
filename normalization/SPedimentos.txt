@@ -1,0 +1,94 @@
+SPedimentos {
+	#-------------Form-GENERALES---------------------
+    PEDIMENTO varchar pk #Identificador de pedimento
+	TIPO varchar #Tipo de pedimento 
+	CLAVEPED varchar #Clave usada para identificar tipo de operacion audanera
+	REGIMEN varchar #Establece el tipo de proceso por el que opera
+	FECHA_INICIO int #Fecha de inicio del pedimento
+	FECHA_FIN int #Fecha termino del pedimento
+	FECHA_PAGO int #Fecha de pago por proceso (Pedimento)
+	ACUSEELECTRONICO varchar #Campo comprobante de la autoridad aduanera usado para pagar contribuciones correspondientes
+	PEDIMENTO18 varchar #Campo utilizado para validar que el pedimento esta dado de alta, se le agrega el año en el que se le dio de alta
+	
+    TIPOPEDIMENTOTRANSPORTEE varchar #Usado para determinar el tipo de fecha de pago  
+	TIPOPEDIMENTOTRANSPORTEA varchar #Usado para determinar el tipo de fecha de pago 
+	TIPOPEDIMENTOTRANSPORTES varchar #Usado para determinar el tipo de fecha de pago 
+
+    #ClienteAsignado no viene pero sigue apareciendo en el formulario general de pedimentos
+    #TipoCambio establece el tipo de cambio desde otra seccion    
+    
+    ADUANA_CRUCE varchar #Se relaciona con la tabla GAduanaSec donde en base al codigo se establece el punto de importacion o exp (seccion aduanera)
+    
+    
+    PAIS varchar
+	FACTOR decimal
+	
+	PEDRECTIFICA varchar
+	SERECTIFICO varchar
+	OBSRECTIFICA varchar
+	INDIVIDUALCONS varchar
+	DTA decimal
+	VALORIVA decimal
+	PEDIMENTODESCARGO varchar
+	PREVALIDACION decimal
+	MONTOTIGIE decimal
+	PAGOIMPUESTO varchar
+	ESMIXTO varchar
+	ESTATUS varchar
+	SERECTIFICO2 varchar
+	PEDRECTIFICA2 varchar
+	FECHA_REC_1 int
+	FECHA_REC_2 int
+	FECHA_CIERRE int
+	FECHA_REVISION int
+	FECHA_AUTORIZACION int
+	FECHA_RECIBIDO int
+	ERRORES varchar
+	PERSONAREV varchar
+	REPRESANTANTEAA varchar
+	CLAVEDESTORIGEN varchar
+	VALORME decimal
+	VALORADUANAS decimal
+	CLAVETRANSPORTACION varchar
+	PEDIMENTOCOMPLEMENTARIO varchar
+	TOTALINCREMMN decimal
+	FACTORINCREMENTABLE decimal
+	FEA varchar
+	FECHA_PAGO_ISO datetime
+	FECHA_ENTRADARECINTO int
+	FECHA_EXTRACCIONRECINTO int
+	FLETE decimal
+	VALSEGUROS decimal
+	SEGUROS decimal
+	EMBALAJES decimal
+	OTROSINCREMENTA decimal
+	FORMAPAGODTA varchar
+	FORMAPAGOPREVAL varchar
+	FORMAPAGOIGI varchar
+	FORMAPAGOIVA varchar
+	RECARGOS decimal
+	IVADEPREV decimal
+	CUOTASCOMPENS varchar
+	MULTAS decimal
+	IDENTIFICADORES varchar
+	CNT decimal
+	CLIENTEASIGNADO varchar
+	SEDESISTIO varchar
+	PEDDESISTIDO varchar
+	IEPS decimal
+	OPCIONDESTINO varchar
+	SUBDIVISION varchar
+	IEPS2 decimal
+	DTA2 decimal
+	IVA2 decimal
+	IGI2 decimal
+	PREVALIDACION2 decimal
+	CNT2 decimal
+	IEPS2FP varchar
+	DTA2FP varchar
+	IVA2FP varchar
+	IGI2FP varchar
+	PREVALIDACION2FP varchar
+	CNT2FP varchar
+	IDPEDVIEJONUEVO int
+}
