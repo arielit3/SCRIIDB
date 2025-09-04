@@ -7,3 +7,6 @@ dbdesinger no acepto el campo name de la tabla sysdiagrams por ser tipo sysname,
 # CodigoDBdesinger
 establecemos unicamente el codigo para la creacion de las tablas que usaremos para relacionar
 en el diagrama V2
+
+# normalization>SPedimentos
+Se normalizara la tabla estableciendo separacion segun el tipo
