@@ -2724,23 +2724,32 @@ QPartes {
 	DESCRIPCIONI varchar
 	CLASE varchar
 	UNIMED varchar
+	TIPOPESO varchar
+	FRACCION varchar
+	
+	FECHAMODIFICA_ISO datetime
+		TIPOFRACCION varchar
+		FRACCIONAME varchar
+
+
 	COSTOUNITARIO decimal
 	TIPOMONEDA varchar
 	CLAVEMONEDA varchar
 	PESOUNITARIO decimal
-	TIPOPESO varchar
+
+	
+	CLAVEFDA varchar
+	CLAVEFCC varchar
+	
 	PAIS varchar
-	FRACCION varchar
-	TIPOFRACCION varchar
 	SECTOR varchar
 	FECHAMODIFICA int
 	FOTOPARTE varchar
-	FECHAMODIFICA_ISO datetime
-	FRACCIONAME varchar
+	
+	
 	HABILITADADESHABILITADA tinyint
 	FECHACREACIONPARTE int
-	CLAVEFDA varchar
-	CLAVEFCC varchar
+	
 	LICENSECODE varchar
 	ECCN varchar
 	EXPORTCODE varchar

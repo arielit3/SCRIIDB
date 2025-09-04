@@ -318,7 +318,7 @@ SPartidasImpo {
 SFacImp {
 	CONSECUTIVO int pk
 	PED_PENDIENTE_ASIGNAR tinyint
-	PEDIMENTOIMPO varchar > SPedimentos.PEDIMENTO #ffffff
+	PEDIMENTOIMPO varchar > SPedimentos.PEDIMENTO 
 	PEDIMENTOR1 varchar > SPedimentos.PEDIMENTO
 	REMESA smallint
 	FACTURAIMPO varchar
